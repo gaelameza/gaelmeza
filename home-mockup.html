@@ -57,6 +57,7 @@ p { margin: 0 0 1em; max-width: 62ch; }
 .ph { background: var(--ph); color: var(--ph-text); border: var(--hair); display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 16px; }
 .r916 { aspect-ratio: 9 / 16; } .r45 { aspect-ratio: 4 / 5; } .r169 { aspect-ratio: 16 / 9; } .r32 { aspect-ratio: 3 / 2; }
 .missing { font-family: var(--mono); font-size: .8em; font-weight: 700; color: var(--red); }
+.stat__n .missing { font-size: .32em; letter-spacing: 0; }
 
 /* Header */
 .site-head { border-bottom: var(--rule); position: sticky; top: 0; background: var(--paper); z-index: 10; }
@@ -151,6 +152,21 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 @media (min-width: 1100px) { .shots { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .more { display: flex; flex-wrap: wrap; gap: 12px 28px; padding-bottom: 48px; }
 
+/* Sports photography */
+.sports { display: grid; gap: 24px; border-top: var(--hair); padding: 40px 0; }
+.sports h3 { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(26px, 3.8vw, 48px); line-height: .98; text-transform: uppercase; margin: 8px 0 14px; }
+.sports__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.sports__grid .wide { grid-column: 1 / -1; }
+@media (min-width: 900px) { .sports { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 48px; align-items: start; } }
+
+/* Writing */
+.writing { list-style: none; margin: 0; padding: 0 0 48px; border-top: var(--rule); }
+.writing li { display: grid; gap: 8px; padding: 20px 0; border-bottom: var(--hair); }
+.writing li:last-child { border-bottom: 0; }
+.writing h4 { font-family: var(--display); font-weight: 800; font-stretch: 100%; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.15; margin: 0 0 6px; }
+.writing p { font-size: 15px; margin: 0; }
+@media (min-width: 900px) { .writing li { grid-template-columns: 220px minmax(0, 1fr) 80px; gap: 32px; align-items: baseline; } .writing .link { justify-self: end; } }
+
 /* Quote */
 .quote .wrap { padding-top: 56px; padding-bottom: 56px; }
 .quote blockquote { margin: 0; font-family: var(--display); font-weight: 700; font-stretch: 100%; font-size: clamp(24px, 3.4vw, 44px); line-height: 1.2; max-width: 30ch; }
@@ -190,6 +206,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
       <a href="#social">Social Media</a>
       <a href="#content">Content</a>
       <a href="#camera">Production</a>
+      <a href="#writing">Writing</a>
       <a href="#">Work</a>
       <a href="#">About</a>
     </nav>
@@ -227,9 +244,9 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
   <section class="stats" aria-label="Headline numbers">
     <div class="wrap">
       <div class="stat"><div class="stat__n">6.9M</div><span class="label muted">Views on one creator collab. Company record.</span></div>
-      <div class="stat"><div class="stat__n">5M+</div><span class="label muted">Views on the Austin account in my first year</span></div>
-      <div class="stat"><div class="stat__n">~80K</div><span class="label muted">YouTube views in Sept 2026. Best month in ~15 years.</span></div>
-      <div class="stat"><div class="stat__n">3</div><span class="label muted">Accounts run solo</span></div>
+      <div class="stat"><div class="stat__n"><span class="missing">[MISSING]</span></div><span class="label muted">Lifetime views on content I made</span></div>
+      <div class="stat"><div class="stat__n">4</div><span class="label muted">Accounts on 3 platforms, run at the same time: 2 Instagram, TikTok, YouTube</span></div>
+      <div class="stat"><div class="stat__n">1</div><span class="label muted">Person doing strategy, social-first content, pro production, photo, video, and copy</span></div>
     </div>
   </section>
 
@@ -245,8 +262,8 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
         <h3 class="sub">What I own</h3>
         <ul class="list">
           <li><span class="label">Scope</span><span>National social for Soccer Post, a soccer retailer with 70+ locations</span></li>
-          <li><span class="label">Accounts</span><span>Three market accounts, run solo</span></li>
-          <li><span class="label">Team</span><span>One-person creative team: strategy, production, and reporting</span></li>
+          <li><span class="label">Accounts</span><span>Four accounts on three platforms (2 Instagram, TikTok, YouTube), run solo</span></li>
+          <li><span class="label">Team</span><span>One-person creative team: strategy, content, production, copy, and reporting</span></li>
           <li><span class="label">Reporting</span><span>Metricool rollout and a reporting practice that sets the schedule</span></li>
           <li><span class="label">Standards</span><span>Brand compliance and neutrality across Nike, adidas, and Puma</span></li>
         </ul>
@@ -292,12 +309,12 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
         <article class="row">
           <div>
             <span class="label muted">System / Multi-account</span>
-            <h3>Three accounts. One person. One system.</h3>
-            <p class="situation"><span class="label">Situation</span>Three market accounts, each with its own voice, and one person running all of them.</p>
+            <h3>Four accounts. Three platforms. One person.</h3>
+            <p class="situation"><span class="label">Situation</span>Two Instagram accounts, a TikTok, and a YouTube channel, each with its own voice, all running at the same time.</p>
             <p>I introduced Metricool to Soccer Post and built the system around it: fixed caption architecture, a voice guide for each account, unique assets per market, and a reporting practice. Example: peak audience activity landed on Fridays around 4pm, so that's when we post.</p>
             <a class="link" href="#">See the systems →</a>
           </div>
-          <div class="ph r45">[Graphic: one producer, three accounts]</div>
+          <div class="ph r45">[Graphic: one producer, four accounts]</div>
         </article>
 
         <article class="row">
@@ -310,22 +327,6 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
             <a class="link" href="#">Read the case study →</a>
           </div>
           <div class="ph r32">[Graphic: YouTube Studio views, flat then the spike]</div>
-        </article>
-
-        <article class="row">
-          <div>
-            <span class="label muted">Case study 04 / Blog program</span>
-            <h3>A channel that didn't exist.</h3>
-            <p class="situation"><span class="label">Situation</span>Soccer Post had no blog.</p>
-            <p>I pitched it, got it greenlit, write the posts, built the SEO structure, and built the per-post reporting. My second post, "On-Field vs Fan Jerseys," is still pulling organic search traffic.</p>
-            <ul class="inline-stats">
-              <li><b>1,300</b><span class="label muted">Pageviews</span></li>
-              <li><b>748</b><span class="label muted">Sessions</span></li>
-              <li><b>637</b><span class="label muted">Visitors, 180 days</span></li>
-            </ul>
-            <a class="link" href="#">Read the case study →</a>
-          </div>
-          <div class="ph r32">[Screenshot: the published blog post]</div>
         </article>
       </div>
     </div>
@@ -430,11 +431,78 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
           <p>Nike Scorpion Pack soleplate work, Predator, and F50 Messi.</p>
         </article>
       </div>
+      <div class="sports">
+        <div class="sports__head">
+          <span class="label muted">Sports photography / Imagine That Sports</span>
+          <h3>Matchday is home.</h3>
+          <p>Sports is my bread and butter behind the camera, next to lifestyle and brand work. I shot Austin FC on assignment for Imagine That Sports and wrote the published match recaps.</p>
+          <a class="link" href="#">Read a match recap ↗</a> <span class="missing">[MISSING: article URL]</span>
+        </div>
+        <div class="sports__grid">
+          <div class="ph r32 wide">[Photo 3:2: Austin FC matchday action]</div>
+          <div class="ph r45">[Photo 4:5: player moment]</div>
+          <div class="ph r45">[Photo 4:5: crowd / supporters]</div>
+          <div class="ph r45">[Photo 4:5: celebration]</div>
+        </div>
+      </div>
       <div class="more">
         <a class="link" href="#">See production work →</a>
         <a class="link" href="#">Full photo portfolio ↗</a>
         <span class="missing">[PORTFOLIO URL]</span>
       </div>
+    </div>
+  </section>
+
+  <!-- BLOCK 4: WRITING -->
+  <section class="block" id="writing" aria-labelledby="b4">
+    <div class="wrap block__head">
+      <span class="label">04 / Copywriting</span>
+      <h2 class="display" id="b4">I write it too.</h2>
+      <p class="block__intro">Blogs, match recaps, campaign copy, and captions. Researched, fact-checked, and written for where it lives.</p>
+    </div>
+    <div class="wrap">
+      <ul class="writing">
+        <li>
+          <span class="label muted">Blog / Soccer Post</span>
+          <div>
+            <h4>"On-Field vs Fan Jerseys: What's the Difference?"</h4>
+            <p>Part of the blog program I pitched and got greenlit. I write the posts and built the SEO structure: keyword-forward headers, FAQ blocks, and internal product linking.</p>
+          </div>
+          <a class="link" href="#">Read ↗</a>
+        </li>
+        <li>
+          <span class="label muted">Blog / Soccer Post</span>
+          <div>
+            <h4>"The Kits You Missed: 2026/27's Best New Home Kits"</h4>
+            <p>A kit roundup, built on the same SEO structure.</p>
+          </div>
+          <a class="link" href="#">Read ↗</a>
+        </li>
+        <li>
+          <span class="label muted">Match recap / Imagine That Sports</span>
+          <div>
+            <h4><span class="missing">[MISSING: recap title]</span></h4>
+            <p>A published Austin FC match recap, written on assignment.</p>
+          </div>
+          <a class="link" href="#">Read ↗</a>
+        </li>
+        <li>
+          <span class="label muted">Campaign copy</span>
+          <div>
+            <h4>Club América vs Austin FC Ticket Giveaway</h4>
+            <p>Campaign copy and compliance language for the giveaway, plus the entry mechanics behind it.</p>
+          </div>
+          <span></span>
+        </li>
+        <li>
+          <span class="label muted">Captions / Systems</span>
+          <div>
+            <h4>Caption architecture</h4>
+            <p>Fixed post skeletons, a five-hashtag structure, and a weekly template, so every account sounds consistent and the work can be handed off.</p>
+          </div>
+          <span></span>
+        </li>
+      </ul>
     </div>
   </section>
 

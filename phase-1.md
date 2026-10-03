@@ -18,6 +18,7 @@ Mockup: `home-mockup.html` (open it in a browser; the "Palette A / B" switch in 
 /production               Professional Content Creation (brand-level)
   /production/photography Photography
   /production/video       Video & Editing
+/writing                  Copywriting (blogs, match recaps, campaign copy, captions)
 /work                     Case studies index
   /work/tonymakesvlogs
   /work/charly-heritage
@@ -28,7 +29,7 @@ Mockup: `home-mockup.html` (open it in a browser; the "Palette A / B" switch in 
 /404
 ```
 
-Nav (desktop, always visible): Social Media, Content, Production, Work, About, plus two buttons: Resume (outline) and Get In Touch (solid).
+Nav (desktop, always visible): Social Media, Content, Production, Writing, Work, About, plus two buttons: Resume (outline) and Get In Touch (solid).
 
 Changes I recommend, and why:
 1. **Nav mirrors the three Home blocks.** Social Media, Content, Production map one to one to Blocks 1, 2, 3, so a hiring manager learns the structure once.
@@ -45,12 +46,13 @@ Every page ends with the same CTA band (Get In Touch + Download Resume) and foot
 **Home** (round 2: minimal brutalism, Paper palette, color only as accents)
 1. Nav: GMM logo, open links, Resume link, Get In Touch button.
 2. Hero: name and title line, giant headline, positioning line, "Open to" line, two CTAs, candid working photo.
-3. Stat row: 4 big numbers between rules (6.9M, 5M+, ~80K, 3).
+3. Stat row: 4 big numbers between rules (6.9M, lifetime views [MISSING], 4 accounts on 3 platforms, 1 person doing it all).
 4. The short version: "What I own" scope list and a career timeline.
-5. Block 1, Social media professional: TonyMakesVlogs, the three-account system, YouTube revival, blog program. Each opens with a one-line situation.
+5. Block 1, Social media professional: TonyMakesVlogs, the four-account system, YouTube revival. Each opens with a one-line situation.
 6. Block 2, Social-first content: 5 vertical tiles, then the World Cup window numbers.
-7. Block 3, Camera work: Charly feature, then Noche de Barrio, Club América giveaway, jumbotron spot, product/studio.
-8. Quote placeholder.
+7. Block 3, Camera work: Charly feature, then Noche de Barrio, Club América giveaway, jumbotron spot, product/studio, then a sports photography segment (Imagine That Sports photos + a link to a recap).
+8. Block 4, Copywriting: blog posts, match recap, campaign copy, caption system. Skill, not numbers.
+8b. Quote placeholder.
 9. Tools and the brand line.
 10. CTA (the one black block), footer.
 
@@ -105,6 +107,13 @@ Every page ends with the same CTA band (Get In Touch + Download Resume) and foot
 4. The Result (big numbers, colored blocks).
 5. Media.
 6. Next case study link. CTA.
+
+**Copywriting**
+1. Hero: "I write it too." plus one line on range.
+2. Blog program: what I built (pitch, SEO structure, reporting) and the posts.
+3. Match recaps for Imagine That Sports, with links.
+4. Campaign copy and caption systems.
+5. CTA.
 
 **About**
 1. Hero: portrait placeholder + "Sales floor to national social."
