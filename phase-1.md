@@ -42,16 +42,17 @@ Changes I recommend, and why:
 
 Every page ends with the same CTA band (Get In Touch + Download Resume) and footer, so each one works as a standalone pitch.
 
-**Home**
-1. Nav: GMM logo, open links, Resume, Get In Touch.
-2. Hero: label (current title, Austin TX), giant headline, positioning line, two CTAs.
-3. Stat row: 4 colored blocks (6.9M, 5M+, ~80K, 3).
-4. Block 1, Social media professional: TonyMakesVlogs, the three-account system, YouTube revival.
-5. Block 2, Social-first content: 5 vertical tiles (trendy, funny, educational, product/hype x2), one line + the number each.
-6. World Cup window stat band.
-7. Block 3, Camera work: Charly feature, then Noche de Barrio, Club América giveaway, Inter Miami jumbotron spot, product/studio.
-8. Brand strip with the approved wording.
-9. CTA band, footer.
+**Home** (round 2: minimal brutalism, Paper palette, color only as accents)
+1. Nav: GMM logo, open links, Resume link, Get In Touch button.
+2. Hero: name and title line, giant headline, positioning line, "Open to" line, two CTAs, candid working photo.
+3. Stat row: 4 big numbers between rules (6.9M, 5M+, ~80K, 3).
+4. The short version: "What I own" scope list and a career timeline.
+5. Block 1, Social media professional: TonyMakesVlogs, the three-account system, YouTube revival, blog program. Each opens with a one-line situation.
+6. Block 2, Social-first content: 5 vertical tiles, then the World Cup window numbers.
+7. Block 3, Camera work: Charly feature, then Noche de Barrio, Club América giveaway, jumbotron spot, product/studio.
+8. Quote placeholder.
+9. Tools and the brand line.
+10. CTA (the one black block), footer.
 
 **Social Media**
 1. Hero: "I run social like a business" style headline, your title, 3 stats.

@@ -9,283 +9,179 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-/* ---------- Palette A: Night Shift ---------- */
+/* Paper palette. Color is used sparingly: black type does the work,
+   red marks a few key moments (large text only), blue is for links. */
 :root {
-  --base: #0A0A0A;
-  --text: #F4F1EA;
-  --paper: #F4F1EA;
-  --ink: #0A0A0A;
-  --blue: #2B44FF;
-  --on-blue: #FFFFFF;
-  --red: #FF4433;
-  --on-red: #0A0A0A;
-  --muted: #9A9A9A;
-  --line: #F4F1EA;
-  --ph: #2A2A2A;
-  --ph-text: #B8B8B8;
-  --shadow: #F4F1EA;
+  --paper: #F2F0EA;
+  --ink: #111111;
+  --blue: #0033CC;
+  --red: #D7261E;
+  --muted: #555555;
+  --ph: #DEDBD3;
+  --ph-text: #333333;
   --display: "Archivo", "Arial Black", Impact, sans-serif;
   --body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
-  --b: 3px;
+  --rule: 2px solid var(--ink);
+  --hair: 1px solid var(--ink);
   --gutter: 16px;
 }
-/* ---------- Palette B: Paper (chosen, on by default via the toggle) ---------- */
-body:has(#pal:checked) {
-  --base: #F2F0EA;
-  --text: #111111;
-  --paper: #111111;
-  --ink: #F2F0EA;
-  --blue: #0033CC;
-  --on-blue: #FFFFFF;
-  --red: #D7261E;
-  --on-red: #FFFFFF;
-  --muted: #555555;
-  --line: #111111;
-  --ph: #D9D6CF;
-  --ph-text: #333333;
-  --shadow: #111111;
-}
+@media (min-width: 760px) { :root { --gutter: 32px; } }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0;
-  background: var(--base);
-  color: var(--text);
-  font-family: var(--body);
-  font-size: 17px;
-  line-height: 1.55;
-  font-stretch: 100%;
-}
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; }
 a { color: inherit; }
-section[id] { scroll-margin-top: 110px; }
-img { max-width: 100%; display: block; }
-.wrap { max-width: 1320px; margin: 0 auto; padding: 0 var(--gutter); }
-@media (min-width: 760px) { :root { --gutter: 32px; } }
-
-/* ---------- Type ---------- */
-.display {
-  font-family: var(--display);
-  font-weight: 900;
-  font-stretch: 125%;
-  text-transform: uppercase;
-  line-height: .88;
-  letter-spacing: -.02em;
-  margin: 0;
-}
-.label {
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.muted { color: var(--muted); }
+section[id] { scroll-margin-top: 80px; }
 p { margin: 0 0 1em; max-width: 62ch; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 var(--gutter); }
 
-/* ---------- Skip link + focus ---------- */
-.skip { position: absolute; left: -999px; top: 8px; background: var(--red); color: var(--on-red); padding: 8px 12px; z-index: 99; }
+.display { font-family: var(--display); font-weight: 900; font-stretch: 125%; text-transform: uppercase; line-height: .9; letter-spacing: -.02em; margin: 0; }
+.label { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.muted { color: var(--muted); }
+.red { color: var(--red); }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--paper); padding: 8px 12px; z-index: 99; }
 .skip:focus { left: 8px; }
-:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 
-/* ---------- Buttons ---------- */
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--mono); font-weight: 700; font-size: 14px;
-  letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
-  padding: 14px 20px;
-  border: var(--b) solid var(--line);
-  box-shadow: 5px 5px 0 var(--shadow);
-  transition: transform .08s ease-out, box-shadow .08s ease-out, background .08s;
-  background: var(--base); color: var(--text);
+/* Buttons: solid black or outline. Hover flips, no shadows. */
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; padding: 13px 18px; border: var(--rule); background: var(--ink); color: var(--paper); transition: background .08s, color .08s; }
+.btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+.btn--line { background: transparent; color: var(--ink); }
+.btn--line:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.link { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+.link:hover { color: var(--ink); }
+
+/* Media placeholders */
+.ph { background: var(--ph); color: var(--ph-text); border: var(--hair); display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 16px; }
+.r916 { aspect-ratio: 9 / 16; } .r45 { aspect-ratio: 4 / 5; } .r169 { aspect-ratio: 16 / 9; } .r32 { aspect-ratio: 3 / 2; }
+.missing { font-family: var(--mono); font-size: .8em; font-weight: 700; color: var(--red); }
+
+/* Header */
+.site-head { border-bottom: var(--rule); position: sticky; top: 0; background: var(--paper); z-index: 10; }
+.site-head .wrap { display: flex; align-items: center; gap: 12px 20px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+.logo { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: 24px; line-height: 1; text-decoration: none; }
+.nav { display: flex; gap: 18px; order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; }
+.nav a { font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; padding: 4px 0; white-space: nowrap; border-bottom: 2px solid transparent; }
+.nav a:hover { border-bottom-color: var(--ink); }
+.head-cta { margin-left: auto; display: flex; gap: 16px; align-items: center; }
+.head-cta .btn { padding: 9px 12px; font-size: 12px; }
+@media (min-width: 980px) { .nav { order: 0; width: auto; margin-left: 16px; gap: 24px; } }
+
+/* Hero */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 36px; padding-bottom: 40px; }
+.hero__meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 20px; }
+.hero__text { container-type: inline-size; }
+.hero h1 { font-size: clamp(34px, 14cqi, 148px); }
+.hero__line { font-size: clamp(18px, 2vw, 22px); line-height: 1.45; margin: 24px 0 14px; max-width: 44ch; }
+.hero__open { border-left: 3px solid var(--ink); padding-left: 12px; margin: 0 0 24px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__photo { max-width: 360px; width: 100%; }
+@media (min-width: 900px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr) 300px; align-items: end; padding-top: 56px; padding-bottom: 56px; }
+  .hero__photo { justify-self: end; }
 }
-.btn:hover { transform: translate(5px, 5px); box-shadow: 0 0 0 var(--shadow); }
-.btn--red { background: var(--red); color: var(--on-red); }
-.btn--blue { background: var(--blue); color: var(--on-blue); }
-.btn--sm { padding: 9px 12px; font-size: 12px; box-shadow: 3px 3px 0 var(--shadow); }
-.btn--sm:hover { transform: translate(3px, 3px); }
 
-/* ---------- Placeholder media ---------- */
-.ph {
-  background: var(--ph);
-  color: var(--ph-text);
-  border: var(--b) solid var(--line);
-  display: flex; align-items: center; justify-content: center; text-align: center;
-  font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
-  padding: 16px;
-  background-image: repeating-linear-gradient(45deg, transparent 0 14px, rgba(127,127,127,.12) 14px 16px);
-}
-.r916 { aspect-ratio: 9 / 16; }
-.r45 { aspect-ratio: 4 / 5; }
-.r169 { aspect-ratio: 16 / 9; }
-.r32 { aspect-ratio: 3 / 2; }
-
-.missing { background: var(--red); color: var(--on-red); font-family: var(--mono); font-size: .8em; font-weight: 700; padding: 1px 6px; }
-
-/* ---------- Header ---------- */
-.site-head { border-bottom: var(--b) solid var(--line); position: sticky; top: 0; background: var(--base); z-index: 10; }
-.site-head .wrap { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
-.logo {
-  font-family: var(--display); font-weight: 900; font-stretch: 125%;
-  font-size: 26px; line-height: 1; text-decoration: none;
-  border: var(--b) solid var(--line); padding: 6px 10px 4px;
-  background: var(--blue); color: var(--on-blue);
-}
-.nav { display: flex; gap: 4px; order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); }
-.nav a { font-family: var(--mono); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; padding: 8px 10px; border: 2px solid transparent; white-space: nowrap; }
-.nav a:hover { border-color: var(--line); background: var(--blue); color: var(--on-blue); }
-.head-cta { margin-left: auto; display: flex; gap: 10px; }
-@media (min-width: 980px) {
-  .nav { order: 0; width: auto; margin: 0 0 0 24px; padding: 0; }
-}
-@media (max-width: 420px) { .head-cta .btn--resume { display: none; } }
-
-/* ---------- Hero ---------- */
-.hero { border-bottom: var(--b) solid var(--line); }
-.hero .wrap { padding-top: 40px; padding-bottom: 40px; }
-.hero__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-.tag { border: 2px solid var(--line); padding: 4px 8px; }
-.tag--red { background: var(--red); color: var(--on-red); border-color: var(--line); }
-.hero h1 { font-size: clamp(34px, 11.5vw, 164px); }
-.hero h1 .hl { color: var(--red); }
-.hero__line { font-size: clamp(18px, 2.2vw, 24px); line-height: 1.4; margin: 28px 0 28px; max-width: 46ch; }
-.hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; }
-
-/* ---------- Stats ---------- */
-.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-bottom: var(--b) solid var(--line); }
-.stat { container-type: inline-size; padding: 20px var(--gutter) 24px; border-right: var(--b) solid var(--line); border-bottom: var(--b) solid var(--line); min-height: 170px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; }
+/* Stats: plain numbers between rules */
+.stats { border-top: var(--rule); border-bottom: var(--rule); }
+.stats .wrap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0; }
+.stat { container-type: inline-size; padding: 18px var(--gutter) 20px; border-right: var(--hair); border-bottom: var(--hair); }
 .stat:nth-child(2n) { border-right: 0; }
 .stat:nth-child(n+3) { border-bottom: 0; }
-.stat__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(30px, 24cqi, 96px); line-height: .9; letter-spacing: -.03em; }
-.stat--blue { background: var(--blue); color: var(--on-blue); }
-.stat--red { background: var(--red); color: var(--on-red); }
-.stat--paper { background: var(--paper); color: var(--ink); }
+.stat__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(30px, 22cqi, 80px); line-height: 1; letter-spacing: -.03em; margin-bottom: 8px; }
 @media (min-width: 900px) {
-  .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stats .wrap { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .stat { border-bottom: 0; }
-  .stat:nth-child(2n) { border-right: var(--b) solid var(--line); }
+  .stat:nth-child(2n) { border-right: var(--hair); }
   .stat:last-child { border-right: 0; }
 }
 
-/* ---------- Section frame ---------- */
-.block { border-bottom: var(--b) solid var(--line); }
-.block__head { display: grid; gap: 16px; padding-top: 48px; padding-bottom: 32px; }
-.block__num { font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: .08em; display: flex; gap: 12px; align-items: center; }
-.block__num span:first-child { background: var(--text); color: var(--base); padding: 3px 8px; }
-.block h2 { font-size: clamp(34px, 9vw, 128px); }
-.block__intro { font-size: 19px; }
-@media (min-width: 900px) {
-  .block__head { grid-template-columns: 1.6fr 1fr; align-items: end; }
-  .block__head .block__num { grid-column: 1 / -1; }
-}
+/* Section frame */
+.block { border-bottom: var(--rule); }
+.block__head { padding-top: 56px; padding-bottom: 28px; display: grid; gap: 14px; }
+.block h2 { font-size: clamp(34px, 7vw, 104px); }
+.block__intro { font-size: 18px; margin: 0; }
+@media (min-width: 900px) { .block__head { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; } .block__head .label { grid-column: 1 / -1; } }
 
-/* ---------- Block 1: proof cards ---------- */
-.proof { display: grid; grid-template-columns: minmax(0, 1fr); border-top: var(--b) solid var(--line); }
-.proof__card { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 28px var(--gutter) 32px; border-bottom: var(--b) solid var(--line); }
-.proof__card:last-child { border-bottom: 0; }
-.proof__card h3 { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(26px, 4.2vw, 56px); line-height: .95; text-transform: uppercase; margin: 8px 0 16px; }
-.mini-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: var(--b) solid var(--line); margin: 20px 0; max-width: 520px; }
-.mini-stats div { container-type: inline-size; padding: 10px 12px; border-right: var(--b) solid var(--line); }
-.mini-stats div:last-child { border-right: 0; }
-.mini-stats b { display: block; font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: clamp(16px, 20cqi, 26px); line-height: 1.05; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 20px; padding: 0; list-style: none; }
-.chips li { border: 2px solid var(--line); padding: 4px 8px; }
-.proof__card--feature { background: var(--paper); color: var(--ink); --line: var(--ink); --shadow: var(--ink); }
-.proof__card--feature .btn { background: var(--paper); color: var(--ink); border-color: var(--ink); }
-.proof__card--feature .ph { --line: var(--ink); }
-@media (min-width: 900px) {
-  .proof__card { grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; padding: 40px var(--gutter); }
-  .proof__card .ph.r916 { max-width: 320px; justify-self: end; width: 100%; }
-}
-.also { padding: 18px var(--gutter); border-top: var(--b) solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+/* Short version: scope + timeline */
+.short { display: grid; gap: 40px; padding-bottom: 56px; }
+@media (min-width: 900px) { .short { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; } }
+.list { list-style: none; margin: 0; padding: 0; border-top: var(--hair); }
+.list li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: var(--hair); }
+.list li .label { padding-top: 4px; }
+.list b { font-weight: 700; }
+.list .now .label { color: var(--red); }
+h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px; }
 
-/* ---------- Block 2: range tiles ---------- */
-.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: var(--b) solid var(--line); }
-.tile { border-right: var(--b) solid var(--line); border-bottom: var(--b) solid var(--line); padding: 14px; display: flex; flex-direction: column; gap: 12px; transition: background .08s; }
-.tile:nth-child(2n) { border-right: 0; }
-.tile:hover { background: var(--blue); color: var(--on-blue); }
-.tile .ph { border-width: 2px; }
-.tile__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(20px, 2.4vw, 34px); line-height: 1; }
-.tile p { font-size: 15px; margin: 0; }
-.tile .label { overflow-wrap: anywhere; }
-@media (min-width: 900px) {
-  .tiles { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  .tile, .tile:nth-child(2n) { border-right: var(--b) solid var(--line); border-bottom: 0; }
-  .tile:last-child { border-right: 0; }
-}
-.band { background: var(--blue); color: var(--on-blue); border-top: var(--b) solid var(--line); }
-.band .wrap { display: grid; gap: 24px; padding-top: 32px; padding-bottom: 32px; }
-.band__stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.band__stats b { display: block; font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: clamp(22px, 22cqi, 56px); line-height: .95; }
-.band__stats > div { container-type: inline-size; }
-@media (min-width: 900px) {
-  .band .wrap { grid-template-columns: 1fr 2.4fr; align-items: center; }
-  .band__stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
+/* Proof rows */
+.rows { border-top: var(--rule); }
+.row { display: grid; gap: 20px; padding: 32px 0; border-bottom: var(--hair); }
+.row:last-child { border-bottom: 0; }
+.row h3 { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(26px, 3.8vw, 48px); line-height: .98; text-transform: uppercase; margin: 8px 0 14px; }
+.situation { font-size: 15px; border-left: 3px solid var(--red); padding-left: 12px; margin-bottom: 14px; }
+.situation .label { display: block; margin-bottom: 2px; }
+.inline-stats { display: flex; flex-wrap: wrap; gap: 6px 24px; margin: 6px 0 18px; padding: 0; list-style: none; }
+.inline-stats b { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 22px; margin-right: 6px; }
+.row .ph { max-width: 300px; width: 100%; }
+@media (min-width: 900px) { .row { grid-template-columns: minmax(0, 1fr) 260px; gap: 56px; align-items: start; } .row .ph { justify-self: end; } }
 
-/* ---------- Block 3: camera ---------- */
-.charly { display: grid; grid-template-columns: minmax(0, 1fr); border-top: var(--b) solid var(--line); }
-.charly .ph { border-width: 0; border-bottom: var(--b) solid var(--line); min-height: 320px; }
-.charly__copy { padding: 28px var(--gutter) 32px; background: var(--red); color: var(--on-red); --line: var(--on-red); --shadow: var(--on-red); }
-.charly__copy h3 { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(30px, 6vw, 84px); line-height: .9; text-transform: uppercase; margin: 12px 0 18px; }
-.charly__copy .btn { background: var(--red); color: var(--on-red); border-color: var(--on-red); }
-@media (min-width: 900px) {
-  .charly { grid-template-columns: 1.5fr 1fr; }
-  .charly .ph { border-bottom: 0; border-right: var(--b) solid var(--line); min-height: 560px; }
-  .charly__copy { display: flex; flex-direction: column; justify-content: center; padding: 48px 40px; }
-}
-.shots { display: grid; grid-template-columns: minmax(0, 1fr); border-top: var(--b) solid var(--line); }
-.shot { padding: 20px var(--gutter) 24px; border-bottom: var(--b) solid var(--line); display: grid; gap: 14px; align-content: start; }
-.shot h3 { font-family: var(--display); font-weight: 800; font-stretch: 112%; font-size: 24px; line-height: 1; text-transform: uppercase; margin: 0; }
+/* Content tiles */
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; padding-bottom: 40px; }
+.tile { display: grid; gap: 8px; align-content: start; }
+.tile__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.05; }
+.tile p { font-size: 14px; margin: 0; }
+@media (min-width: 900px) { .tiles { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.wc { border-top: var(--hair); padding: 24px 0 48px; display: grid; gap: 16px; }
+.wc__stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.wc__stats b { display: block; font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: clamp(26px, 3.4vw, 44px); line-height: 1; }
+@media (min-width: 900px) { .wc { grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); align-items: center; } .wc__stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* Camera work */
+.feature { display: grid; gap: 24px; border-top: var(--rule); padding-top: 32px; }
+.feature .ph { min-height: 300px; }
+.feature__copy { container-type: inline-size; }
+.feature h3 { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(26px, 10.5cqi, 72px); line-height: .92; text-transform: uppercase; margin: 10px 0 16px; }
+@media (min-width: 900px) { .feature { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 48px; align-items: center; } .feature .ph { min-height: 520px; } }
+.shots { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 40px 0; }
+.shot { display: grid; gap: 10px; align-content: start; }
+.shot h4 { font-family: var(--display); font-weight: 800; font-stretch: 112%; font-size: 21px; line-height: 1.05; text-transform: uppercase; margin: 0; }
 .shot p { font-size: 15px; margin: 0; }
-@media (min-width: 700px) {
-  .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .shot:nth-child(odd) { border-right: var(--b) solid var(--line); }
-}
-@media (min-width: 1100px) {
-  .shots { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .shot { border-bottom: 0; border-right: var(--b) solid var(--line); }
-  .shot:last-child { border-right: 0; }
-}
-.camera-ctas { display: flex; flex-wrap: wrap; gap: 14px; padding: 28px var(--gutter); border-top: var(--b) solid var(--line); }
+@media (min-width: 700px) { .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .shots { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.more { display: flex; flex-wrap: wrap; gap: 12px 28px; padding-bottom: 48px; }
 
-/* ---------- Brand strip ---------- */
-.brands { border-bottom: var(--b) solid var(--line); background: var(--paper); color: var(--ink); }
-.brands .wrap { padding-top: 24px; padding-bottom: 28px; }
-.brands__row { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 12px; }
-.brands__row span { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(30px, 6vw, 72px); line-height: 1; text-transform: uppercase; }
-.brands__row span + span::before { content: "/"; margin-right: 28px; color: var(--red); }
+/* Quote */
+.quote .wrap { padding-top: 56px; padding-bottom: 56px; }
+.quote blockquote { margin: 0; font-family: var(--display); font-weight: 700; font-stretch: 100%; font-size: clamp(24px, 3.4vw, 44px); line-height: 1.2; max-width: 30ch; }
+.quote blockquote::before { content: "\201C"; display: block; font-weight: 900; font-size: 2.2em; line-height: .6; color: var(--red); margin-bottom: 8px; }
+.quote figcaption { margin-top: 20px; }
 
-/* ---------- CTA ---------- */
-.cta { background: var(--red); color: var(--on-red); border-bottom: var(--b) solid var(--line); --line: var(--on-red); --shadow: var(--on-red); }
-.cta .wrap { padding-top: 56px; padding-bottom: 56px; }
-.cta h2 { font-size: clamp(48px, 13vw, 190px); }
-.cta p { font-size: 20px; margin: 24px 0; }
-.cta .btn { border-color: var(--on-red); }
-.cta .btn--ghost { background: var(--red); color: var(--on-red); }
-.cta .btn--solid { background: var(--on-red); color: var(--red); }
-.cta__links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 32px; }
+/* Tools + brands */
+.facts .wrap { display: grid; gap: 32px; padding-top: 40px; padding-bottom: 48px; }
+@media (min-width: 900px) { .facts .wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; } }
+.plain { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 18px; font-weight: 600; }
+.brands { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(24px, 3.4vw, 40px); line-height: 1.1; text-transform: uppercase; margin: 0; }
 
-/* ---------- Footer ---------- */
-.foot .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; padding-top: 24px; padding-bottom: 80px; }
+/* CTA: the one dark block on the page */
+.cta { background: var(--ink); color: var(--paper); }
+.cta .wrap { padding-top: 64px; padding-bottom: 64px; }
+.cta h2 { font-size: clamp(48px, 12vw, 176px); }
+.cta p { font-size: 19px; margin: 20px 0 28px; }
+.cta .btn { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.cta .btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+.cta .btn--line { background: transparent; color: var(--paper); }
+.cta__links { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 32px; }
+.cta__links a { text-decoration: underline; text-underline-offset: 4px; }
 
-/* ---------- Mockup-only palette switch ---------- */
-.pal-switch { position: fixed; left: 12px; bottom: 12px; z-index: 50; background: var(--base); color: var(--text); border: 2px solid var(--line); padding: 8px 10px; display: flex; gap: 8px; align-items: center; cursor: pointer; box-shadow: 3px 3px 0 var(--shadow); }
-.pal-switch input { accent-color: var(--red); width: 18px; height: 18px; margin: 0; }
+.foot { background: var(--ink); color: var(--paper); border-top: 1px solid #444; }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; padding-top: 20px; padding-bottom: 28px; }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition: none !important; }
-  .btn:hover { transform: none; }
-}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-
-<label class="pal-switch label" title="Mockup only: compare palettes">
-  <input type="checkbox" id="pal" checked> Paper palette (uncheck for Night Shift)
-</label>
 
 <header class="site-head">
   <div class="wrap">
@@ -298,8 +194,8 @@ p { margin: 0 0 1em; max-width: 62ch; }
       <a href="#">About</a>
     </nav>
     <div class="head-cta">
-      <a class="btn btn--sm btn--resume" href="#">Resume ↓</a>
-      <a class="btn btn--sm btn--red" href="#contact">Get In Touch</a>
+      <a class="link" href="#">Resume</a>
+      <a class="btn" href="#contact">Get In Touch</a>
     </div>
   </div>
 </header>
@@ -309,211 +205,263 @@ p { margin: 0 0 1em; max-width: 62ch; }
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <div class="hero__tags">
-        <span class="tag label tag--red">Interim Social Media Director</span>
-        <span class="tag label">Soccer Post, national</span>
-        <span class="tag label">Austin, TX</span>
+      <div class="hero__text">
+        <div class="hero__meta label">
+          <span>Gael Meza</span>
+          <span class="muted">Interim Social Media Director, Soccer Post</span>
+          <span class="muted">Austin, TX</span>
+        </div>
+        <h1 class="display">Social that moves the numbers<span class="red">.</span></h1>
+        <p class="hero__line">I'm Gael Meza, a social media professional in Austin, TX. I run strategy, systems, and content for a national soccer retailer, and I shoot and edit it myself.</p>
+        <p class="hero__open label">Open to: <span class="missing">[MISSING: roles, e.g. Social Media Manager or Director / Austin or remote]</span></p>
+        <div class="ctas">
+          <a class="btn" href="#contact">Get In Touch →</a>
+          <a class="btn btn--line" href="#">Download Resume ↓</a>
+        </div>
       </div>
-      <h1 class="display">Social that moves <span class="hl">the numbers.</span></h1>
-      <p class="hero__line">I'm Gael Meza, a social media professional in Austin, TX. I run strategy, systems, and content for a national soccer retailer, and I shoot and edit it myself.</p>
-      <div class="hero__ctas">
-        <a class="btn btn--red" href="#contact">Get In Touch →</a>
-        <a class="btn" href="#">Download Resume ↓</a>
-      </div>
+      <div class="ph r45 hero__photo">[Photo 4:5: you at work, candid, behind the camera]</div>
     </div>
   </section>
 
   <!-- STATS -->
   <section class="stats" aria-label="Headline numbers">
-    <div class="stat stat--blue">
-      <span class="label">Company record</span>
-      <div><div class="stat__n">6.9M</div><span class="label">Views on one creator collab</span></div>
-    </div>
-    <div class="stat stat--red">
-      <span class="label">Austin account</span>
-      <div><div class="stat__n">5M+</div><span class="label">Views in my first year</span></div>
-    </div>
-    <div class="stat stat--paper">
-      <span class="label">YouTube, Sept 2026</span>
-      <div><div class="stat__n">~80K</div><span class="label">Views, best month in ~15 years</span></div>
-    </div>
-    <div class="stat">
-      <span class="label">One person</span>
-      <div><div class="stat__n">3</div><span class="label">Accounts run solo</span></div>
+    <div class="wrap">
+      <div class="stat"><div class="stat__n">6.9M</div><span class="label muted">Views on one creator collab. Company record.</span></div>
+      <div class="stat"><div class="stat__n">5M+</div><span class="label muted">Views on the Austin account in my first year</span></div>
+      <div class="stat"><div class="stat__n">~80K</div><span class="label muted">YouTube views in Sept 2026. Best month in ~15 years.</span></div>
+      <div class="stat"><div class="stat__n">3</div><span class="label muted">Accounts run solo</span></div>
     </div>
   </section>
 
-  <!-- BLOCK 1: SOCIAL MEDIA PROFESSIONAL -->
+  <!-- THE SHORT VERSION: scope + timeline -->
+  <section class="block" aria-labelledby="sv">
+    <div class="wrap block__head">
+      <span class="label">The short version</span>
+      <h2 class="display" id="sv">Sales floor to national social.</h2>
+      <p class="block__intro">Four years, one company, and a steady climb from the sales floor to running the brand's social.</p>
+    </div>
+    <div class="wrap short">
+      <div>
+        <h3 class="sub">What I own</h3>
+        <ul class="list">
+          <li><span class="label">Scope</span><span>National social for Soccer Post, a soccer retailer with 70+ locations</span></li>
+          <li><span class="label">Accounts</span><span>Three market accounts, run solo</span></li>
+          <li><span class="label">Team</span><span>One-person creative team: strategy, production, and reporting</span></li>
+          <li><span class="label">Reporting</span><span>Metricool rollout and a reporting practice that sets the schedule</span></li>
+          <li><span class="label">Standards</span><span>Brand compliance and neutrality across Nike, adidas, and Puma</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="sub">Timeline</h3>
+        <ul class="list">
+          <li class="now"><span class="label">May 2026, now</span><span><b>Interim Social Media Director</b>, national</span></li>
+          <li><span class="label">Feb 2026, now</span><span><b>National Content Creator &amp; Social Strategist</b></span></li>
+          <li><span class="label">May 2025, now</span><span><b>Social Media Manager &amp; Producer</b>, Austin market</span></li>
+          <li><span class="label">2022 to 2025</span><span>Sales Associate, Sales Team Lead, Social Media Team Member, Sales Team Lead &amp; Primary Digital Creative. Started at The Soccer Corner, now Soccer Post.</span></li>
+          <li><span class="label">On the side</span><span>Founder, Gael Meza Media. Shot Austin FC on assignment for Imagine That Sports.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCK 1 -->
   <section class="block" id="social" aria-labelledby="b1">
     <div class="wrap block__head">
-      <div class="block__num label"><span>01</span><span>Social media professional</span></div>
+      <span class="label">01 / Social media professional</span>
       <h2 class="display" id="b1">I run social like a business.</h2>
-      <p class="block__intro">Not just nice posts. Strategy, scheduling, analytics, reporting, and the systems that make it repeatable.</p>
+      <p class="block__intro">Strategy, scheduling, analytics, reporting, and the systems that make it repeatable.</p>
     </div>
-
-    <div class="proof">
-      <article class="proof__card proof__card--feature">
-        <div>
-          <span class="label">Case study 01 / TonyMakesVlogs</span>
-          <h3>6.9M views. It cost one pair of boots.</h3>
-          <p>Nobody assigned this. I found a creator mid-way through his "Becoming A Pro Soccer Player" series, noticed his Copa Mundials had holes in them, and pitched the collab myself. I ran it end to end as a collab post, so the reach credited Soccer Post directly. It's the most-viewed content in company history.</p>
-          <div class="mini-stats">
-            <div><b>579K</b><span class="label">Likes</span></div>
-            <div><b>53.4K</b><span class="label">Shares</span></div>
-            <div><b>19.6K</b><span class="label">Saves</span></div>
+    <div class="wrap">
+      <div class="rows">
+        <article class="row">
+          <div>
+            <span class="label muted">Case study 01 / TonyMakesVlogs</span>
+            <h3>6.9M views. It cost one pair of boots.</h3>
+            <p class="situation"><span class="label">Situation</span>A creator mid-way through his "Becoming A Pro Soccer Player" series, playing in Copa Mundials with holes in them.</p>
+            <p>Nobody assigned this. I spotted it, pitched the collab myself, and ran it end to end as a collab post so the reach credited Soccer Post directly. It's the most-viewed content in company history.</p>
+            <ul class="inline-stats">
+              <li><b>579K</b><span class="label muted">Likes</span></li>
+              <li><b>53.4K</b><span class="label muted">Shares</span></li>
+              <li><b>19.6K</b><span class="label muted">Saves</span></li>
+            </ul>
+            <a class="link" href="#">Read the case study →</a>
           </div>
-          <a class="btn" href="#">Read the case study →</a>
-        </div>
-        <div class="ph r916">[Video 9:16: Tony collab reel]</div>
-      </article>
+          <div class="ph r916">[Video 9:16: Tony collab reel]</div>
+        </article>
 
-      <article class="proof__card">
-        <div>
-          <span class="label">System / Multi-account</span>
-          <h3>Three accounts. One person. One system.</h3>
-          <p>I introduced Metricool to Soccer Post and run three market accounts solo through it. I built the reporting practice and use the data to set the schedule. Example: peak audience activity landed on Fridays around 4pm, so that's when we post.</p>
-          <ul class="chips label">
-            <li>Metricool rollout</li>
-            <li>Caption architecture</li>
-            <li>Voice guide x3</li>
-            <li>Multi-market assets</li>
-            <li>Brand compliance</li>
-            <li>Design systems</li>
-          </ul>
-          <a class="btn" href="#">See the systems →</a>
-        </div>
-        <div class="ph r45">[Graphic: one producer, three accounts, system diagram]</div>
-      </article>
+        <article class="row">
+          <div>
+            <span class="label muted">System / Multi-account</span>
+            <h3>Three accounts. One person. One system.</h3>
+            <p class="situation"><span class="label">Situation</span>Three market accounts, each with its own voice, and one person running all of them.</p>
+            <p>I introduced Metricool to Soccer Post and built the system around it: fixed caption architecture, a voice guide for each account, unique assets per market, and a reporting practice. Example: peak audience activity landed on Fridays around 4pm, so that's when we post.</p>
+            <a class="link" href="#">See the systems →</a>
+          </div>
+          <div class="ph r45">[Graphic: one producer, three accounts]</div>
+        </article>
 
-      <article class="proof__card">
-        <div>
-          <span class="label">Case study 03 / YouTube revival</span>
-          <h3>Best month in roughly fifteen years.</h3>
-          <p>I revived Soccer Post's dormant YouTube channel. September 2026 closed at about 80,000 views, the biggest monthly spike in the channel's history.</p>
-          <p class="muted">My role: <span class="missing">[MISSING]</span> Formats: <span class="missing">[MISSING]</span></p>
-          <a class="btn" href="#">Read the case study →</a>
-        </div>
-        <div class="ph r32">[Graphic: YouTube Studio views, flat baseline then the spike]</div>
-      </article>
-    </div>
-    <div class="also">
-      <span class="label">Also</span>
-      <a class="label" href="#">Case study 04: Soccer Post Blog Program, a channel I pitched, built, and measured →</a>
+        <article class="row">
+          <div>
+            <span class="label muted">Case study 03 / YouTube revival</span>
+            <h3>Best month in roughly fifteen years.</h3>
+            <p class="situation"><span class="label">Situation</span>Soccer Post's YouTube channel had gone dormant.</p>
+            <p>I revived it. September 2026 closed at about 80,000 views, the biggest monthly spike in the channel's history.</p>
+            <p class="muted">My role: <span class="missing">[MISSING]</span> Formats: <span class="missing">[MISSING]</span></p>
+            <a class="link" href="#">Read the case study →</a>
+          </div>
+          <div class="ph r32">[Graphic: YouTube Studio views, flat then the spike]</div>
+        </article>
+
+        <article class="row">
+          <div>
+            <span class="label muted">Case study 04 / Blog program</span>
+            <h3>A channel that didn't exist.</h3>
+            <p class="situation"><span class="label">Situation</span>Soccer Post had no blog.</p>
+            <p>I pitched it, got it greenlit, write the posts, built the SEO structure, and built the per-post reporting. My second post, "On-Field vs Fan Jerseys," is still pulling organic search traffic.</p>
+            <ul class="inline-stats">
+              <li><b>1,300</b><span class="label muted">Pageviews</span></li>
+              <li><b>748</b><span class="label muted">Sessions</span></li>
+              <li><b>637</b><span class="label muted">Visitors, 180 days</span></li>
+            </ul>
+            <a class="link" href="#">Read the case study →</a>
+          </div>
+          <div class="ph r32">[Screenshot: the published blog post]</div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- BLOCK 2: SOCIAL-FIRST CONTENT -->
+  <!-- BLOCK 2 -->
   <section class="block" id="content" aria-labelledby="b2">
     <div class="wrap block__head">
-      <div class="block__num label"><span>02</span><span>Social-first content</span></div>
+      <span class="label">02 / Social-first content</span>
       <h2 class="display" id="b2">Range, not one style.</h2>
-      <p class="block__intro">Platform-native content built to perform. Trends, humor, education, and product hype, all from the same desk.</p>
+      <p class="block__intro">Platform-native content built to perform: trends, humor, education, and product hype.</p>
     </div>
-    <div class="tiles">
-      <article class="tile">
-        <span class="label">Trendy / Fast</span>
-        <div class="ph r916">[Thumb 9:16: trend post]</div>
-        <div class="tile__n"><span class="missing">[MISSING]</span></div>
-        <p><span class="missing">[MISSING: post + idea in one line]</span></p>
-      </article>
-      <article class="tile">
-        <span class="label">Funny</span>
-        <div class="ph r916">[Thumb 9:16: funny post]</div>
-        <div class="tile__n"><span class="missing">[MISSING]</span></div>
-        <p><span class="missing">[MISSING: post + idea in one line]</span></p>
-      </article>
-      <article class="tile">
-        <span class="label">Educational</span>
-        <div class="ph r916">[Thumb 4:5: SP Stats carousel]</div>
-        <div class="tile__n"><span class="missing">[MISSING]</span></div>
-        <p>SP Stats carousels for Mexico and USMNT in the Round of 16. Researched and verified before publish.</p>
-      </article>
-      <article class="tile">
-        <span class="label">Product / Hype</span>
-        <div class="ph r916">[Thumb 9:16: adidas F50 reel]</div>
-        <div class="tile__n">490,950 views</div>
-        <p>adidas F50 "Football's Heartbreaker" (Lamine Yamal) reel. ~57K interactions.</p>
-      </article>
-      <article class="tile">
-        <span class="label">Product / Hype</span>
-        <div class="ph r916">[Thumb 9:16: World Cup Away Jerseys reel]</div>
-        <div class="tile__n">508,632 views</div>
-        <p>adidas 2026 World Cup Away Jerseys reel. ~47K interactions.</p>
-      </article>
-    </div>
-    <div class="band">
-      <div class="wrap">
+    <div class="wrap">
+      <div class="tiles">
+        <article class="tile">
+          <div class="ph r916">[Thumb 9:16: trend post]</div>
+          <span class="label muted">Trendy / Fast</span>
+          <div class="tile__n"><span class="missing">[MISSING]</span></div>
+          <p><span class="missing">[MISSING: post + idea in one line]</span></p>
+        </article>
+        <article class="tile">
+          <div class="ph r916">[Thumb 9:16: funny post]</div>
+          <span class="label muted">Funny</span>
+          <div class="tile__n"><span class="missing">[MISSING]</span></div>
+          <p><span class="missing">[MISSING: post + idea in one line]</span></p>
+        </article>
+        <article class="tile">
+          <div class="ph r916">[Thumb 4:5: SP Stats carousel]</div>
+          <span class="label muted">Educational</span>
+          <div class="tile__n"><span class="missing">[MISSING]</span></div>
+          <p>SP Stats carousels for Mexico and USMNT in the Round of 16, verified before publish.</p>
+        </article>
+        <article class="tile">
+          <div class="ph r916">[Thumb 9:16: adidas F50 reel]</div>
+          <span class="label muted">Product / Hype</span>
+          <div class="tile__n">490,950 views</div>
+          <p>adidas F50 "Football's Heartbreaker" (Lamine Yamal) reel. ~57K interactions.</p>
+        </article>
+        <article class="tile">
+          <div class="ph r916">[Thumb 9:16: World Cup Away Jerseys reel]</div>
+          <span class="label muted">Product / Hype</span>
+          <div class="tile__n">508,632 views</div>
+          <p>adidas 2026 World Cup Away Jerseys reel. ~47K interactions.</p>
+        </article>
+      </div>
+      <div class="wc">
         <div>
           <span class="label">World Cup window</span>
-          <p style="margin:6px 0 0">June 9 to July 21, 2026. National and Austin accounts combined.</p>
+          <p class="muted" style="margin:6px 0 0">June 9 to July 21, 2026. National and Austin accounts combined.</p>
         </div>
-        <div class="band__stats">
-          <div><b>~800K</b><span class="label">Views</span></div>
-          <div><b>~266K</b><span class="label">Accounts reached</span></div>
-          <div><b>~40K</b><span class="label">Interactions</span></div>
-          <div><b>~994</b><span class="label">Net new followers</span></div>
+        <div class="wc__stats">
+          <div><b>~800K</b><span class="label muted">Views</span></div>
+          <div><b>~266K</b><span class="label muted">Accounts reached</span></div>
+          <div><b>~40K</b><span class="label muted">Interactions</span></div>
+          <div><b>~994</b><span class="label muted">Net new followers</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BLOCK 3: CAMERA WORK -->
+  <!-- BLOCK 3 -->
   <section class="block" id="camera" aria-labelledby="b3">
     <div class="wrap block__head">
-      <div class="block__num label"><span>03</span><span>Camera work</span></div>
+      <span class="label">03 / Camera work</span>
       <h2 class="display" id="b3">I shoot it too.</h2>
       <p class="block__intro">Brand-level photo and video, produced end to end: concept, shot list, directing, shooting, editing.</p>
     </div>
-
-    <article class="charly">
-      <div class="ph">[Hero photo: Charly Heritage street style, downtown Austin]</div>
-      <div class="charly__copy">
-        <span class="label">Case study 02 / Brand collaboration</span>
-        <h3>Charly Heritage Collection</h3>
-        <p>A downtown Austin street style shoot I produced, shot, and edited. Published as a four-way collaboration with Charly USA, Charly Fútbol, Soccer Post, and Soccer Post ATX. Soccer Post's first mainstream brand collab in a long time.</p>
-        <p>Results: <span class="missing" style="background:var(--on-red);color:var(--red)">[MISSING]</span></p>
-        <div><a class="btn" href="#">See the shoot →</a></div>
+    <div class="wrap">
+      <article class="feature">
+        <div class="ph">[Hero photo: Charly Heritage street style, downtown Austin]</div>
+        <div class="feature__copy">
+          <span class="label muted">Case study 02 / Brand collaboration</span>
+          <h3>Charly Heritage Collection</h3>
+          <p>A downtown Austin street style shoot I produced, shot, and edited. Published as a four-way collaboration with Charly USA, Charly Fútbol, Soccer Post, and Soccer Post ATX. Soccer Post's first mainstream brand collab in a long time.</p>
+          <p class="muted">Results: <span class="missing">[MISSING]</span></p>
+          <a class="link" href="#">See the shoot →</a>
+        </div>
+      </article>
+      <div class="shots">
+        <article class="shot">
+          <div class="ph r45">[Photo: Noche de Barrio event]</div>
+          <span class="label muted">adidas street soccer event</span>
+          <h4>Noche de Barrio</h4>
+          <p>Built the shot list, drone plan, and production sheet. Shot the event and directed the recap edit with the external studio.</p>
+        </article>
+        <article class="shot">
+          <div class="ph r45">[Photo: on-site giveaway activation]</div>
+          <span class="label muted">Production lead</span>
+          <h4>Club América vs Austin FC Ticket Giveaway</h4>
+          <p>Designed the entry mechanics, wrote the campaign copy, was lead photographer, and directed the on-site activation. With adidas.</p>
+        </article>
+        <article class="shot">
+          <div class="ph r45">[Still: jumbotron commercial]</div>
+          <span class="label muted">Produced in one day</span>
+          <h4>Jumbotron Commercial</h4>
+          <p>Produced, shot, and edited in one day. Aired at Inter Miami CF Stadium.</p>
+        </article>
+        <article class="shot">
+          <div class="ph r45">[Photo: product/studio, Scorpion soleplate]</div>
+          <span class="label muted">Product + studio</span>
+          <h4>Product Work</h4>
+          <p>Nike Scorpion Pack soleplate work, Predator, and F50 Messi.</p>
+        </article>
       </div>
-    </article>
-
-    <div class="shots">
-      <article class="shot">
-        <div class="ph r45">[Photo: Noche de Barrio event]</div>
-        <span class="label">adidas street soccer event</span>
-        <h3>Noche de Barrio</h3>
-        <p>Built the shot list, drone plan, and production sheet. Shot the event and directed the recap edit with the external studio.</p>
-      </article>
-      <article class="shot">
-        <div class="ph r45">[Photo: on-site giveaway activation]</div>
-        <span class="label">Production lead</span>
-        <h3>Club América vs Austin FC Ticket Giveaway</h3>
-        <p>Designed the entry mechanics, wrote the campaign copy, was lead photographer, and directed the on-site activation. With adidas.</p>
-      </article>
-      <article class="shot">
-        <div class="ph r169">[Video 16:9: jumbotron commercial]</div>
-        <span class="label">Produced in one day</span>
-        <h3>Jumbotron Commercial</h3>
-        <p>Produced, shot, and edited in one day. Aired at Inter Miami CF Stadium.</p>
-      </article>
-      <article class="shot">
-        <div class="ph r45">[Photo: product/studio, Scorpion soleplate]</div>
-        <span class="label">Product + studio</span>
-        <h3>Product Work</h3>
-        <p>Nike Scorpion Pack soleplate work, Predator, and F50 Messi.</p>
-      </article>
-    </div>
-    <div class="camera-ctas">
-      <a class="btn btn--blue" href="#">See production work →</a>
-      <a class="btn" href="#">Full photo portfolio ↗ <span class="missing">[PORTFOLIO URL]</span></a>
+      <div class="more">
+        <a class="link" href="#">See production work →</a>
+        <a class="link" href="#">Full photo portfolio ↗</a>
+        <span class="missing">[PORTFOLIO URL]</span>
+      </div>
     </div>
   </section>
 
-  <!-- BRAND STRIP -->
-  <section class="brands" aria-label="Brands featured">
+  <!-- QUOTE -->
+  <section class="block quote" aria-label="What people say">
     <div class="wrap">
-      <span class="label">Content produced for Soccer Post featuring</span>
-      <div class="brands__row" aria-label="Nike, adidas, Puma, and Charly">
-        <span>Nike</span><span>adidas</span><span>Puma</span><span>Charly</span>
+      <figure style="margin:0">
+        <blockquote>[QUOTE: one or two sentences from a manager, partner, or collaborator about working with you.]</blockquote>
+        <figcaption class="label muted">[NAME], [TITLE], [COMPANY]</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- TOOLS + BRANDS -->
+  <section class="block facts" aria-label="Tools and brands">
+    <div class="wrap">
+      <div>
+        <h3 class="sub">Tools</h3>
+        <ul class="plain">
+          <li>Metricool</li>
+          <li>Lightroom</li>
+          <li><span class="missing">[MISSING: editing, design, and other apps you use]</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="sub">Content produced for Soccer Post featuring</h3>
+        <p class="brands">Nike, adidas, Puma, and Charly</p>
       </div>
     </div>
   </section>
@@ -522,11 +470,11 @@ p { margin: 0 0 1em; max-width: 62ch; }
   <section class="cta" id="contact" aria-labelledby="cta">
     <div class="wrap">
       <span class="label">Hiring, or have a project?</span>
-      <h2 class="display" id="cta">Let's talk.</h2>
+      <h2 class="display" id="cta">Let's talk<span class="red">.</span></h2>
       <p>Open to full-time roles, social media, content, and production work.</p>
-      <div class="hero__ctas">
-        <a class="btn btn--solid" href="#">Get In Touch →</a>
-        <a class="btn btn--ghost" href="#">Download Resume ↓</a>
+      <div class="ctas">
+        <a class="btn" href="#">Get In Touch →</a>
+        <a class="btn btn--line" href="#">Download Resume ↓</a>
       </div>
       <div class="cta__links label">
         <a href="mailto:mezagaelalejandro@gmail.com">mezagaelalejandro@gmail.com</a>
@@ -540,7 +488,7 @@ p { margin: 0 0 1em; max-width: 62ch; }
 <footer class="foot">
   <div class="wrap label">
     <span>GMM / Gael Meza / Austin, TX</span>
-    <span class="muted">© 2026</span>
+    <span>© 2026</span>
   </div>
 </footer>
 </body>
