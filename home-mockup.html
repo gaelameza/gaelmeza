@@ -9,13 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-/* Paper palette. Color is used sparingly: black type does the work,
-   red marks a few key moments (large text only), blue is for links. */
+/* Paper palette. Black type does the work. Color comes in one rhythm:
+   one solid block per section, alternating blue and red down the page. */
 :root {
   --paper: #F2F0EA;
   --ink: #111111;
-  --blue: #0033CC;
-  --red: #D7261E;
+  --blue: #1F2C9E; /* night cobalt: white text 11.0:1, on paper 9.6:1 */
+  --red: #A3221B;  /* brick red: white text 7.5:1, on paper 6.6:1 */
   --muted: #555555;
   --ph: #DEDBD3;
   --ph-text: #333333;
@@ -58,6 +58,14 @@ p { margin: 0 0 1em; max-width: 62ch; }
 .r916 { aspect-ratio: 9 / 16; } .r45 { aspect-ratio: 4 / 5; } .r169 { aspect-ratio: 16 / 9; } .r32 { aspect-ratio: 3 / 2; }
 .missing { font-family: var(--mono); font-size: .8em; font-weight: 700; color: var(--red); }
 .stat__n .missing { font-size: .4em; letter-spacing: 0; vertical-align: middle; }
+
+/* Color blocks: one per section, alternating blue / red */
+.blk-blue, .blk-red { color: #fff; }
+.blk-blue { background: var(--blue); }
+.blk-red { background: var(--red); }
+.blk-blue .muted, .blk-red .muted, .blk-blue .link, .blk-red .link, .blk-blue .label, .blk-red .label { color: #fff; }
+.blk-blue .missing, .blk-red .missing { color: #fff; background: rgba(0,0,0,.28); padding: 0 4px; }
+.pad { padding: 24px; }
 
 /* Header */
 .site-head { border-bottom: var(--rule); position: sticky; top: 0; background: var(--paper); z-index: 10; }
@@ -137,8 +145,6 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 .acct + .acct { border-top: var(--hair); }
 .acct p { font-size: 15px; margin: 10px 0 0; }
 .acct__links { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
-.acct--ink { background: var(--ink); color: var(--paper); }
-.acct--ink .link { color: #fff; }
 @media (min-width: 700px) { .accts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .acct + .acct { border-top: 0; border-left: var(--hair); } }
 
 /* Content tiles */
@@ -147,8 +153,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 .tile__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.05; }
 .tile p { font-size: 14px; margin: 0; }
 @media (min-width: 900px) { .tiles { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
-.wc { background: var(--blue); color: #fff; padding: 28px 24px; margin-bottom: 48px; display: grid; gap: 16px; }
-.wc .muted { color: #fff; }
+.wc { padding: 28px 24px; margin-bottom: 48px; display: grid; gap: 16px; }
 .wc__stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .wc__stats b { display: block; font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: clamp(20px, 24cqi, 44px); line-height: 1; }
 .wc__stats > div { container-type: inline-size; }
@@ -185,6 +190,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 /* Writing */
 .writing { list-style: none; margin: 0; padding: 0 0 48px; border-top: var(--rule); }
 .writing li { display: grid; gap: 8px; padding: 20px 0; border-bottom: var(--hair); }
+.writing li.pad { padding: 24px; }
 .writing li:last-child { border-bottom: 0; }
 .writing h4 { font-family: var(--display); font-weight: 800; font-stretch: 100%; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.15; margin: 0 0 6px; }
 .writing p { font-size: 15px; margin: 0; }
@@ -193,7 +199,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 /* Quote */
 .quote .wrap { padding-top: 56px; padding-bottom: 56px; }
 .quote blockquote { margin: 0; font-family: var(--display); font-weight: 700; font-stretch: 100%; font-size: clamp(24px, 3.4vw, 44px); line-height: 1.2; max-width: 30ch; }
-.quote blockquote::before { content: "\201C"; display: block; font-weight: 900; font-size: 2.2em; line-height: .6; color: var(--red); margin-bottom: 8px; }
+.quote blockquote::before { content: "\201C"; display: block; font-weight: 900; font-size: 2.2em; line-height: .6; margin-bottom: 8px; }
 .quote figcaption { margin-top: 20px; }
 
 /* Tools + brands */
@@ -343,7 +349,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
                 </ul>
                 <p>Run mostly through the system I built in Metricool: planned, scheduled, and measured, with an organic post whenever the moment calls for it. Fixed caption architecture and a voice guide keep each platform on brand.</p>
               </div>
-              <div class="acct acct--ink">
+              <div class="acct blk-blue">
                 <span class="label">Austin / Community-driven</span>
                 <ul class="acct__links">
                   <li><a class="link" href="https://instagram.com/soccerpostatx">Instagram @soccerpostatx ↗</a></li>
@@ -410,7 +416,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
           <p>adidas 2026 World Cup Away Jerseys reel. ~47K interactions.</p>
         </article>
       </div>
-      <div class="wc">
+      <div class="wc blk-red">
         <div>
           <span class="label">World Cup window</span>
           <p class="muted" style="margin:6px 0 0">June 9 to July 21, 2026. National and Austin accounts combined.</p>
@@ -434,7 +440,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
     </div>
     <div class="wrap">
       <article class="design">
-        <div class="design__copy">
+        <div class="design__copy blk-blue pad">
           <span class="label muted">Featured carousel</span>
           <h3>Soccer Post Player Card tutorial</h3>
           <p>A tutorial carousel inspired by the player cards in the EA SPORTS FC video game.</p>
@@ -488,7 +494,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
     <div class="wrap">
       <article class="feature">
         <div class="ph">[Hero photo: Charly Heritage street style, downtown Austin]</div>
-        <div class="feature__copy">
+        <div class="feature__copy blk-red pad">
           <span class="label muted">Case study 02 / Brand collaboration</span>
           <h3>Charly Heritage Collection</h3>
           <p>A downtown Austin street style shoot I produced, shot, and edited. Published as a four-way collaboration with Charly USA, Charly Fútbol, Soccer Post, and Soccer Post ATX. Soccer Post's first mainstream brand collab in a long time.</p>
@@ -553,7 +559,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
     </div>
     <div class="wrap">
       <ul class="writing">
-        <li>
+        <li class="blk-blue pad">
           <span class="label muted">Blog / Soccer Post</span>
           <div>
             <h4>"On-Field vs Fan Jerseys: What's the Difference?"</h4>
@@ -600,7 +606,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
   <!-- QUOTE -->
   <section class="block quote" aria-label="What people say">
     <div class="wrap">
-      <figure style="margin:0">
+      <figure class="blk-red pad" style="margin:0">
         <blockquote>[QUOTE: one or two sentences from a manager, partner, or collaborator about working with you.]</blockquote>
         <figcaption class="label muted">[NAME], [TITLE], [COMPANY]</figcaption>
       </figure>
