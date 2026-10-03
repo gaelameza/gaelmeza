@@ -206,6 +206,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 .facts .wrap { display: grid; gap: 32px; padding-top: 40px; padding-bottom: 48px; }
 @media (min-width: 900px) { .facts .wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; } }
 .plain { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 18px; font-weight: 600; }
+.plain--sm { font-size: 15px; font-weight: 500; }
 .brands { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(24px, 3.4vw, 40px); line-height: 1.1; text-transform: uppercase; margin: 0; }
 
 /* CTA: the one dark block on the page */
@@ -631,9 +632,16 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
       <div>
         <h3 class="sub">Tools</h3>
         <ul class="plain">
-          <li>Metricool</li>
+          <li>Photoshop</li>
           <li>Lightroom</li>
-          <li><span class="missing">[MISSING: confirm which you use, e.g. Photoshop, Premiere Pro, Illustrator, Figma, Canva, CapCut]</span></li>
+          <li>DaVinci Resolve</li>
+          <li>Metricool</li>
+        </ul>
+        <p class="label muted" style="margin:14px 0 6px">Working knowledge</p>
+        <ul class="plain plain--sm">
+          <li>Premiere Pro</li>
+          <li>Illustrator</li>
+          <li>Canva</li>
         </ul>
       </div>
       <div>

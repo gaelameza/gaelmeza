@@ -37,7 +37,7 @@ I read the Home mockup top to bottom as the person hiring for this role, then ch
 1. **Real photos, early.** This is the biggest one. For a role like this, the photos are the portfolio. My recommendation: make the hero image one of your own best photographs, with your portrait smaller or on About. Or add a strip of 3 to 4 of your best shots right under the stats.
 2. **Non-soccer work.** Every example is soccer. Mello sells to restaurants, CPG brands, and universities. One or two lifestyle, product, or brand pieces from Gael Meza Media would prove the skills transfer. Do you have any?
 3. **Experience gap.** When did Gael Meza Media and the Imagine That Sports work start? If they go back before your social roles, "years in content" may honestly reach 3+, and we can show that.
-4. **Tools.** List the apps you actually use (Photoshop, Premiere Pro, Illustrator, Figma, Canva, CapCut). Hiring managers and job-application software both scan for these names.
+4. **Tools.** Done: Photoshop, Lightroom, DaVinci Resolve, and Metricool as main tools, with Premiere Pro, Illustrator, and Canva as working knowledge.
 5. **Photography craft.** One or two lines on how you work: lighting setups, product on white versus in context, how you edit. The listing asks for lighting and composition by name.
 6. **Email.** Leave it off the site. In your application, one honest line works: you haven't run email yet and are ready to pick up Flodesk.
 7. **Trim for restraint.** "You know when to do less" is a test the site itself takes. Home has a lot now. I'd move the World Cup numbers and the YouTube row to the Social Media page and keep Home to the strongest piece per section. Want me to?
