@@ -57,7 +57,7 @@ p { margin: 0 0 1em; max-width: 62ch; }
 .ph { background: var(--ph); color: var(--ph-text); border: var(--hair); display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 16px; }
 .r916 { aspect-ratio: 9 / 16; } .r45 { aspect-ratio: 4 / 5; } .r169 { aspect-ratio: 16 / 9; } .r32 { aspect-ratio: 3 / 2; }
 .missing { font-family: var(--mono); font-size: .8em; font-weight: 700; color: var(--red); }
-.stat__n .missing { font-size: .32em; letter-spacing: 0; }
+.stat__n .missing { font-size: .4em; letter-spacing: 0; vertical-align: middle; }
 
 /* Header */
 .site-head { border-bottom: var(--rule); position: sticky; top: 0; background: var(--paper); z-index: 10; }
@@ -84,18 +84,21 @@ p { margin: 0 0 1em; max-width: 62ch; }
   .hero__photo { justify-self: end; }
 }
 
-/* Stats: plain numbers between rules */
+/* Stats: wide centered boxes, two words max per header, two colored */
 .stats { border-top: var(--rule); border-bottom: var(--rule); }
-.stats .wrap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0; }
-.stat { container-type: inline-size; padding: 18px var(--gutter) 20px; border-right: var(--hair); border-bottom: var(--hair); }
-.stat:nth-child(2n) { border-right: 0; }
-.stat:nth-child(n+3) { border-bottom: 0; }
-.stat__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(30px, 22cqi, 80px); line-height: 1; letter-spacing: -.03em; margin-bottom: 8px; }
-@media (min-width: 900px) {
-  .stats .wrap { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .stat { border-bottom: 0; }
-  .stat:nth-child(2n) { border-right: var(--hair); }
-  .stat:last-child { border-right: 0; }
+.stats .wrap { display: grid; grid-template-columns: minmax(0, 1fr); padding: 0; }
+.stat { container-type: inline-size; padding: 32px var(--gutter) 30px; border-bottom: var(--hair); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 190px; }
+.stat:last-child { border-bottom: 0; }
+.stat__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(30px, 10.5cqi, 92px); line-height: .95; letter-spacing: -.03em; margin-bottom: 12px; text-transform: uppercase; }
+.stat .label { max-width: 38ch; }
+.stat--blue { background: var(--blue); color: #fff; }
+.stat--red { background: var(--red); color: #fff; }
+.stat--blue .muted, .stat--red .muted { color: #fff; }
+@media (min-width: 760px) {
+  .stats .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat { min-height: 240px; border-bottom: var(--hair); }
+  .stat:nth-child(odd) { border-right: var(--hair); }
+  .stat:nth-child(n+3) { border-bottom: 0; }
 }
 
 /* Section frame */
@@ -125,7 +128,18 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 .inline-stats { display: flex; flex-wrap: wrap; gap: 6px 24px; margin: 6px 0 18px; padding: 0; list-style: none; }
 .inline-stats b { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 22px; margin-right: 6px; }
 .row .ph { max-width: 300px; width: 100%; }
+.row--full { grid-template-columns: minmax(0, 1fr) !important; }
 @media (min-width: 900px) { .row { grid-template-columns: minmax(0, 1fr) 260px; gap: 56px; align-items: start; } .row .ph { justify-self: end; } }
+
+/* Accounts */
+.accts { display: grid; gap: 0; border: var(--hair); margin: 4px 0 18px; }
+.acct { padding: 18px; }
+.acct + .acct { border-top: var(--hair); }
+.acct p { font-size: 15px; margin: 10px 0 0; }
+.acct__links { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
+.acct--ink { background: var(--ink); color: var(--paper); }
+.acct--ink .link { color: #fff; }
+@media (min-width: 700px) { .accts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .acct + .acct { border-top: 0; border-left: var(--hair); } }
 
 /* Content tiles */
 .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; padding-bottom: 40px; }
@@ -133,9 +147,11 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 .tile__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.05; }
 .tile p { font-size: 14px; margin: 0; }
 @media (min-width: 900px) { .tiles { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
-.wc { border-top: var(--hair); padding: 24px 0 48px; display: grid; gap: 16px; }
+.wc { background: var(--blue); color: #fff; padding: 28px 24px; margin-bottom: 48px; display: grid; gap: 16px; }
+.wc .muted { color: #fff; }
 .wc__stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.wc__stats b { display: block; font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: clamp(26px, 3.4vw, 44px); line-height: 1; }
+.wc__stats b { display: block; font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: clamp(20px, 24cqi, 44px); line-height: 1; }
+.wc__stats > div { container-type: inline-size; }
 @media (min-width: 900px) { .wc { grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); align-items: center; } .wc__stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 /* Camera work */
@@ -243,10 +259,10 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
   <!-- STATS -->
   <section class="stats" aria-label="Headline numbers">
     <div class="wrap">
-      <div class="stat"><div class="stat__n">6.9M</div><span class="label muted">Views on one creator collab. Company record.</span></div>
-      <div class="stat"><div class="stat__n"><span class="missing">[MISSING]</span></div><span class="label muted">Lifetime views on content I made</span></div>
-      <div class="stat"><div class="stat__n">4</div><span class="label muted">Accounts on 3 platforms, run at the same time: 2 Instagram, TikTok, YouTube</span></div>
-      <div class="stat"><div class="stat__n">1</div><span class="label muted">Person doing strategy, social-first content, pro production, photo, video, and copy</span></div>
+      <div class="stat stat--blue"><div class="stat__n">6.9M views</div><span class="label muted">On one creator collab. A company record.</span></div>
+      <div class="stat"><div class="stat__n"><span class="missing">[MISSING]</span> views</div><span class="label muted">Lifetime, on content I made</span></div>
+      <div class="stat"><div class="stat__n">4 accounts</div><span class="label muted">Instagram x2, TikTok, and YouTube, run at the same time</span></div>
+      <div class="stat stat--red"><div class="stat__n">One person</div><span class="label muted">Strategy, social-first content, pro production, photo, video, and copy</span></div>
     </div>
   </section>
 
@@ -255,14 +271,14 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
     <div class="wrap block__head">
       <span class="label">The short version</span>
       <h2 class="display" id="sv">Sales floor to national social.</h2>
-      <p class="block__intro">Four years, one company, and a steady climb from the sales floor to running the brand's social.</p>
+      <p class="block__intro">Two years in social, and a fast climb from the sales floor to running a national brand's accounts. Judge me by the work.</p>
     </div>
     <div class="wrap short">
       <div>
         <h3 class="sub">What I own</h3>
         <ul class="list">
           <li><span class="label">Scope</span><span>National social for Soccer Post, a soccer retailer with 70+ locations</span></li>
-          <li><span class="label">Accounts</span><span>Four accounts on three platforms (2 Instagram, TikTok, YouTube), run solo</span></li>
+          <li><span class="label">Accounts</span><span>National Instagram, TikTok, and YouTube, plus the Austin Instagram, run solo</span></li>
           <li><span class="label">Team</span><span>One-person creative team: strategy, content, production, copy, and reporting</span></li>
           <li><span class="label">Reporting</span><span>Metricool rollout and a reporting practice that sets the schedule</span></li>
           <li><span class="label">Standards</span><span>Brand compliance and neutrality across Nike, adidas, and Puma</span></li>
@@ -306,15 +322,30 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
           <div class="ph r916">[Video 9:16: Tony collab reel]</div>
         </article>
 
-        <article class="row">
+        <article class="row row--full">
           <div>
             <span class="label muted">System / Multi-account</span>
             <h3>Four accounts. Three platforms. One person.</h3>
-            <p class="situation"><span class="label">Situation</span>Two Instagram accounts, a TikTok, and a YouTube channel, each with its own voice, all running at the same time.</p>
-            <p>I introduced Metricool to Soccer Post and built the system around it: fixed caption architecture, a voice guide for each account, unique assets per market, and a reporting practice. Example: peak audience activity landed on Fridays around 4pm, so that's when we post.</p>
+            <div class="accts">
+              <div class="acct">
+                <span class="label">National / Systems-driven</span>
+                <ul class="acct__links">
+                  <li><a class="link" href="https://instagram.com/soccerpost">Instagram @soccerpost ↗</a></li>
+                  <li><a class="link" href="https://www.tiktok.com/@soccerpost.fc">TikTok @soccerpost.fc ↗</a></li>
+                  <li><a class="link" href="#">YouTube Soccer Post F.C ↗</a> <span class="missing">[MISSING: channel URL]</span></li>
+                </ul>
+                <p>Run mostly through the system I built in Metricool: planned, scheduled, and measured, with an organic post whenever the moment calls for it. Fixed caption architecture and a voice guide keep each platform on brand.</p>
+              </div>
+              <div class="acct acct--ink">
+                <span class="label">Austin / Community-driven</span>
+                <ul class="acct__links">
+                  <li><a class="link" href="https://instagram.com/soccerpostatx">Instagram @soccerpostatx ↗</a></li>
+                </ul>
+                <p>My passion project. More freedom, more community: community content, pro studio shoots, and posts built for engagement. It regularly drives sales and foot traffic. I hear "I came here from Instagram" all the time.</p>
+              </div>
+            </div>
             <a class="link" href="#">See the systems →</a>
           </div>
-          <div class="ph r45">[Graphic: one producer, four accounts]</div>
         </article>
 
         <article class="row">

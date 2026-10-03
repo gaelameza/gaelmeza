@@ -46,9 +46,9 @@ Every page ends with the same CTA band (Get In Touch + Download Resume) and foot
 **Home** (round 2: minimal brutalism, Paper palette, color only as accents)
 1. Nav: GMM logo, open links, Resume link, Get In Touch button.
 2. Hero: name and title line, giant headline, positioning line, "Open to" line, two CTAs, candid working photo.
-3. Stat row: 4 big numbers between rules (6.9M, lifetime views [MISSING], 4 accounts on 3 platforms, 1 person doing it all).
+3. Stat grid: 2x2 wide centered boxes with two-word headers (6.9M Views in blue, [MISSING] Views, 4 Accounts, One Person in red).
 4. The short version: "What I own" scope list and a career timeline.
-5. Block 1, Social media professional: TonyMakesVlogs, the four-account system, YouTube revival. Each opens with a one-line situation.
+5. Block 1, Social media professional: TonyMakesVlogs, the accounts split into National (systems-driven) and Austin (community-driven) with links, YouTube revival. Each opens with a one-line situation.
 6. Block 2, Social-first content: 5 vertical tiles, then the World Cup window numbers.
 7. Block 3, Camera work: Charly feature, then Noche de Barrio, Club América giveaway, jumbotron spot, product/studio, then a sports photography segment (Imagine That Sports photos + a link to a recap).
 8. Block 4, Copywriting: blog posts, match recap, campaign copy, caption system. Skill, not numbers.
