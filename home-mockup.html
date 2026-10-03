@@ -168,6 +168,13 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 @media (min-width: 1100px) { .shots { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .more { display: flex; flex-wrap: wrap; gap: 12px 28px; padding-bottom: 48px; }
 
+/* Design */
+.design { display: grid; gap: 24px; border-top: var(--rule); padding-top: 32px; }
+.design h3 { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(26px, 3.8vw, 48px); line-height: .98; text-transform: uppercase; margin: 8px 0 14px; }
+.slides { display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+.slides .ph { scroll-snap-align: start; }
+@media (min-width: 900px) { .design { grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); gap: 48px; align-items: center; } .slides { grid-auto-columns: 34%; } }
+
 /* Sports photography */
 .sports { display: grid; gap: 24px; border-top: var(--hair); padding: 40px 0; }
 .sports h3 { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(26px, 3.8vw, 48px); line-height: .98; text-transform: uppercase; margin: 8px 0 14px; }
@@ -319,7 +326,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
             </ul>
             <a class="link" href="#">Read the case study →</a>
           </div>
-          <div class="ph r916">[Video 9:16: Tony collab reel]</div>
+          <div class="ph r916">[IG embed 9:16: Tony collab reel, post URL]</div>
         </article>
 
         <article class="row row--full">
@@ -332,7 +339,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
                 <ul class="acct__links">
                   <li><a class="link" href="https://instagram.com/soccerpost">Instagram @soccerpost ↗</a></li>
                   <li><a class="link" href="https://www.tiktok.com/@soccerpost.fc">TikTok @soccerpost.fc ↗</a></li>
-                  <li><a class="link" href="#">YouTube Soccer Post F.C ↗</a> <span class="missing">[MISSING: channel URL]</span></li>
+                  <li><a class="link" href="https://www.youtube.com/@SoccerPostFC">YouTube Soccer Post F.C ↗</a></li>
                 </ul>
                 <p>Run mostly through the system I built in Metricool: planned, scheduled, and measured, with an organic post whenever the moment calls for it. Fixed caption architecture and a voice guide keep each platform on brand.</p>
               </div>
@@ -373,31 +380,31 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
     <div class="wrap">
       <div class="tiles">
         <article class="tile">
-          <div class="ph r916">[Thumb 9:16: trend post]</div>
+          <div class="ph r916">[IG embed 9:16: trend post URL]</div>
           <span class="label muted">Trendy / Fast</span>
           <div class="tile__n"><span class="missing">[MISSING]</span></div>
           <p><span class="missing">[MISSING: post + idea in one line]</span></p>
         </article>
         <article class="tile">
-          <div class="ph r916">[Thumb 9:16: funny post]</div>
+          <div class="ph r916">[IG embed 9:16: funny post URL]</div>
           <span class="label muted">Funny</span>
           <div class="tile__n"><span class="missing">[MISSING]</span></div>
           <p><span class="missing">[MISSING: post + idea in one line]</span></p>
         </article>
         <article class="tile">
-          <div class="ph r916">[Thumb 4:5: SP Stats carousel]</div>
+          <div class="ph r916">[IG embed: SP Stats carousel URL]</div>
           <span class="label muted">Educational</span>
           <div class="tile__n"><span class="missing">[MISSING]</span></div>
           <p>SP Stats carousels for Mexico and USMNT in the Round of 16, verified before publish.</p>
         </article>
         <article class="tile">
-          <div class="ph r916">[Thumb 9:16: adidas F50 reel]</div>
+          <div class="ph r916">[IG embed 9:16: adidas F50 reel URL]</div>
           <span class="label muted">Product / Hype</span>
           <div class="tile__n">490,950 views</div>
           <p>adidas F50 "Football's Heartbreaker" (Lamine Yamal) reel. ~57K interactions.</p>
         </article>
         <article class="tile">
-          <div class="ph r916">[Thumb 9:16: World Cup Away Jerseys reel]</div>
+          <div class="ph r916">[IG embed 9:16: Away Jerseys reel URL]</div>
           <span class="label muted">Product / Hype</span>
           <div class="tile__n">508,632 views</div>
           <p>adidas 2026 World Cup Away Jerseys reel. ~47K interactions.</p>
@@ -418,10 +425,63 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
     </div>
   </section>
 
+  <!-- BLOCK 3: DESIGN -->
+  <section class="block" id="design" aria-labelledby="b3d">
+    <div class="wrap block__head">
+      <span class="label">03 / Graphic design</span>
+      <h2 class="display" id="b3d">Built for the feed.</h2>
+      <p class="block__intro">Carousels, stat cards, and matchday graphics. Built on systems so they stay consistent, and getting sharper with every post.</p>
+    </div>
+    <div class="wrap">
+      <article class="design">
+        <div class="design__copy">
+          <span class="label muted">Featured carousel</span>
+          <h3>Soccer Post Player Card tutorial</h3>
+          <p>A tutorial carousel inspired by the player cards in the EA SPORTS FC video game.</p>
+          <p><span class="missing">[MISSING: what it teaches, your role, and any numbers]</span></p>
+          <a class="link" href="#">See the carousel ↗</a> <span class="missing">[MISSING: post URL]</span>
+        </div>
+        <div class="slides" aria-label="Carousel slides">
+          <div class="ph r45">[Slide 1: cover]</div>
+          <div class="ph r45">[Slide 2]</div>
+          <div class="ph r45">[Slide 3]</div>
+          <div class="ph r45">[Slide 4]</div>
+          <div class="ph r45">[Slide 5: CTA]</div>
+        </div>
+      </article>
+      <div class="shots">
+        <article class="shot">
+          <div class="ph r45">[Graphic: carousel system example]</div>
+          <span class="label muted">Design system</span>
+          <h4>Carousel system</h4>
+          <p>Corner labels, numbered steps, pill CTAs, and safe zones, so every carousel reads the same way.</p>
+        </article>
+        <article class="shot">
+          <div class="ph r45">[Graphic: stat card]</div>
+          <span class="label muted">Design system</span>
+          <h4>Stat cards</h4>
+          <p>A reusable stat card format for fast, accurate numbers posts.</p>
+        </article>
+        <article class="shot">
+          <div class="ph r45">[Graphic: quarterfinals bracket]</div>
+          <span class="label muted">World Cup 2026</span>
+          <h4>Bracket + matchups</h4>
+          <p>Quarterfinals bracket and matchup graphics, researched and verified before publish.</p>
+        </article>
+        <article class="shot">
+          <div class="ph r45">[Graphic: popup flyer]</div>
+          <span class="label muted">Events</span>
+          <h4>Flyers</h4>
+          <p>Flyers and the social campaign for the Meanwhile Brewing popup and watch party series.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- BLOCK 3 -->
   <section class="block" id="camera" aria-labelledby="b3">
     <div class="wrap block__head">
-      <span class="label">03 / Camera work</span>
+      <span class="label">04 / Camera work</span>
       <h2 class="display" id="b3">I shoot it too.</h2>
       <p class="block__intro">Brand-level photo and video, produced end to end: concept, shot list, directing, shooting, editing.</p>
     </div>
@@ -487,7 +547,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
   <!-- BLOCK 4: WRITING -->
   <section class="block" id="writing" aria-labelledby="b4">
     <div class="wrap block__head">
-      <span class="label">04 / Copywriting</span>
+      <span class="label">05 / Copywriting</span>
       <h2 class="display" id="b4">I write it too.</h2>
       <p class="block__intro">Blogs, match recaps, campaign copy, and captions. Researched, fact-checked, and written for where it lives.</p>
     </div>

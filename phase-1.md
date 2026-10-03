@@ -50,8 +50,9 @@ Every page ends with the same CTA band (Get In Touch + Download Resume) and foot
 4. The short version: "What I own" scope list and a career timeline.
 5. Block 1, Social media professional: TonyMakesVlogs, the accounts split into National (systems-driven) and Austin (community-driven) with links, YouTube revival. Each opens with a one-line situation.
 6. Block 2, Social-first content: 5 vertical tiles, then the World Cup window numbers.
-7. Block 3, Camera work: Charly feature, then Noche de Barrio, Club América giveaway, jumbotron spot, product/studio, then a sports photography segment (Imagine That Sports photos + a link to a recap).
-8. Block 4, Copywriting: blog posts, match recap, campaign copy, caption system. Skill, not numbers.
+6b. Block 3, Graphic design: Player Card tutorial carousel (swipeable slides), then carousel system, stat cards, World Cup bracket/matchups, popup flyers.
+7. Block 4, Camera work: Charly feature, then Noche de Barrio, Club América giveaway, jumbotron spot, product/studio, then a sports photography segment (Imagine That Sports photos + a link to a recap).
+8. Block 5, Copywriting: blog posts, match recap, campaign copy, caption system. Skill, not numbers.
 8b. Quote placeholder.
 9. Tools and the brand line.
 10. CTA (the one black block), footer.
@@ -69,7 +70,7 @@ Every page ends with the same CTA band (Get In Touch + Download Resume) and foot
 2. Range grid: trends, humor, education, product hype, 9:16 tiles with numbers.
 3. World Cup content program: formats, verify-before-publish, carousel examples.
 4. Meanwhile Brewing popup series: content you can draw a line to people walking in the door.
-5. Graphics and carousels: design system examples (corner labels, numbered steps, stat cards).
+5. Graphic design: Player Card tutorial carousel, carousel system, stat cards, World Cup graphics, flyers.
 6. Other work one-liners.
 7. CTA.
 
@@ -164,6 +165,10 @@ The mockup uses option 1. My pick is 1 for the headline with 2 as the first case
 Either way, full case study pages flip to the light base for long reading, so the brutalism stays in the blocks and body text stays easy.
 
 **Type.** I'm assuming "Adineu Pro" is adineue PRO, adidas's corporate typeface. Honest take: the shape fits (geometric, wide, heavy in Bold, great in all caps), but two problems. First, licensing: it's usually not sold for public web use, so we need to confirm you have a webfont license. Second, positioning: your copy rules require neutrality across Nike, adidas, and Puma, and setting your whole site in adidas's brand font quietly undercuts that for anyone who recognizes it. My recommendation is a similar wide grotesk for headlines (the mockup uses **Archivo** at its widest, free on Google Fonts) and **JetBrains Mono** for labels and tags, with Archivo at normal width for body. If you have the license and still want it, it drops in as the headline font with one line of CSS.
+
+## Instagram embeds
+
+Instagram posts can be embedded live using Instagram's own embed code. Each live embed loads Instagram's script and is heavy on phones, so the build uses a "tap to load" approach: a fast thumbnail with the number shows first, and the real post loads when tapped. Each slot needs the public post URL.
 
 ## 6. Questions before the full build
 
