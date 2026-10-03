@@ -223,7 +223,50 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 .foot { background: var(--ink); color: var(--paper); border-top: 1px solid #444; }
 .foot .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; padding-top: 20px; padding-bottom: 28px; }
 
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+/* ---------- Motion: hard, fast, minimal. No floaty easing. ---------- */
+:root { --snap: cubic-bezier(.2, .9, .1, 1); }
+
+/* Ticker strip */
+.ticker { border-bottom: var(--rule); overflow: hidden; padding: 14px 0; }
+.ticker__track { display: flex; width: max-content; animation: tick 28s linear infinite; }
+.ticker__track span { font-family: var(--display); font-weight: 900; font-stretch: 125%; text-transform: uppercase; font-size: clamp(22px, 3vw, 36px); line-height: 1; padding-right: 28px; white-space: nowrap; }
+.ticker__track span::after { content: "/"; color: var(--red); margin-left: 28px; }
+.ticker:hover .ticker__track { animation-play-state: paused; }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Intro: words punch up out of a mask, the period stamps in, the photo wipes open */
+  .intro-h1 .m { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .04em; }
+  .intro-h1 .m > span { display: inline-block; transform: translateY(105%); animation: up .5s var(--snap) forwards; animation-delay: calc(var(--i) * 70ms + 100ms); }
+  .intro-h1 .stamp { display: inline-block; opacity: 0; animation: stamp .24s steps(3, end) .62s forwards; }
+  .hero__meta, .hero__line, .hero__open, .hero .ctas { opacity: 0; animation: rise .35s var(--snap) forwards; }
+  .hero__meta { animation-delay: 0s; }
+  .hero__line { animation-delay: .5s; }
+  .hero__open { animation-delay: .58s; }
+  .hero .ctas { animation-delay: .66s; }
+  .hero__photo { clip-path: inset(100% 0 0 0); animation: wipe-up .6s var(--snap) .35s forwards; }
+  .site-head { animation: drop .35s var(--snap) both; }
+
+  @keyframes up { to { transform: translateY(0); } }
+  @keyframes stamp { 0% { opacity: 1; transform: scale(2.4); } 100% { opacity: 1; transform: scale(1); } }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes wipe-up { to { clip-path: inset(0 0 0 0); } }
+  @keyframes wipe-right { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  @keyframes drop { from { transform: translateY(-100%); } to { transform: none; } }
+
+  /* Scroll reveals: pure CSS, only where the browser supports scroll-driven animation.
+     Elsewhere everything simply shows, no hidden content. */
+  @supports (animation-timeline: view()) {
+    .block h2, .cta h2 { animation: wipe-right linear both; animation-timeline: view(); animation-range: entry 10% entry 70%; }
+    .blk-blue, .blk-red, .stat { animation: wipe-right linear both; animation-timeline: view(); animation-range: entry 5% entry 55%; }
+    .ph:not(.hero__photo) { animation: wipe-up linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+    .stat__n, .wc__stats b, .inline-stats b { animation: rise linear both; animation-timeline: view(); animation-range: entry 20% entry 80%; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
 </style>
 </head>
 <body>
@@ -258,7 +301,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
           <span class="muted">Interim Social Media Director, Soccer Post</span>
           <span class="muted">Austin, TX</span>
         </div>
-        <h1 class="display">Social that moves the numbers<span class="red">.</span></h1>
+        <h1 class="display intro-h1" aria-label="Social that moves the numbers."><span class="m" aria-hidden="true"><span style="--i:0">Social</span></span> <span class="m" aria-hidden="true"><span style="--i:1">that</span></span> <span class="m" aria-hidden="true"><span style="--i:2">moves</span></span> <span class="m" aria-hidden="true"><span style="--i:3">the</span></span> <span class="m" aria-hidden="true"><span style="--i:4">numbers</span></span><span class="red stamp" aria-hidden="true">.</span></h1>
         <p class="hero__line">I'm Gael Meza, a social media professional in Austin, TX. I plan it, shoot it, design it, and write it, and I run the strategy and reporting behind it for a national soccer retailer.</p>
         <p class="hero__open label">Open to: <span class="missing">[MISSING: roles, e.g. Social Media Manager or Director / Austin or remote]</span></p>
         <div class="ctas">
@@ -279,6 +322,14 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
       <div class="stat stat--red"><div class="stat__n">One person</div><span class="label muted">Strategy, social-first content, pro production, photo, video, and copy</span></div>
     </div>
   </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-label="Plan it, shoot it, design it, write it">
+    <div class="ticker__track" aria-hidden="true">
+      <span>Plan it</span><span>Shoot it</span><span>Design it</span><span>Write it</span><span>Measure it</span>
+      <span>Plan it</span><span>Shoot it</span><span>Design it</span><span>Write it</span><span>Measure it</span>
+    </div>
+  </div>
 
   <!-- THE SHORT VERSION: scope + timeline -->
   <section class="block" aria-labelledby="sv">
