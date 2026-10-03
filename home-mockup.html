@@ -243,14 +243,17 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
   @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
   @keyframes reveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 
-  /* Scroll: content eases in as it arrives. Only in browsers with scroll-driven
-     animation; elsewhere everything simply shows. */
-  @supports (animation-timeline: view()) {
-    .block h2, .cta h2, .stat, .ph:not(.hero__photo), .row, .tile, .shot, .writing li, .list li {
-      animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 100%;
-    }
-    .blk-blue, .blk-red { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; }
-  }
+  /* Scroll: each piece plays once, on its own clock, when it first comes into view.
+     A tiny script adds .in; without the script nothing is hidden. */
+  .js .rv { opacity: 0; transform: translateY(16px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0ms); }
+  .js .rv.pop { transform: translateY(14px) scale(.965); }
+  .js .rv.in { opacity: 1; transform: none; }
+  .js .wipe { clip-path: inset(0 100% 0 0); transition: clip-path 1.2s var(--ease); transition-delay: var(--d, 0ms); }
+  .js .wipe.in { clip-path: inset(0 0 0 0); }
+
+  /* Content boxes: a small, hard-edged lift on hover */
+  .tile .ph, .shot .ph, .sports__grid .ph, .slides .ph, .row .ph { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+  .tile:hover .ph, .shot:hover .ph, .sports__grid .ph:hover, .slides .ph:hover, .row:hover .ph { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--ink); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -710,5 +713,26 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
     <span>© 2026</span>
   </div>
 </footer>
+<script>
+/* Reveal-on-scroll: plays once per element, then stops watching it. */
+(function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('js');
+  var sel = '.block h2, .cta h2, .stat, .row, .acct, .tile, .shot, .wc, .design__copy, .feature, .sports, .writing li, .list li, .quote figure, .facts .wrap > div';
+  var els = document.querySelectorAll(sel);
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  els.forEach(function (el) {
+    el.classList.add(el.matches('.blk-blue, .blk-red') ? 'wipe' : 'rv');
+    if (el.matches('.stat, .tile, .shot, .acct')) el.classList.add('pop');
+    var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.matches(sel); });
+    el.style.setProperty('--d', Math.min(sibs.indexOf(el), 4) * 90 + 'ms');
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
