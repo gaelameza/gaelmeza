@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-/* ---------- Palette A: Night Shift (default) ---------- */
+/* ---------- Palette A: Night Shift ---------- */
 :root {
   --base: #0A0A0A;
   --text: #F4F1EA;
@@ -30,7 +30,7 @@
   --b: 3px;
   --gutter: 16px;
 }
-/* ---------- Palette B: Paper (mockup toggle, no JS) ---------- */
+/* ---------- Palette B: Paper (chosen, on by default via the toggle) ---------- */
 body:has(#pal:checked) {
   --base: #F2F0EA;
   --text: #111111;
@@ -284,7 +284,7 @@ p { margin: 0 0 1em; max-width: 62ch; }
 <a class="skip" href="#main">Skip to content</a>
 
 <label class="pal-switch label" title="Mockup only: compare palettes">
-  <input type="checkbox" id="pal"> Palette B: Paper
+  <input type="checkbox" id="pal" checked> Paper palette (uncheck for Night Shift)
 </label>
 
 <header class="site-head">
