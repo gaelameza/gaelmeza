@@ -153,7 +153,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 .tile { display: grid; gap: 8px; align-content: start; }
 .tile__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.05; }
 .tile p { font-size: 14px; margin: 0; }
-@media (min-width: 900px) { .tiles { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .wc { padding: 28px 24px; margin-bottom: 48px; display: grid; gap: 16px; }
 .wc__stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .wc__stats b { display: block; font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: clamp(20px, 24cqi, 44px); line-height: 1; }
@@ -180,6 +180,20 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
 .slides { display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
 .slides .ph { scroll-snap-align: start; }
 @media (min-width: 900px) { .design { grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); gap: 48px; align-items: center; } .slides { grid-auto-columns: 34%; } }
+
+/* Carousel slides (real images) */
+.slides img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border: var(--hair); scroll-snap-align: start; display: block; transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+.slides img:hover { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--ink); }
+
+/* Embeds: a light facade first, the real post loads in a lightbox on tap */
+.embed { width: 100%; max-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px; text-align: center; background: var(--ink); color: var(--paper); border: var(--hair); cursor: pointer; font: inherit; transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+.embed b { font-family: var(--display); font-weight: 900; font-stretch: 125%; text-transform: uppercase; font-size: clamp(20px, 2.4vw, 30px); line-height: 1; }
+.embed__cta { border: 1px solid var(--paper); padding: 6px 10px; }
+.embed:hover { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--red); }
+.row .embed { justify-self: end; }
+.lightbox { border: var(--rule); background: var(--paper); padding: 12px; width: min(92vw, 420px); max-height: 92vh; overflow: auto; }
+.lightbox::backdrop { background: rgba(17, 17, 17, .75); }
+.lightbox__close { display: block; margin: 0 0 10px auto; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--ink); color: var(--paper); border: 0; padding: 8px 12px; cursor: pointer; }
 
 /* Sports photography */
 .sports { display: grid; gap: 24px; border-top: var(--hair); padding: 40px 0; }
@@ -372,7 +386,11 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
             </ul>
             <a class="link" href="#">Read the case study →</a>
           </div>
-          <div class="ph r916">[IG embed 9:16: Tony collab reel, post URL]</div>
+          <button class="embed r916" type="button" data-embed="instagram" data-url="https://www.instagram.com/reel/DcWGGlrOup4/">
+            <span class="label">Instagram reel / @tonymakesvlogs</span>
+            <b>6.9M views</b>
+            <span class="embed__cta label">▶ Play the post</span>
+          </button>
         </article>
 
         <article class="row row--full">
@@ -455,16 +473,14 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
           <p>SP Stats carousels for Mexico and USMNT in the Round of 16, verified before publish.</p>
         </article>
         <article class="tile">
-          <div class="ph r916">[IG embed 9:16: adidas F50 reel URL]</div>
+          <button class="embed r916" type="button" data-embed="tiktok" data-url="https://www.tiktok.com/@soccerpostaustin/video/7613405934206946590" data-id="7613405934206946590">
+            <span class="label">TikTok / @soccerpostaustin</span>
+            <b>adidas F50</b>
+            <span class="embed__cta label">▶ Play the post</span>
+          </button>
           <span class="label muted">Product / Hype</span>
           <div class="tile__n">490,950 views</div>
-          <p>adidas F50 "Football's Heartbreaker" (Lamine Yamal) reel. ~57K interactions.</p>
-        </article>
-        <article class="tile">
-          <div class="ph r916">[IG embed 9:16: Away Jerseys reel URL]</div>
-          <span class="label muted">Product / Hype</span>
-          <div class="tile__n">508,632 views</div>
-          <p>adidas 2026 World Cup Away Jerseys reel. ~47K interactions.</p>
+          <p>adidas F50 "Football's Heartbreaker" (Lamine Yamal) drop. ~57K interactions.</p>
         </article>
       </div>
       <div class="wc blk-red">
@@ -493,17 +509,18 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
       <article class="design">
         <div class="design__copy blk-blue pad">
           <span class="label muted">Featured carousel</span>
-          <h3>Soccer Post Player Card tutorial</h3>
-          <p>A tutorial carousel inspired by the player cards in the EA SPORTS FC video game.</p>
-          <p><span class="missing">[MISSING: what it teaches, your role, and any numbers]</span></p>
+          <h3>Soccer Post Future Hero Card</h3>
+          <p>A how-to carousel inspired by the player cards in the EA SPORTS FC video game. It walks fans through making their own card in Canva: pick a position, add a photo, rate yourself, then post it and tag Soccer Post.</p>
+          <p class="label muted">Designed, written, and edited by me, with AI assistance</p>
+          <p><span class="missing">[MISSING: results]</span></p>
           <a class="link" href="#">See the carousel ↗</a> <span class="missing">[MISSING: post URL]</span>
         </div>
         <div class="slides" aria-label="Carousel slides">
-          <div class="ph r45">[Slide 1: cover]</div>
-          <div class="ph r45">[Slide 2]</div>
-          <div class="ph r45">[Slide 3]</div>
-          <div class="ph r45">[Slide 4]</div>
-          <div class="ph r45">[Slide 5: CTA]</div>
+          <img src="assets/img/future-hero-card/slide-1.png" alt="Cover slide: Make your own player card, with a finished Soccer Post Future Hero Card" width="1080" height="1440" loading="lazy">
+          <img src="assets/img/future-hero-card/slide-2.png" alt="Step 1: Pick your position, outfield or keeper" width="1080" height="1440" loading="lazy">
+          <img src="assets/img/future-hero-card/slide-3.png" alt="Step 2: Add your photo in the Canva template" width="1080" height="1440" loading="lazy">
+          <img src="assets/img/future-hero-card/slide-4.png" alt="Step 3: Rate yourself on all six stats" width="1080" height="1440" loading="lazy">
+          <img src="assets/img/future-hero-card/slide-5.png" alt="Step 4: Post it and tag Soccer Post, with a finished card" width="1080" height="1440" loading="lazy">
         </div>
       </article>
       <div class="shots">
@@ -714,7 +731,34 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
     <span>© 2026</span>
   </div>
 </footer>
+<dialog class="lightbox" aria-label="Post">
+  <button class="lightbox__close" type="button">Close ✕</button>
+  <div class="lightbox__body"></div>
+</dialog>
 <script>
+/* Embeds: nothing from Instagram or TikTok loads until someone taps a post. */
+(function () {
+  var box = document.querySelector('.lightbox'), body = box.querySelector('.lightbox__body');
+  function load(src) { var s = document.createElement('script'); s.async = true; s.src = src; body.appendChild(s); }
+  document.querySelectorAll('.embed').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var url = btn.dataset.url;
+      if (btn.dataset.embed === 'instagram') {
+        body.innerHTML = '<blockquote class="instagram-media" data-instgrm-permalink="' + url + '" data-instgrm-version="14" style="margin:0;min-width:0;width:100%"></blockquote>';
+        if (window.instgrm) window.instgrm.Embeds.process(); else load('https://www.instagram.com/embed.js');
+      } else {
+        body.innerHTML = '<blockquote class="tiktok-embed" cite="' + url + '" data-video-id="' + btn.dataset.id + '" style="margin:0;min-width:0;max-width:605px"><section></section></blockquote>';
+        load('https://www.tiktok.com/embed.js');
+      }
+      box.showModal();
+    });
+  });
+  function close() { box.close(); }
+  box.querySelector('.lightbox__close').addEventListener('click', close);
+  box.addEventListener('click', function (e) { if (e.target === box) close(); });
+  box.addEventListener('close', function () { body.innerHTML = ''; });
+})();
+
 /* Reveal-on-scroll: plays once per element, then stops watching it. */
 (function () {
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -723,7 +767,7 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
   var els = document.querySelectorAll(sel);
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      if (e.isIntersecting) { e.target.classList.add('in'); if (e.target._rv) e.target._rv.classList.add('in'); io.unobserve(e.target); }
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
   els.forEach(function (el) {
@@ -731,8 +775,20 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
     if (el.matches('.stat, .tile, .shot, .acct')) el.classList.add('pop');
     var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.matches(sel); });
     el.style.setProperty('--d', Math.min(sibs.indexOf(el), 4) * 90 + 'ms');
-    io.observe(el);
+    /* A fully clipped element never reports as visible, so wipes watch a wrapper instead */
+    if (el.classList.contains('wipe')) { var w = el.parentNode; w._rv = el; io.observe(w); } else io.observe(el);
   });
+  /* Safety net: anything already scrolled past gets revealed, even on very fast scrolls */
+  var tick = false;
+  addEventListener('scroll', function () {
+    if (tick) return; tick = true;
+    requestAnimationFrame(function () {
+      tick = false;
+      document.querySelectorAll('.rv:not(.in), .wipe:not(.in)').forEach(function (el) {
+        if (el.getBoundingClientRect().top < innerHeight * 0.92) el.classList.add('in');
+      });
+    });
+  }, { passive: true });
 })();
 </script>
 </body>
