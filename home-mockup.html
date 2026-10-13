@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gael Meza | Social Media Professional, Austin TX</title>
-<meta name="description" content="Gael Meza is a social media professional and social-first creative in Austin, TX. Strategy, systems, and brand-level photo and video.">
+<meta name="description" content="Gael Meza runs social for a national soccer retailer and makes the content himself: video, design, photo, and copy. Austin, TX.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-/* Paper palette. Black type does the work. Color comes in one rhythm:
-   one solid block per section, alternating blue and red down the page. */
+/* Paper palette. Black type does the work. One solid color block per section,
+   alternating blue and red down the page. */
 :root {
   --paper: #F2F0EA;
   --ink: #111111;
-  --blue: #1F2C9E; /* night cobalt: white text 11.0:1, on paper 9.6:1 */
-  --red: #A3221B;  /* brick red: white text 7.5:1, on paper 6.6:1 */
+  --blue: #1F2C9E;  /* night cobalt: white text 11.0:1, on paper 9.6:1 */
+  --red: #A3221B;   /* brick red: white text 7.5:1, on paper 6.6:1 */
   --muted: #555555;
   --ph: #DEDBD3;
   --ph-text: #333333;
@@ -25,224 +25,195 @@
   --rule: 2px solid var(--ink);
   --hair: 1px solid var(--ink);
   --gutter: 16px;
+  --sec: 28px;
+  --ease: cubic-bezier(.16, 1, .3, 1);
 }
-@media (min-width: 760px) { :root { --gutter: 32px; } }
+@media (min-width: 760px) { :root { --gutter: 32px; --sec: 72px; } }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; }
+@media (min-width: 760px) { body { font-size: 17px; } }
 a { color: inherit; }
-section[id] { scroll-margin-top: 80px; }
-p { margin: 0 0 1em; max-width: 62ch; }
+img { max-width: 100%; display: block; }
+section[id] { scroll-margin-top: 72px; }
+p { margin: 0 0 .8em; max-width: 62ch; }
 .wrap { max-width: 1280px; margin: 0 auto; padding: 0 var(--gutter); }
 
 .display { font-family: var(--display); font-weight: 900; font-stretch: 125%; text-transform: uppercase; line-height: .9; letter-spacing: -.02em; margin: 0; }
-.label { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.label { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+@media (min-width: 760px) { .label { font-size: 12px; } }
 .muted { color: var(--muted); }
 .red { color: var(--red); }
+.missing { font-family: var(--mono); font-size: .8em; font-weight: 700; color: var(--red); }
 
 .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--paper); padding: 8px 12px; z-index: 99; }
 .skip:focus { left: 8px; }
 :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 
-/* Buttons: solid black or outline. Hover flips, no shadows. */
-.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; padding: 13px 18px; border: var(--rule); background: var(--ink); color: var(--paper); transition: background .08s, color .08s; }
+/* Buttons and links */
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; padding: 12px 16px; border: var(--rule); background: var(--ink); color: var(--paper); transition: background .2s, color .2s, border-color .2s; }
 .btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
 .btn--line { background: transparent; color: var(--ink); }
 .btn--line:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
-.link { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+.link { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 .link:hover { color: var(--ink); }
 
-/* Media placeholders */
-.ph { background: var(--ph); color: var(--ph-text); border: var(--hair); display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 16px; }
-.r916 { aspect-ratio: 9 / 16; } .r45 { aspect-ratio: 4 / 5; } .r169 { aspect-ratio: 16 / 9; } .r32 { aspect-ratio: 3 / 2; }
-.missing { font-family: var(--mono); font-size: .8em; font-weight: 700; color: var(--red); }
-.stat__n .missing { font-size: .4em; letter-spacing: 0; vertical-align: middle; }
-
-/* Color blocks: one per section, alternating blue / red */
+/* Color blocks */
 .blk-blue, .blk-red { color: #fff; }
 .blk-blue { background: var(--blue); }
 .blk-red { background: var(--red); }
-.blk-blue .muted, .blk-red .muted, .blk-blue .link, .blk-red .link, .blk-blue .label, .blk-red .label { color: #fff; }
+.blk-blue .muted, .blk-red .muted, .blk-blue .link, .blk-red .link, .blk-blue .label, .blk-red .label, .blk-blue dt, .blk-red dt { color: #fff; }
 .blk-blue .missing, .blk-red .missing { color: #fff; background: rgba(0,0,0,.28); padding: 0 4px; }
-.pad { padding: 24px; }
+
+/* Media placeholders */
+.ph { background: var(--ph); color: var(--ph-text); border: var(--hair); display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 12px; }
+.r916 { aspect-ratio: 9 / 16; } .r45 { aspect-ratio: 4 / 5; } .r169 { aspect-ratio: 16 / 9; } .r32 { aspect-ratio: 3 / 2; }
 
 /* Header */
 .site-head { border-bottom: var(--rule); position: sticky; top: 0; background: var(--paper); z-index: 10; }
-.site-head .wrap { display: flex; align-items: center; gap: 12px 20px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
-.logo { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: 24px; line-height: 1; text-decoration: none; }
-.nav { display: flex; gap: 18px; order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; }
-.nav a { font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; padding: 4px 0; white-space: nowrap; border-bottom: 2px solid transparent; }
+.site-head .wrap { display: flex; align-items: center; gap: 8px 20px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; }
+.logo { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: 18px; line-height: 1; text-decoration: none; text-transform: uppercase; }
+.nav { display: flex; gap: 16px; order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; }
+.nav a { font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; padding: 2px 0; white-space: nowrap; border-bottom: 2px solid transparent; }
 .nav a:hover { border-bottom-color: var(--ink); }
-.head-cta { margin-left: auto; display: flex; gap: 16px; align-items: center; }
-.head-cta .btn { padding: 9px 12px; font-size: 12px; }
-@media (max-width: 479px) { .logo { font-size: 18px; } .head-cta .link { display: none; } }
+.head-cta { margin-left: auto; }
+.head-cta .btn { padding: 8px 12px; font-size: 12px; }
+@media (min-width: 760px) { .logo { font-size: 22px; } }
 @media (min-width: 980px) { .nav { order: 0; width: auto; margin-left: 16px; gap: 24px; } }
 
-/* Hero */
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 36px; padding-bottom: 40px; }
-.hero__meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 20px; }
-.hero__text { container-type: inline-size; }
-.hero h1 { font-size: clamp(34px, 14cqi, 148px); }
-.hero__line { font-size: clamp(18px, 2vw, 22px); line-height: 1.45; margin: 24px 0 14px; max-width: 44ch; }
-.hero__open { border-left: 3px solid var(--ink); padding-left: 12px; margin: 0 0 24px; }
-.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-.hero__photo { max-width: 360px; width: 100%; }
-@media (min-width: 900px) {
-  .hero .wrap { grid-template-columns: minmax(0, 1fr) 300px; align-items: end; padding-top: 56px; padding-bottom: 56px; }
-  .hero__photo { justify-self: end; }
-}
-
-/* Stats: wide centered boxes, two words max per header, two colored */
-.stats { border-top: var(--rule); border-bottom: var(--rule); }
-.stats .wrap { display: grid; grid-template-columns: minmax(0, 1fr); padding: 0; }
-.stat { container-type: inline-size; padding: 32px var(--gutter) 30px; border-bottom: var(--hair); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 190px; }
-.stat:last-child { border-bottom: 0; }
-.stat__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(30px, 10.5cqi, 92px); line-height: .95; letter-spacing: -.03em; margin-bottom: 12px; text-transform: uppercase; }
-.stat .label { max-width: 38ch; }
-.stat--blue { background: var(--blue); color: #fff; }
-.stat--red { background: var(--red); color: #fff; }
-.stat--blue .muted, .stat--red .muted { color: #fff; }
-@media (min-width: 760px) {
-  .stats .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .stat { min-height: 240px; border-bottom: var(--hair); }
-  .stat:nth-child(odd) { border-right: var(--hair); }
-  .stat:nth-child(n+3) { border-bottom: 0; }
-}
-
 /* Section frame */
-.block { border-bottom: var(--rule); }
-.block__head { padding-top: 56px; padding-bottom: 28px; display: grid; gap: 14px; }
-.block h2 { font-size: clamp(34px, 7vw, 104px); }
-.block__intro { font-size: 18px; margin: 0; }
-@media (min-width: 900px) { .block__head { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; } .block__head .label { grid-column: 1 / -1; } }
+.sec { border-bottom: var(--rule); padding: var(--sec) 0; }
+.sec__head { display: grid; gap: 8px; margin-bottom: 18px; }
+.sec h2 { font-size: clamp(30px, 6.4vw, 92px); }
+.sec__intro { margin: 0; }
+@media (min-width: 900px) { .sec__head { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; margin-bottom: 36px; } .sec__head .label { grid-column: 1 / -1; } }
 
-/* Short version: scope + timeline */
-.short { display: grid; gap: 40px; padding-bottom: 56px; }
-@media (min-width: 900px) { .short { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; } }
-.list { list-style: none; margin: 0; padding: 0; border-top: var(--hair); }
-.list li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: var(--hair); }
-.list li .label { padding-top: 4px; }
-.list b { font-weight: 700; }
-.list .now .label { color: var(--red); }
-h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px; }
+/* 1. Hero */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 132px; gap: 16px 20px; padding-top: 20px; padding-bottom: 28px; align-items: end; }
+.hero__text { container-type: inline-size; grid-column: 1 / -1; }
+.hero__meta { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 14px; }
+.hero h1 { font-size: clamp(34px, 14cqi, 140px); }
+.hero__line { font-size: clamp(16px, 1.9vw, 21px); line-height: 1.45; margin: 18px 0 10px; max-width: 44ch; }
+.hero__open { border-left: 3px solid var(--ink); padding-left: 10px; margin: 0; }
+.ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero .ctas { align-self: center; }
+.phone { border: 3px solid var(--ink); border-radius: 18px; padding: 6px; background: var(--ink); width: 100%; }
+.phone .ph { border: 0; border-radius: 12px; font-size: 9px; }
+@media (min-width: 900px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr) 250px; gap: 24px 56px; padding-top: 56px; padding-bottom: 56px; }
+  .hero__text { grid-column: 1; }
+  .hero__side { grid-column: 2; grid-row: 1 / span 2; }
+  .hero .ctas { grid-column: 1; }
+  .phone .ph { font-size: 11px; }
+}
 
-/* Proof rows */
-.rows { border-top: var(--rule); }
-.row { display: grid; gap: 20px; padding: 32px 0; border-bottom: var(--hair); }
-.row:last-child { border-bottom: 0; }
-.row h3 { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(26px, 3.8vw, 48px); line-height: .98; text-transform: uppercase; margin: 8px 0 14px; }
-.situation { font-size: 15px; border-left: 3px solid var(--red); padding-left: 12px; margin-bottom: 14px; }
-.situation .label { display: block; margin-bottom: 2px; }
-.inline-stats { display: flex; flex-wrap: wrap; gap: 6px 24px; margin: 6px 0 18px; padding: 0; list-style: none; }
-.inline-stats b { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 22px; margin-right: 6px; }
-.row .ph { max-width: 300px; width: 100%; }
-.row--full { grid-template-columns: minmax(0, 1fr) !important; }
-@media (min-width: 900px) { .row { grid-template-columns: minmax(0, 1fr) 260px; gap: 56px; align-items: start; } .row .ph { justify-self: end; } }
+/* 2. Results band */
+.results { border-bottom: var(--rule); }
+.results .wrap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0; }
+.stat { container-type: inline-size; padding: 20px var(--gutter); border-right: var(--hair); border-bottom: var(--hair); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; min-height: 112px; }
+.stat:nth-child(2n) { border-right: 0; }
+.stat:nth-child(n+3) { border-bottom: 0; }
+.stat__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(28px, 24cqi, 84px); line-height: .95; letter-spacing: -.03em; }
+@media (min-width: 900px) {
+  .results .wrap { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stat { border-bottom: 0; min-height: 200px; }
+  .stat:nth-child(2n) { border-right: var(--hair); }
+  .stat:last-child { border-right: 0; }
+}
 
-/* Accounts */
-.accts { display: grid; gap: 0; border: var(--hair); margin: 4px 0 18px; }
-.acct { padding: 18px; }
+/* 3. Case studies */
+.cases, .prod { display: grid; grid-auto-flow: column; grid-auto-columns: 86%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+.cases > *, .prod > * { scroll-snap-align: start; }
+.swipe { display: block; margin: -12px 0 12px; }
+@media (min-width: 900px) { .swipe { display: none; } }
+.case { border: var(--rule); padding: 18px; display: grid; gap: 10px; align-content: start; }
+.case h3 { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(22px, 2.4vw, 30px); line-height: 1; text-transform: uppercase; margin: 0; }
+.case dl { margin: 0; display: grid; gap: 8px; }
+.case dt { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.case dd { margin: 0; font-size: 14px; }
+.case .links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 4px; }
+@media (min-width: 900px) { .cases { grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; overflow: visible; } }
+
+/* 4. How I run social */
+.run { display: grid; gap: 16px; }
+@media (min-width: 900px) { .run { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; } }
+.accts { display: grid; border: var(--rule); }
+.acct { padding: 16px; }
 .acct + .acct { border-top: var(--hair); }
-.acct p { font-size: 15px; margin: 10px 0 0; }
-.acct__links { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
+.acct p { font-size: 15px; margin: 8px 0 0; }
+.acct ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.acct b { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 22px; }
 @media (min-width: 700px) { .accts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .acct + .acct { border-top: 0; border-left: var(--hair); } }
+.decision { padding: 20px; display: grid; gap: 8px; align-content: center; }
+.decision q { font-family: var(--display); font-weight: 800; font-stretch: 100%; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.2; quotes: none; }
+.systems { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: var(--hair); border-left: var(--hair); }
+.systems li { padding: 10px; border-right: var(--hair); border-bottom: var(--hair); font-size: 14px; }
+.systems b { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px; }
+@media (min-width: 900px) { .systems { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.artifacts { display: grid; grid-auto-flow: column; grid-auto-columns: 60%; gap: 10px; overflow-x: auto; margin-top: 16px; padding-bottom: 6px; scroll-snap-type: x mandatory; }
+.artifacts .ph { scroll-snap-align: start; aspect-ratio: 16 / 10; }
+@media (min-width: 900px) { .artifacts { grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; } }
+.blogline { margin: 16px 0 0; font-size: 15px; max-width: none; }
 
-/* Content tiles */
-.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; padding-bottom: 40px; }
-.tile { display: grid; gap: 8px; align-content: start; }
-.tile__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.05; }
-.tile p { font-size: 14px; margin: 0; }
-@media (min-width: 900px) { .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.wc { padding: 28px 24px; margin-bottom: 48px; display: grid; gap: 16px; }
-.wc__stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.wc__stats b { display: block; font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: clamp(20px, 24cqi, 44px); line-height: 1; }
-.wc__stats > div { container-type: inline-size; }
-@media (min-width: 900px) { .wc { grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); align-items: center; } .wc__stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* 5. Everything I make */
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.filters input { position: absolute; opacity: 0; pointer-events: none; }
+.filters label { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border: var(--hair); padding: 6px 10px; cursor: pointer; }
+.filters input:checked + label { background: var(--ink); color: var(--paper); }
+.filters input:focus-visible + label { outline: 3px solid var(--blue); outline-offset: 2px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+@media (min-width: 900px) { .item .ph, .item img { aspect-ratio: 4 / 5; } .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 20px; } }
+.item { display: grid; gap: 6px; align-content: start; }
+.item .ph, .item img { aspect-ratio: 1 / 1; width: 100%; height: auto; object-fit: cover; border: var(--hair); transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+.item:hover .ph, .item:hover img { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--ink); }
+.item h3 { font-family: var(--display); font-weight: 800; font-stretch: 100%; font-size: 15px; line-height: 1.2; margin: 0; }
+.item__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: 18px; line-height: 1; }
+.make:has(#f-video:checked) .item:not([data-type="video"]),
+.make:has(#f-design:checked) .item:not([data-type="design"]),
+.make:has(#f-photo:checked) .item:not([data-type="photo"]),
+.make:has(#f-writing:checked) .item:not([data-type="writing"]) { display: none; }
 
-/* Camera work */
-.feature { display: grid; gap: 24px; border-top: var(--rule); padding-top: 32px; }
-.feature .ph { min-height: 300px; }
-.feature__copy { container-type: inline-size; }
-.feature h3 { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(26px, 10.5cqi, 72px); line-height: .92; text-transform: uppercase; margin: 10px 0 16px; }
-@media (min-width: 900px) { .feature { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 48px; align-items: center; } .feature .ph { min-height: 520px; } }
-.shots { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 40px 0; }
-.shot { display: grid; gap: 10px; align-content: start; }
-.shot h4 { font-family: var(--display); font-weight: 800; font-stretch: 112%; font-size: 21px; line-height: 1.05; text-transform: uppercase; margin: 0; }
-.shot p { font-size: 15px; margin: 0; }
-@media (min-width: 700px) { .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1100px) { .shots { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.more { display: flex; flex-wrap: wrap; gap: 12px 28px; padding-bottom: 48px; }
+/* 6. Production */
+.prod__item { display: grid; border: var(--rule); align-content: start; }
+.prod__copy { padding: 16px; }
+.prod__copy h3 { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(22px, 2.6vw, 34px); line-height: 1; text-transform: uppercase; margin: 6px 0 10px; }
+.prod__copy p { font-size: 15px; }
+.prod__item .ph { border: 0; border-bottom: var(--hair); }
+@media (min-width: 900px) { .prod { grid-auto-flow: row; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 20px; overflow: visible; } }
 
-/* Design */
-.design { display: grid; gap: 24px; border-top: var(--rule); padding-top: 32px; }
-.design h3 { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(26px, 3.8vw, 48px); line-height: .98; text-transform: uppercase; margin: 8px 0 14px; }
-.slides { display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
-.slides .ph { scroll-snap-align: start; }
-@media (min-width: 900px) { .design { grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); gap: 48px; align-items: center; } .slides { grid-auto-columns: 34%; } }
+/* 7. Experience */
+.exp { display: grid; gap: 16px; }
+@media (min-width: 900px) { .exp { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; align-items: start; } }
+.list { list-style: none; margin: 0; padding: 0; border-top: var(--hair); }
+.list li { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 12px; padding: 7px 0; border-bottom: var(--hair); font-size: 15px; }
+.list li .label { padding-top: 3px; }
+.list .now .label { color: var(--red); }
+.quote { padding: 20px; margin: 0; }
+.quote blockquote { margin: 0; font-family: var(--display); font-weight: 700; font-stretch: 100%; font-size: clamp(19px, 2vw, 26px); line-height: 1.25; }
+.quote figcaption { margin-top: 12px; }
 
-/* Carousel slides (real images) */
-.slides img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border: var(--hair); scroll-snap-align: start; display: block; transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
-.slides img:hover { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--ink); }
+/* 8. Platforms and tools */
+.tools { display: grid; gap: 14px; }
+.tools div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 12px; border-top: var(--hair); padding-top: 10px; font-size: 15px; }
+@media (min-width: 900px) { .tools { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; } .tools div { grid-template-columns: 1fr; gap: 6px; } }
+.brandline { margin: 20px 0 0; font-family: var(--display); font-weight: 900; font-stretch: 112%; text-transform: uppercase; font-size: clamp(16px, 2vw, 24px); line-height: 1.2; max-width: none; }
 
-/* Embeds: a light facade first, the real post loads in a lightbox on tap */
-.embed { width: 100%; max-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px; text-align: center; background: var(--ink); color: var(--paper); border: var(--hair); cursor: pointer; font: inherit; transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
-.embed b { font-family: var(--display); font-weight: 900; font-stretch: 125%; text-transform: uppercase; font-size: clamp(20px, 2.4vw, 30px); line-height: 1; }
-.embed__cta { border: 1px solid var(--paper); padding: 6px 10px; }
-.embed:hover { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--red); }
-.row .embed { justify-self: end; }
-.lightbox { border: var(--rule); background: var(--paper); padding: 12px; width: min(92vw, 420px); max-height: 92vh; overflow: auto; }
-.lightbox::backdrop { background: rgba(17, 17, 17, .75); }
-.lightbox__close { display: block; margin: 0 0 10px auto; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--ink); color: var(--paper); border: 0; padding: 8px 12px; cursor: pointer; }
-
-/* Sports photography */
-.sports { display: grid; gap: 24px; border-top: var(--hair); padding: 40px 0; }
-.sports h3 { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(26px, 3.8vw, 48px); line-height: .98; text-transform: uppercase; margin: 8px 0 14px; }
-.sports__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-.sports__grid .wide { grid-column: 1 / -1; }
-@media (min-width: 900px) { .sports { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 48px; align-items: start; } }
-
-/* Writing */
-.writing { list-style: none; margin: 0; padding: 0 0 48px; border-top: var(--rule); }
-.writing li { display: grid; gap: 8px; padding: 20px 0; border-bottom: var(--hair); }
-.writing li.pad { padding: 24px; }
-.writing li:last-child { border-bottom: 0; }
-.writing h4 { font-family: var(--display); font-weight: 800; font-stretch: 100%; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.15; margin: 0 0 6px; }
-.writing p { font-size: 15px; margin: 0; }
-@media (min-width: 900px) { .writing li { grid-template-columns: 220px minmax(0, 1fr) 80px; gap: 32px; align-items: baseline; } .writing .link { justify-self: end; } }
-
-/* Quote */
-.quote .wrap { padding-top: 56px; padding-bottom: 56px; }
-.quote blockquote { margin: 0; font-family: var(--display); font-weight: 700; font-stretch: 100%; font-size: clamp(24px, 3.4vw, 44px); line-height: 1.2; max-width: 30ch; }
-.quote blockquote::before { content: "\201C"; display: block; font-weight: 900; font-size: 2.2em; line-height: .6; margin-bottom: 8px; }
-.quote figcaption { margin-top: 20px; }
-
-/* Tools + brands */
-.facts .wrap { display: grid; gap: 32px; padding-top: 40px; padding-bottom: 48px; }
-@media (min-width: 900px) { .facts .wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; } }
-.plain { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 18px; font-weight: 600; }
-.plain--sm { font-size: 15px; font-weight: 500; }
-.brands { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: clamp(24px, 3.4vw, 40px); line-height: 1.1; text-transform: uppercase; margin: 0; }
-
-/* CTA: the one dark block on the page */
+/* 9. CTA */
 .cta { background: var(--ink); color: var(--paper); }
-.cta .wrap { padding-top: 64px; padding-bottom: 64px; }
-.cta h2 { font-size: clamp(48px, 12vw, 176px); }
-.cta p { font-size: 19px; margin: 20px 0 28px; }
+.cta .wrap { padding-top: 48px; padding-bottom: 48px; }
+.cta h2 { font-size: clamp(48px, 12vw, 168px); }
+.cta p { font-size: 18px; margin: 16px 0 22px; }
 .cta .btn { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 .cta .btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
 .cta .btn--line { background: transparent; color: var(--paper); }
-.cta__links { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 32px; }
+.cta__links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 24px; }
 .cta__links a { text-decoration: underline; text-underline-offset: 4px; }
-
 .foot { background: var(--ink); color: var(--paper); border-top: 1px solid #444; }
-.foot .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; padding-top: 20px; padding-bottom: 28px; }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; padding-top: 16px; padding-bottom: 20px; }
 
-/* ---------- Motion: quiet and unhurried. Small distances, long ease-outs. ---------- */
-:root { --ease: cubic-bezier(.16, 1, .3, 1); }
-
+/* Motion: quiet and unhurried */
 @media (prefers-reduced-motion: no-preference) {
-  /* Intro: headline words rise out of a mask, then the rest settles in */
   .intro-h1 .m { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .04em; }
   .intro-h1 .m > span { display: inline-block; transform: translateY(100%); animation: up 1.1s var(--ease) forwards; animation-delay: calc(var(--i) * 120ms + 150ms); }
   .intro-h1 .stamp { display: inline-block; opacity: 0; animation: fade .9s var(--ease) 1s forwards; }
@@ -251,29 +222,16 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
   .hero__line { animation-delay: .8s; }
   .hero__open { animation-delay: .95s; }
   .hero .ctas { animation-delay: 1.1s; }
-  .hero__photo { opacity: 0; animation: fade 1.4s var(--ease) .5s forwards; }
-
+  .hero__side { opacity: 0; animation: fade 1.4s var(--ease) .5s forwards; }
   @keyframes up { to { transform: translateY(0); } }
   @keyframes fade { to { opacity: 1; } }
   @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-  @keyframes reveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 
-  /* Scroll: each piece plays once, on its own clock, when it first comes into view.
-     A tiny script adds .in; without the script nothing is hidden. */
   .js .rv { opacity: 0; transform: translateY(16px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0ms); }
   .js .rv.pop { transform: translateY(14px) scale(.965); }
   .js .rv.in { opacity: 1; transform: none; }
-  .js .wipe { clip-path: inset(0 100% 0 0); transition: clip-path 1.2s var(--ease); transition-delay: var(--d, 0ms); }
-  .js .wipe.in { clip-path: inset(0 0 0 0); }
-
-  /* Content boxes: a small, hard-edged lift on hover */
-  .tile .ph, .shot .ph, .sports__grid .ph, .slides .ph, .row .ph { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
-  .tile:hover .ph, .shot:hover .ph, .sports__grid .ph:hover, .slides .ph:hover, .row:hover .ph { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--ink); }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition: none !important; animation: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 </style>
 </head>
 <body>
@@ -283,434 +241,278 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
   <div class="wrap">
     <a class="logo" href="#" aria-label="Gael Meza, home">Gael Meza</a>
     <nav class="nav" aria-label="Main">
-      <a href="#social">Social Media</a>
-      <a href="#content">Content</a>
-      <a href="#camera">Production</a>
-      <a href="#writing">Writing</a>
-      <a href="#">Work</a>
-      <a href="#">About</a>
+      <a href="#work">Work</a>
+      <a href="#social">Social</a>
+      <a href="#make">Content</a>
+      <a href="#about">About</a>
+      <a href="#">Resume</a>
     </nav>
-    <div class="head-cta">
-      <a class="link" href="#">Resume</a>
-      <a class="btn" href="#contact">Get In Touch</a>
-    </div>
+    <div class="head-cta"><a class="btn" href="#contact">Get In Touch</a></div>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- HERO -->
+  <!-- 1. HERO -->
   <section class="hero">
     <div class="wrap">
       <div class="hero__text">
         <div class="hero__meta label">
-          <span>Gael Meza</span>
-          <span class="muted">Interim Social Media Director, Soccer Post</span>
+          <span>Interim Social Media Director, Soccer Post</span>
           <span class="muted">Austin, TX</span>
         </div>
         <h1 class="display intro-h1" aria-label="Social that moves the numbers."><span class="m" aria-hidden="true"><span style="--i:0">Social</span></span> <span class="m" aria-hidden="true"><span style="--i:1">that</span></span> <span class="m" aria-hidden="true"><span style="--i:2">moves</span></span> <span class="m" aria-hidden="true"><span style="--i:3">the</span></span> <span class="m" aria-hidden="true"><span style="--i:4">numbers</span></span><span class="red stamp" aria-hidden="true">.</span></h1>
         <p class="hero__line">I'm Gael Meza, a social media professional in Austin, TX. I plan it, shoot it, design it, and write it, and I run the strategy and reporting behind it for a national soccer retailer.</p>
-        <p class="hero__open label">Open to: <span class="missing">[MISSING: roles, e.g. Social Media Manager or Director / Austin or remote]</span></p>
-        <div class="ctas">
-          <a class="btn" href="#contact">Get In Touch →</a>
-          <a class="btn btn--line" href="#">Download Resume ↓</a>
+        <p class="hero__open label">Open to: Social Media Manager, Content Lead, or Social Media Director. Austin or remote.</p>
+      </div>
+      <div class="ctas">
+        <a class="btn" href="#contact">Get In Touch →</a>
+        <a class="btn btn--line" href="#">Download Resume ↓</a>
+      </div>
+      <div class="hero__side">
+        <div class="phone"><div class="ph r916">[Video 9:16 loop: 6 to 8 second reel montage, muted]</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. RESULTS -->
+  <section class="results" aria-label="Results">
+    <div class="wrap">
+      <div class="stat blk-blue"><div class="stat__n">6.9M</div><span class="label">Views on one creator collab. A company record.</span></div>
+      <div class="stat"><div class="stat__n">5M+</div><span class="label muted">Views, Austin account, first year</span></div>
+      <div class="stat"><div class="stat__n">~80K</div><span class="label muted">Views. YouTube's best month in about 15 years.</span></div>
+      <div class="stat blk-red"><div class="stat__n">+19.4%</div><span class="label">Austin follower growth in 6 weeks (World Cup window)</span></div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURED CASE STUDIES -->
+  <section class="sec" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">Featured case studies</span>
+        <h2 class="display" id="work-h">The work, by the numbers.</h2>
+        <p class="sec__intro">Three projects. Goal, what I did, the result, and what I'd do next.</p>
+      </div>
+      <span class="swipe label muted">Swipe for all three →</span>
+      <div class="cases">
+        <article class="case blk-blue">
+          <span class="label">01 / TonyMakesVlogs</span>
+          <h3>6.9M views. Cost: one pair of boots.</h3>
+          <dl>
+            <div><dt>Goal</dt><dd>Grow reach for the national account with no budget.</dd></div>
+            <div><dt>What I did</dt><dd>Spotted a creator mid-way through his "Becoming A Pro Soccer Player" series, playing in Copa Mundial boots with holes in them. Pitched the collab myself, coordinated the product, and ran it as a collab post so the reach credited Soccer Post.</dd></div>
+            <div><dt>Result</dt><dd>6.9M views, 579K likes, 53.4K shares, 19.6K saves. About 240x the account's ~29K followers at the time. Most-viewed content in company history.</dd></div>
+            <div><dt>What I'd do next</dt><dd><span class="missing">[MISSING]</span></dd></div>
+          </dl>
+          <div class="links"><a class="link" href="#">Read the case study →</a><a class="link" href="https://www.instagram.com/reel/DcWGGlrOup4/">View original ↗</a></div>
+        </article>
+
+        <article class="case">
+          <span class="label muted">02 / YouTube revival</span>
+          <h3>Best month in about 15 years.</h3>
+          <div class="ph r169">[Graphic: YouTube Studio views, flat for years then the spike]</div>
+          <dl>
+            <div><dt>Goal</dt><dd>Bring a dormant channel back to life.</dd></div>
+            <div><dt>What I did</dt><dd><span class="missing">[MISSING: my role and formats]</span></dd></div>
+            <div><dt>Result</dt><dd>About 80,000 views in September 2026, the biggest month in the channel's roughly 15-year history.</dd></div>
+            <div><dt>What I'd do next</dt><dd><span class="missing">[MISSING]</span></dd></div>
+          </dl>
+          <div class="links"><a class="link" href="#">Read the case study →</a><a class="link" href="https://www.youtube.com/@SoccerPostFC">View channel ↗</a></div>
+        </article>
+
+        <article class="case">
+          <span class="label muted">03 / World Cup content program</span>
+          <h3>~800K views in six weeks.</h3>
+          <dl>
+            <div><dt>Goal</dt><dd>Own the World Cup moment across the national and Austin accounts.</dd></div>
+            <div><dt>What I did</dt><dd>Concepted, researched, fact-checked, and produced the program: SP Stats carousels (Mexico and USMNT, Round of 16), a quarterfinals bracket, matchup graphics, and boot and kit content, all on a verify-before-publish rule.</dd></div>
+            <div><dt>Result</dt><dd>June 9 to July 21, 2026, national and Austin combined: ~800K views, ~266K accounts reached, ~40K interactions, ~994 net new followers.</dd></div>
+            <div><dt>What I'd do next</dt><dd><span class="missing">[MISSING]</span></dd></div>
+          </dl>
+          <div class="links"><a class="link" href="#">Read the case study →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW I RUN SOCIAL -->
+  <section class="sec" id="social" aria-labelledby="social-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">How I run social</span>
+        <h2 class="display" id="social-h">Planned, measured, repeatable.</h2>
+        <p class="sec__intro"><span class="missing">[VERIFY: 3 or 4 accounts]</span> accounts, one person, and the systems that keep it consistent.</p>
+      </div>
+      <div class="run">
+        <div class="accts">
+          <div class="acct">
+            <span class="label">National / Systems-driven</span>
+            <ul>
+              <li><a class="link" href="https://instagram.com/soccerpost">IG @soccerpost ↗</a></li>
+              <li><a class="link" href="https://www.tiktok.com/@soccerpost.fc">TikTok @soccerpost.fc ↗</a></li>
+              <li><a class="link" href="https://www.youtube.com/@SoccerPostFC">YouTube Soccer Post F.C ↗</a></li>
+            </ul>
+            <p>Planned, scheduled, and measured in Metricool, with an organic post when the moment calls for it.</p>
+          </div>
+          <div class="acct">
+            <span class="label">Austin / Community-driven</span>
+            <ul><li><a class="link" href="https://instagram.com/soccerpostatx">IG @soccerpostatx ↗</a></li></ul>
+            <p>Where I test ideas and build community. <b>5M+</b> views in my first year, and it regularly drives sales and foot traffic.</p>
+          </div>
+        </div>
+        <div class="decision blk-red">
+          <span class="label">Data to decision</span>
+          <q>Metricool showed our audience peaks Fridays around 4pm, so I moved key launches there.</q>
+          <span class="label">Result: <span class="missing">[MISSING]</span></span>
         </div>
       </div>
-      <div class="ph r45 hero__photo">[Photo 4:5: you at work, candid, behind the camera]</div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="stats" aria-label="Headline numbers">
-    <div class="wrap">
-      <div class="stat stat--blue"><div class="stat__n">6.9M views</div><span class="label muted">On one creator collab. A company record.</span></div>
-      <div class="stat"><div class="stat__n"><span class="missing">[MISSING]</span> views</div><span class="label muted">Lifetime, on content I made</span></div>
-      <div class="stat"><div class="stat__n">4 accounts</div><span class="label muted">Instagram x2, TikTok, and YouTube, run at the same time</span></div>
-      <div class="stat stat--red"><div class="stat__n">One person</div><span class="label muted">Strategy, social-first content, pro production, photo, video, and copy</span></div>
-    </div>
-  </section>
-
-  <!-- THE SHORT VERSION: scope + timeline -->
-  <section class="block" aria-labelledby="sv">
-    <div class="wrap block__head">
-      <span class="label">The short version</span>
-      <h2 class="display" id="sv">Sales floor to national social.</h2>
-      <p class="block__intro">From the sales floor to running a national brand's social, in one continuous run at one company.</p>
-    </div>
-    <div class="wrap short">
-      <div>
-        <h3 class="sub">What I own</h3>
-        <ul class="list">
-          <li><span class="label">Scope</span><span>National social for Soccer Post, a soccer retailer with 70+ locations selling boots, jerseys, and apparel</span></li>
-          <li><span class="label">Accounts</span><span>National Instagram, TikTok, and YouTube, plus the Austin Instagram, run solo</span></li>
-          <li><span class="label">Team</span><span>One-person creative team, covering what a two-person team handled before me: strategy, content, production, copy, and reporting</span></li>
-          <li><span class="label">Reporting</span><span>Metricool rollout and a reporting practice that sets the schedule</span></li>
-          <li><span class="label">Partners</span><span>Leadership, store teams, brand partners, and external studios</span></li>
-          <li><span class="label">Standards</span><span>Brand compliance and neutrality across Nike, adidas, and Puma</span></li>
-        </ul>
+      <ul class="systems">
+        <li><b>Caption architecture</b>Fixed post skeletons and a five-hashtag structure</li>
+        <li><b>Voice guide</b>One voice per account: editorial, local, and TikTok-native</li>
+        <li><b>Multi-market assets</b>Unique selects per market to avoid duplicate-content reach suppression</li>
+        <li><b>Brand compliance</b>Neutral across Nike, adidas, and Puma, with verify-before-publish</li>
+      </ul>
+      <div class="artifacts">
+        <div class="ph">[Artifact: one-page monthly social report]</div>
+        <div class="ph">[Artifact: content calendar snapshot]</div>
+        <div class="ph">[Artifact: caption template + voice guide side by side]</div>
       </div>
-      <div>
-        <h3 class="sub">Timeline</h3>
+      <p class="blogline"><span class="label">Blog + analytics</span><br>Pitched and built the Soccer Post blog with SEO structure and custom per-post reporting in Shopify Analytics (ShopifyQL). "On-Field vs Fan Jerseys" has 1,300 pageviews over 180 days.</p>
+    </div>
+  </section>
+
+  <!-- 5. EVERYTHING I MAKE -->
+  <section class="sec make" id="make" aria-labelledby="make-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">Everything I make</span>
+        <h2 class="display" id="make-h">I make it too.</h2>
+        <p class="sec__intro">Video, design, photo, and writing, made by me.</p>
+      </div>
+      <div class="filters" role="radiogroup" aria-label="Filter work">
+        <input type="radio" name="f" id="f-all" checked><label for="f-all">All</label>
+        <input type="radio" name="f" id="f-video"><label for="f-video">Video</label>
+        <input type="radio" name="f" id="f-design"><label for="f-design">Design</label>
+        <input type="radio" name="f" id="f-photo"><label for="f-photo">Photo</label>
+        <input type="radio" name="f" id="f-writing"><label for="f-writing">Writing</label>
+      </div>
+      <div class="grid">
+        <article class="item" data-type="video">
+          <div class="ph">[MP4 loop, muted: adidas F50 reel]</div>
+          <span class="label muted">Video</span>
+          <h3>adidas F50 "Football's Heartbreaker" (Lamine Yamal)</h3>
+          <span class="item__n">490,950 views</span>
+          <a class="link" href="https://www.tiktok.com/@soccerpostaustin/video/7613405934206946590">View original ↗</a>
+        </article>
+        <article class="item" data-type="design">
+          <div class="ph">[Image: SP Stats carousel cover]</div>
+          <span class="label muted">Design</span>
+          <h3>SP Stats carousel: Mexico and USMNT, Round of 16</h3>
+          <a class="link" href="#">View original ↗</a>
+        </article>
+        <article class="item" data-type="design">
+          <img src="assets/img/future-hero-card/slide-1.png" alt="Make your own player card: cover slide of the Soccer Post Future Hero Card tutorial carousel" width="1080" height="1440" loading="lazy">
+          <span class="label muted">Design</span>
+          <h3>Future Hero Card: player card tutorial carousel</h3>
+          <a class="link" href="#">View original ↗</a>
+        </article>
+        <article class="item" data-type="design">
+          <div class="ph">[Image: launch carousel cover]</div>
+          <span class="label muted">Design</span>
+          <h3>Product launch carousel overlays</h3>
+          <a class="link" href="https://www.instagram.com/p/Db3ZEWYIPpa/">View original ↗</a>
+        </article>
+        <article class="item" data-type="photo">
+          <div class="ph">[Photo: Austin FC matchday]</div>
+          <span class="label muted">Photo</span>
+          <h3>Austin FC matchday, Imagine That Sports</h3>
+          <a class="link" href="#">View original ↗</a>
+        </article>
+        <article class="item" data-type="photo">
+          <div class="ph">[Photo: Nike Scorpion Pack soleplate]</div>
+          <span class="label muted">Photo</span>
+          <h3>Product and studio: Nike Scorpion Pack soleplate</h3>
+        </article>
+        <article class="item" data-type="writing">
+          <div class="ph">[Image: blog post header]</div>
+          <span class="label muted">Writing</span>
+          <h3>"On-Field vs Fan Jerseys: What's the Difference?"</h3>
+          <a class="link" href="#">Read ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. BRAND-LEVEL PRODUCTION -->
+  <section class="sec" aria-labelledby="prod-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">Brand-level production</span>
+        <h2 class="display" id="prod-h">Produced, shot, and edited.</h2>
+      </div>
+      <span class="swipe label muted">Swipe for both →</span>
+      <div class="prod">
+        <article class="prod__item">
+          <div class="ph r169">[Photo 16:9: Charly Heritage street style, downtown Austin]</div>
+          <div class="prod__copy blk-blue">
+            <span class="label">Brand collaboration</span>
+            <h3>Charly Heritage Collection</h3>
+            <p>Produced, shot, and edited a downtown Austin street style shoot, published as a four-way collab with Charly USA, Charly Fútbol, Soccer Post, and Soccer Post ATX.</p>
+            <p class="label">Results: <span class="missing">[MISSING]</span></p>
+          </div>
+        </article>
+        <article class="prod__item">
+          <div class="ph r169">[Video 16:9: jumbotron commercial]</div>
+          <div class="prod__copy">
+            <span class="label muted">Made in one day</span>
+            <h3>Jumbotron commercial</h3>
+            <p>Produced, shot, and edited in one day. Aired at Inter Miami CF Stadium.</p>
+            <a class="link" href="#">Full photo portfolio ↗</a> <span class="missing">[PORTFOLIO URL]</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. EXPERIENCE + TESTIMONIAL -->
+  <section class="sec" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">Experience</span>
+        <h2 class="display" id="about-h">Sales floor to national social.</h2>
+        <p class="sec__intro">One continuous run at one company. <span class="missing">[VERIFY: titles match LinkedIn]</span></p>
+      </div>
+      <div class="exp">
         <ul class="list">
-          <li class="now"><span class="label">May 2026, now</span><span><b>Interim Social Media Director</b>, national</span></li>
+          <li class="now"><span class="label">May 2026, now</span><span><b>Interim Social Media Director</b>, Soccer Post, national</span></li>
           <li><span class="label">Feb 2026, now</span><span><b>National Content Creator &amp; Social Strategist</b></span></li>
           <li><span class="label">May 2025, now</span><span><b>Social Media Manager &amp; Producer</b>, Austin market</span></li>
-          <li><span class="label">Oct 2024 to May 2025</span><span><b>Social Media Team Member</b>, then <b>Sales Team Lead &amp; Primary Digital Creative</b></span></li>
-          <li><span class="label">2022 to 2024</span><span>Sales Associate, then Sales Team Lead. Started at The Soccer Corner, now Soccer Post.</span></li>
-          <li><span class="label">Feb 2026</span><span>Shot Austin FC and wrote match recaps on assignment for Imagine That Sports</span></li>
-          <li><span class="label">Feb 2025, now</span><span><b>Founder, Gael Meza Media</b>, photo and content studio</span></li>
+          <li><span class="label">2022 to 2025</span><span>Sales and early social roles at The Soccer Corner, now Soccer Post. Social from Oct 2024.</span></li>
+          <li><span class="label">Aug 2026</span><span>Shot Austin FC and wrote match recaps for Imagine That Sports</span></li>
+          <li><span class="label">Feb 2025, now</span><span><b>Founder, Gael Meza Media</b></span></li>
         </ul>
+        <figure class="quote blk-red">
+          <blockquote>[QUOTE: from a creator, client, or partner]</blockquote>
+          <figcaption class="label">[NAME], [TITLE], [COMPANY]</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- BLOCK 1 -->
-  <section class="block" id="social" aria-labelledby="b1">
-    <div class="wrap block__head">
-      <span class="label">01 / Social media professional</span>
-      <h2 class="display" id="b1">I run social like a business.</h2>
-      <p class="block__intro">Strategy, scheduling, analytics, reporting, and the systems that make it repeatable.</p>
-    </div>
+  <!-- 8. PLATFORMS AND TOOLS -->
+  <section class="sec" aria-labelledby="tools-h">
     <div class="wrap">
-      <div class="rows">
-        <article class="row">
-          <div>
-            <span class="label muted">Case study 01 / TonyMakesVlogs</span>
-            <h3>6.9M views. It cost one pair of boots.</h3>
-            <p class="situation"><span class="label">Situation</span>A creator mid-way through his "Becoming A Pro Soccer Player" series, playing in Copa Mundial boots with holes in them.</p>
-            <p>Nobody assigned this. I spotted it, pitched the collab myself, and ran it end to end as a collab post so the reach credited Soccer Post directly. It's the most-viewed content in company history.</p>
-            <ul class="inline-stats">
-              <li><b>579K</b><span class="label muted">Likes</span></li>
-              <li><b>53.4K</b><span class="label muted">Shares</span></li>
-              <li><b>19.6K</b><span class="label muted">Saves</span></li>
-            </ul>
-            <a class="link" href="#">Read the case study →</a>
-          </div>
-          <button class="embed r916" type="button" data-embed="instagram" data-url="https://www.instagram.com/reel/DcWGGlrOup4/">
-            <span class="label">Instagram reel / @tonymakesvlogs</span>
-            <b>6.9M views</b>
-            <span class="embed__cta label">▶ Play the post</span>
-          </button>
-        </article>
-
-        <article class="row row--full">
-          <div>
-            <span class="label muted">System / Multi-account</span>
-            <h3>Four accounts. Three platforms. One person.</h3>
-            <div class="accts">
-              <div class="acct">
-                <span class="label">National / Systems-driven</span>
-                <ul class="acct__links">
-                  <li><a class="link" href="https://instagram.com/soccerpost">Instagram @soccerpost ↗</a></li>
-                  <li><a class="link" href="https://www.tiktok.com/@soccerpost.fc">TikTok @soccerpost.fc ↗</a></li>
-                  <li><a class="link" href="https://www.youtube.com/@SoccerPostFC">YouTube Soccer Post F.C ↗</a></li>
-                </ul>
-                <p>Run mostly through the system I built in Metricool: planned, scheduled, and measured, with an organic post whenever the moment calls for it. Fixed caption architecture and a voice guide keep each platform on brand.</p>
-              </div>
-              <div class="acct blk-blue">
-                <span class="label">Austin / Community-driven</span>
-                <ul class="acct__links">
-                  <li><a class="link" href="https://instagram.com/soccerpostatx">Instagram @soccerpostatx ↗</a></li>
-                </ul>
-                <p>My passion project. More freedom, more community: community content, pro studio shoots, and posts built for engagement. It regularly drives sales and foot traffic. I hear "I came here from Instagram" all the time.</p>
-              </div>
-            </div>
-            <a class="link" href="#">See the systems →</a>
-          </div>
-        </article>
-
-        <article class="row">
-          <div>
-            <span class="label muted">Campaign / Meanwhile Brewing popup series</span>
-            <h3>Content that walks in the door.</h3>
-            <p class="situation"><span class="label">Situation</span>A recurring Soccer Post popup shop and watch party at an Austin brewery.</p>
-            <p>I made the flyers and the social campaign, shot the events, and posted weekly recaps from my own footage for about a month. The recaps drove more foot traffic and referral customers the following week, across the whole run.</p>
-            <a class="link" href="#">See the campaign →</a>
-          </div>
-          <div class="ph r45">[Photo 4:5: popup event, shot by me]</div>
-        </article>
-
-        <article class="row">
-          <div>
-            <span class="label muted">Case study 02 / YouTube revival</span>
-            <h3>Best month in roughly fifteen years.</h3>
-            <p class="situation"><span class="label">Situation</span>Soccer Post's YouTube channel had gone dormant.</p>
-            <p>I revived it. September 2026 closed at about 80,000 views, the biggest monthly spike in the channel's history.</p>
-            <p class="muted">My role: <span class="missing">[MISSING]</span> Formats: <span class="missing">[MISSING]</span></p>
-            <a class="link" href="#">Read the case study →</a>
-          </div>
-          <div class="ph r32">[Graphic: YouTube Studio views, flat then the spike]</div>
-        </article>
+      <h2 class="label" id="tools-h" style="margin:0 0 14px">Platforms and tools</h2>
+      <div class="tools">
+        <div><span class="label muted">Platforms</span><span>Instagram, TikTok, YouTube</span></div>
+        <div><span class="label muted">Analytics</span><span>Metricool, Meta Business Suite and Insights, YouTube Studio, Shopify Analytics (ShopifyQL)</span></div>
+        <div><span class="label muted">Creative</span><span>Photoshop, Lightroom, DaVinci Resolve, Premiere Pro, Illustrator, Canva, CapCut</span></div>
       </div>
+      <p class="brandline">Content produced for Soccer Post featuring Nike, adidas, Puma, and Charly</p>
     </div>
   </section>
 
-  <!-- BLOCK 2 -->
-  <section class="block" id="content" aria-labelledby="b2">
-    <div class="wrap block__head">
-      <span class="label">02 / Social-first content</span>
-      <h2 class="display" id="b2">Range, not one style.</h2>
-      <p class="block__intro">Platform-native content built to perform: trends, humor, education, and product hype.</p>
-    </div>
-    <div class="wrap">
-      <div class="tiles">
-        <article class="tile">
-          <div class="ph r916">[IG embed 9:16: trend post URL]</div>
-          <span class="label muted">Trendy / Fast</span>
-          <div class="tile__n"><span class="missing">[MISSING]</span></div>
-          <p><span class="missing">[MISSING: post + idea in one line]</span></p>
-        </article>
-        <article class="tile">
-          <div class="ph r916">[IG embed 9:16: funny post URL]</div>
-          <span class="label muted">Funny</span>
-          <div class="tile__n"><span class="missing">[MISSING]</span></div>
-          <p><span class="missing">[MISSING: post + idea in one line]</span></p>
-        </article>
-        <article class="tile">
-          <div class="ph r916">[IG embed: SP Stats carousel URL]</div>
-          <span class="label muted">Educational</span>
-          <div class="tile__n"><span class="missing">[MISSING]</span></div>
-          <p>SP Stats carousels for Mexico and USMNT in the Round of 16, verified before publish.</p>
-        </article>
-        <article class="tile">
-          <button class="embed r916" type="button" data-embed="tiktok" data-url="https://www.tiktok.com/@soccerpostaustin/video/7613405934206946590" data-id="7613405934206946590">
-            <span class="label">TikTok / @soccerpostaustin</span>
-            <b>adidas F50</b>
-            <span class="embed__cta label">▶ Play the post</span>
-          </button>
-          <span class="label muted">Product / Hype</span>
-          <div class="tile__n">490,950 views</div>
-          <p>adidas F50 "Football's Heartbreaker" (Lamine Yamal) drop. ~57K interactions.</p>
-        </article>
-      </div>
-      <div class="wc blk-red">
-        <div>
-          <span class="label">World Cup window</span>
-          <p class="muted" style="margin:6px 0 0">June 9 to July 21, 2026. National and Austin accounts combined.</p>
-        </div>
-        <div class="wc__stats">
-          <div><b>~800K</b><span class="label muted">Views</span></div>
-          <div><b>~266K</b><span class="label muted">Accounts reached</span></div>
-          <div><b>~40K</b><span class="label muted">Interactions</span></div>
-          <div><b>~994</b><span class="label muted">Net new followers</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK 3: DESIGN -->
-  <section class="block" id="design" aria-labelledby="b3d">
-    <div class="wrap block__head">
-      <span class="label">03 / Graphic design</span>
-      <h2 class="display" id="b3d">Built for the feed.</h2>
-      <p class="block__intro">Carousels, stat cards, and matchday graphics. Built on systems so they stay consistent, and getting sharper with every post.</p>
-    </div>
-    <div class="wrap">
-      <article class="design">
-        <div class="design__copy blk-blue pad">
-          <span class="label muted">Featured carousel</span>
-          <h3>Soccer Post Future Hero Card</h3>
-          <p>A how-to carousel inspired by the player cards in the EA SPORTS FC video game. It walks fans through making their own card in Canva: pick a position, add a photo, rate yourself, then post it and tag Soccer Post.</p>
-          <p class="label muted">Designed, written, and edited by me, with AI assistance</p>
-          <p><span class="missing">[MISSING: results]</span></p>
-          <a class="link" href="#">See the carousel ↗</a> <span class="missing">[MISSING: post URL]</span>
-        </div>
-        <div class="slides" aria-label="Carousel slides">
-          <img src="assets/img/future-hero-card/slide-1.png" alt="Cover slide: Make your own player card, with a finished Soccer Post Future Hero Card" width="1080" height="1440" loading="lazy">
-          <img src="assets/img/future-hero-card/slide-2.png" alt="Step 1: Pick your position, outfield or keeper" width="1080" height="1440" loading="lazy">
-          <img src="assets/img/future-hero-card/slide-3.png" alt="Step 2: Add your photo in the Canva template" width="1080" height="1440" loading="lazy">
-          <img src="assets/img/future-hero-card/slide-4.png" alt="Step 3: Rate yourself on all six stats" width="1080" height="1440" loading="lazy">
-          <img src="assets/img/future-hero-card/slide-5.png" alt="Step 4: Post it and tag Soccer Post, with a finished card" width="1080" height="1440" loading="lazy">
-        </div>
-      </article>
-      <div class="shots">
-        <article class="shot">
-          <button class="embed r45" type="button" data-embed="instagram" data-url="https://www.instagram.com/p/Db3ZEWYIPpa/">
-            <span class="label">Instagram carousel / @soccerpost</span>
-            <b>Launch carousel</b>
-            <span class="embed__cta label">▶ View the post</span>
-          </button>
-          <span class="label muted">Product launch / Carousel system</span>
-          <h4>Launch carousel</h4>
-          <p>Overlay graphics I designed on the brand's launch assets, built on my carousel system: corner labels, numbered steps, pill CTAs, and safe zones.</p>
-        </article>
-        <article class="shot">
-          <div class="ph r45">[Graphic: stat card]</div>
-          <span class="label muted">Design system</span>
-          <h4>Stat cards</h4>
-          <p>A reusable stat card format for fast, accurate numbers posts.</p>
-        </article>
-        <article class="shot">
-          <div class="ph r45">[Graphic: quarterfinals bracket]</div>
-          <span class="label muted">World Cup 2026</span>
-          <h4>Bracket + matchups</h4>
-          <p>Quarterfinals bracket and matchup graphics, researched and verified before publish.</p>
-        </article>
-        <article class="shot">
-          <div class="ph r45">[Graphic: popup flyer]</div>
-          <span class="label muted">Events</span>
-          <h4>Flyers</h4>
-          <p>Flyers and the social campaign for the Meanwhile Brewing popup and watch party series.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK 3 -->
-  <section class="block" id="camera" aria-labelledby="b3">
-    <div class="wrap block__head">
-      <span class="label">04 / Camera work</span>
-      <h2 class="display" id="b3">I shoot it too.</h2>
-      <p class="block__intro">Brand-level photo and video, produced end to end: concept, shot list, directing, shooting, editing. Every photo here is shot and edited by me.</p>
-    </div>
-    <div class="wrap">
-      <article class="feature">
-        <div class="ph">[Hero photo: Charly Heritage street style, downtown Austin]</div>
-        <div class="feature__copy blk-red pad">
-          <span class="label muted">Case study 03 / Brand collaboration</span>
-          <h3>Charly Heritage Collection</h3>
-          <p>A downtown Austin street style shoot I produced, shot, and edited. Published as a four-way collaboration with Charly USA, Charly Fútbol, Soccer Post, and Soccer Post ATX. Soccer Post's first mainstream brand collab in a long time.</p>
-          <p class="muted">Results: <span class="missing">[MISSING]</span></p>
-          <a class="link" href="#">See the shoot →</a>
-        </div>
-      </article>
-      <div class="shots">
-        <article class="shot">
-          <div class="ph r45">[Photo: Noche de Barrio event]</div>
-          <span class="label muted">adidas street soccer event</span>
-          <h4>Noche de Barrio</h4>
-          <p>Built the shot list, drone plan, and production sheet. Shot the event and directed the recap edit with the external studio.</p>
-        </article>
-        <article class="shot">
-          <div class="ph r45">[Photo: on-site giveaway activation]</div>
-          <span class="label muted">Production lead</span>
-          <h4>Club América vs Austin FC Ticket Giveaway</h4>
-          <p>Designed the entry mechanics, wrote the campaign copy, was lead photographer, and directed the on-site activation. With adidas.</p>
-        </article>
-        <article class="shot">
-          <div class="ph r45">[Still: jumbotron commercial]</div>
-          <span class="label muted">Produced in one day</span>
-          <h4>Jumbotron Commercial</h4>
-          <p>Produced, shot, and edited in one day. Aired at Inter Miami CF Stadium.</p>
-        </article>
-        <article class="shot">
-          <div class="ph r45">[Photo: product/studio, Scorpion soleplate]</div>
-          <span class="label muted">Product + studio</span>
-          <h4>Product Work</h4>
-          <p>Product and studio photography, shot and edited by me: Nike Scorpion Pack soleplate work, Predator, and F50 Messi.</p>
-        </article>
-      </div>
-      <div class="sports">
-        <div class="sports__head">
-          <span class="label muted">Sports photography / Imagine That Sports</span>
-          <h3>Matchday is home.</h3>
-          <p>Sports is my bread and butter behind the camera, next to lifestyle and brand work. I shot Austin FC on assignment for Imagine That Sports and wrote the published match recaps.</p>
-          <a class="link" href="#">Read a match recap ↗</a> <span class="missing">[MISSING: article URL]</span>
-        </div>
-        <div class="sports__grid">
-          <div class="ph r32 wide">[Photo 3:2: Austin FC matchday action]</div>
-          <div class="ph r45">[Photo 4:5: player moment]</div>
-          <div class="ph r45">[Photo 4:5: crowd / supporters]</div>
-          <div class="ph r45">[Photo 4:5: celebration]</div>
-        </div>
-      </div>
-      <div class="more">
-        <a class="link" href="#">See production work →</a>
-        <a class="link" href="#">Full photo portfolio ↗</a>
-        <span class="missing">[PORTFOLIO URL]</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOCK 4: WRITING -->
-  <section class="block" id="writing" aria-labelledby="b4">
-    <div class="wrap block__head">
-      <span class="label">05 / Copywriting</span>
-      <h2 class="display" id="b4">I write it too.</h2>
-      <p class="block__intro">Blogs, match recaps, campaign copy, and captions. Researched, fact-checked, and written for where it lives.</p>
-    </div>
-    <div class="wrap">
-      <ul class="writing">
-        <li class="blk-blue pad">
-          <span class="label muted">Blog / Soccer Post</span>
-          <div>
-            <h4>"On-Field vs Fan Jerseys: What's the Difference?"</h4>
-            <p>Part of the blog program I pitched and got greenlit. I write the posts and built the SEO structure: keyword-forward headers, FAQ blocks, and internal product linking.</p>
-          </div>
-          <a class="link" href="#">Read ↗</a>
-        </li>
-        <li>
-          <span class="label muted">Blog / Soccer Post</span>
-          <div>
-            <h4>"The Kits You Missed: 2026/27's Best New Home Kits"</h4>
-            <p>A kit roundup, built on the same SEO structure.</p>
-          </div>
-          <a class="link" href="#">Read ↗</a>
-        </li>
-        <li>
-          <span class="label muted">Match recap / Imagine That Sports</span>
-          <div>
-            <h4><span class="missing">[MISSING: recap title]</span></h4>
-            <p>A published Austin FC match recap, written on assignment.</p>
-          </div>
-          <a class="link" href="#">Read ↗</a>
-        </li>
-        <li>
-          <span class="label muted">Campaign copy</span>
-          <div>
-            <h4>Club América vs Austin FC Ticket Giveaway</h4>
-            <p>Campaign copy and compliance language for the giveaway, plus the entry mechanics behind it.</p>
-          </div>
-          <span></span>
-        </li>
-        <li>
-          <span class="label muted">Captions / Systems</span>
-          <div>
-            <h4>Caption architecture</h4>
-            <p>Fixed post skeletons, a five-hashtag structure, and a weekly template, so every account sounds consistent and the work can be handed off.</p>
-          </div>
-          <span></span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- QUOTE -->
-  <section class="block quote" aria-label="What people say">
-    <div class="wrap">
-      <figure class="blk-red pad" style="margin:0">
-        <blockquote>[QUOTE: one or two sentences from a manager, partner, or collaborator about working with you.]</blockquote>
-        <figcaption class="label muted">[NAME], [TITLE], [COMPANY]</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- TOOLS + BRANDS -->
-  <section class="block facts" aria-label="Tools and brands">
-    <div class="wrap">
-      <div>
-        <h3 class="sub">Tools</h3>
-        <ul class="plain">
-          <li>Photoshop</li>
-          <li>Lightroom</li>
-          <li>DaVinci Resolve</li>
-          <li>Metricool</li>
-        </ul>
-        <p class="label muted" style="margin:14px 0 6px">Working knowledge</p>
-        <ul class="plain plain--sm">
-          <li>Premiere Pro</li>
-          <li>Illustrator</li>
-          <li>Canva</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="sub">Content produced for Soccer Post featuring</h3>
-        <p class="brands">Nike, adidas, Puma, and Charly</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
+  <!-- 9. LET'S TALK -->
   <section class="cta" id="contact" aria-labelledby="cta">
     <div class="wrap">
       <span class="label">Hiring, or have a project?</span>
@@ -735,61 +537,31 @@ h3.sub { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-
     <span>© 2026</span>
   </div>
 </footer>
-<dialog class="lightbox" aria-label="Post">
-  <button class="lightbox__close" type="button">Close ✕</button>
-  <div class="lightbox__body"></div>
-</dialog>
 <script>
-/* Embeds: nothing from Instagram or TikTok loads until someone taps a post. */
-(function () {
-  var box = document.querySelector('.lightbox'), body = box.querySelector('.lightbox__body');
-  function load(src) { var s = document.createElement('script'); s.async = true; s.src = src; body.appendChild(s); }
-  document.querySelectorAll('.embed').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var url = btn.dataset.url;
-      if (btn.dataset.embed === 'instagram') {
-        body.innerHTML = '<blockquote class="instagram-media" data-instgrm-permalink="' + url + '" data-instgrm-version="14" style="margin:0;min-width:0;width:100%"></blockquote>';
-        if (window.instgrm) window.instgrm.Embeds.process(); else load('https://www.instagram.com/embed.js');
-      } else {
-        body.innerHTML = '<blockquote class="tiktok-embed" cite="' + url + '" data-video-id="' + btn.dataset.id + '" style="margin:0;min-width:0;max-width:605px"><section></section></blockquote>';
-        load('https://www.tiktok.com/embed.js');
-      }
-      box.showModal();
-    });
-  });
-  function close() { box.close(); }
-  box.querySelector('.lightbox__close').addEventListener('click', close);
-  box.addEventListener('click', function (e) { if (e.target === box) close(); });
-  box.addEventListener('close', function () { body.innerHTML = ''; });
-})();
-
-/* Reveal-on-scroll: plays once per element, then stops watching it. */
+/* Reveal-on-scroll: each piece eases in once, the first time it comes into view. */
 (function () {
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   document.documentElement.classList.add('js');
-  var sel = '.block h2, .cta h2, .stat, .row, .acct, .tile, .shot, .wc, .design__copy, .feature, .sports, .writing li, .list li, .quote figure, .facts .wrap > div';
+  var sel = '.sec h2, .cta h2, .stat, .case, .accts, .decision, .systems, .artifacts, .item, .prod__item, .list, .quote, .tools';
   var els = document.querySelectorAll(sel);
   var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('in'); if (e.target._rv) e.target._rv.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
   els.forEach(function (el) {
-    el.classList.add(el.matches('.blk-blue, .blk-red') ? 'wipe' : 'rv');
-    if (el.matches('.stat, .tile, .shot, .acct')) el.classList.add('pop');
+    el.classList.add('rv');
+    if (el.matches('.stat, .case, .item')) el.classList.add('pop');
     var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.matches(sel); });
-    el.style.setProperty('--d', Math.min(sibs.indexOf(el), 4) * 90 + 'ms');
-    /* A fully clipped element never reports as visible, so wipes watch a wrapper instead */
-    if (el.classList.contains('wipe')) { var w = el.parentNode; w._rv = el; io.observe(w); } else io.observe(el);
+    el.style.setProperty('--d', Math.min(sibs.indexOf(el), 3) * 90 + 'ms');
+    io.observe(el);
   });
-  /* Safety net: anything already scrolled past gets revealed, even on very fast scrolls */
+  /* Safety net for very fast scrolls */
   var tick = false;
   addEventListener('scroll', function () {
     if (tick) return; tick = true;
     requestAnimationFrame(function () {
       tick = false;
-      document.querySelectorAll('.rv:not(.in), .wipe:not(.in)').forEach(function (el) {
-        if (el.getBoundingClientRect().top < innerHeight * 0.92) el.classList.add('in');
+      document.querySelectorAll('.rv:not(.in)').forEach(function (el) {
+        if (el.getBoundingClientRect().top < innerHeight * 0.94) el.classList.add('in');
       });
     });
   }, { passive: true });
