@@ -14,6 +14,7 @@ Updated Oct 14 after your answers. Done items are checked. Cut items (BTS photo,
 - [x] Light-trail boot model
 - [x] Destino brand and project
 - [x] "All practical, no composites"
+- [ ] **Jordan studio shoot:** what was it for (national launch post?), and any result: views, saves, or how it was used. Did you also shoot and edit the video?
 - [ ] **Titles:** do your titles on the page match LinkedIn exactly? Send your LinkedIn titles if any differ.
 - [x] Portfolio URL
 

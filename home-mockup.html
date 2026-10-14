@@ -169,10 +169,25 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .item:hover .ph, .item:hover img { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--ink); }
 .item h3 { font-family: var(--display); font-weight: 800; font-stretch: 100%; font-size: 15px; line-height: 1.2; margin: 0; }
 .item__n { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: 18px; line-height: 1; }
-.make:has(#f-video:checked) .item:not([data-type="video"]),
-.make:has(#f-design:checked) .item:not([data-type="design"]),
-.make:has(#f-photo:checked) .item:not([data-type="photo"]),
-.make:has(#f-writing:checked) .item:not([data-type="writing"]) { display: none; }
+.make:has(#f-brand:checked) .item:not([data-type~="brand"]),
+.make:has(#f-video:checked) .item:not([data-type~="video"]),
+.make:has(#f-design:checked) .item:not([data-type~="design"]),
+.make:has(#f-photo:checked) .item:not([data-type~="photo"]),
+.make:has(#f-writing:checked) .item:not([data-type~="writing"]) { display: none; }
+.item--wide { grid-column: 1 / -1; gap: 0; border: var(--rule); }
+.item--wide img { aspect-ratio: 16 / 9 !important; border: 0; }
+.item--wide:hover img { transform: none; box-shadow: none; }
+.item__body { padding: 16px; }
+.item__body p { font-size: 14px; margin: 6px 0 0; }
+@media (min-width: 900px) { .item--wide { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); } .item--wide img { height: 100%; } .item__body { padding: 24px; align-self: center; } }
+/* Studio case study */
+.case--studio { margin-top: 20px; display: grid; gap: 18px; }
+.studio__media .phone { max-width: 200px; }
+@media (min-width: 900px) { .studio__media .phone { max-width: 260px; } }
+.studio__media video { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; display: block; background: #000; }
+.studio__strip { display: grid; grid-auto-flow: column; grid-auto-columns: 42%; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+.studio__strip img { scroll-snap-align: start; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: var(--hair); }
+@media (min-width: 900px) { .case--studio { grid-template-columns: 280px minmax(0, 1fr); align-items: start; gap: 28px; } .studio__strip { grid-auto-flow: row; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; } }
 
 /* 5b. Photography */
 .shots { display: grid; grid-auto-flow: column; grid-auto-columns: 72%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin: 0; }
@@ -258,8 +273,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
     <nav class="nav" aria-label="Main">
       <a href="#work">Work</a>
       <a href="#social">Social</a>
-      <a href="#make">Content</a>
-      <a href="#photo">Photo</a>
+      <a href="#make">The work</a>
       <a href="#about">About</a>
     </nav>
     <div class="head-cta"><a class="btn" href="#contact">Get In Touch</a></div>
@@ -306,9 +320,9 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       <div class="sec__head">
         <span class="label">Featured case studies</span>
         <h2 class="display" id="work-h">The work, by the numbers.</h2>
-        <p class="sec__intro">Three projects. Goal, what I did, the result, and what I'd do next.</p>
+        <p class="sec__intro">Four projects. Goal, what I did, the result, and what I'd do next.</p>
       </div>
-      <span class="swipe label muted">Swipe for all three →</span>
+      <span class="swipe label muted">Swipe for all three, then the studio shoot below →</span>
       <div class="cases">
         <article class="case blk-blue">
           <span class="label">01 / TonyMakesVlogs</span>
@@ -347,6 +361,30 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <div class="links"><a class="link" href="#">Read the case study →</a></div>
         </article>
       </div>
+      <article class="case case--studio">
+        <div class="studio__media">
+          <div class="phone"><video class="r916" src="assets/video/tiempo-jordan.mp4" poster="assets/video/tiempo-jordan-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Vertical video from the Nike Tiempo x Jordan SE studio shoot"></video></div>
+        </div>
+        <div class="studio__body">
+          <span class="label muted">04 / Studio shoot</span>
+          <h3>Nike Tiempo x Jordan SE. One boot, a full studio set.</h3>
+          <dl>
+            <div><dt>Goal</dt><dd>Make a premium boot drop look premium on the national accounts. <span class="missing">[VERIFY]</span></dd></div>
+            <div><dt>What I did</dt><dd>Lit, shot, and edited the whole set myself: hero shots on a red sweep, macro details of the leather, soleplate, and heel, styled flat lays, and a vertical video. All practical, edited in Lightroom.</dd></div>
+            <div><dt>Result</dt><dd><span class="missing">[MISSING: views, saves, or how it was used]</span></dd></div>
+          </dl>
+          <div class="studio__strip">
+            <img src="assets/img/jordan/pair-800.jpg" srcset="assets/img/jordan/pair-800.jpg 800w, assets/img/jordan/pair-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="The Nike Tiempo x Jordan SE pair on a red sweep, one boot showing the soleplate" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/sole-800.jpg" srcset="assets/img/jordan/sole-800.jpg 800w, assets/img/jordan/sole-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Macro of the translucent soleplate with the Jumpman logo" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/jumpman-800.jpg" srcset="assets/img/jordan/jumpman-800.jpg 800w, assets/img/jordan/jumpman-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Close-up of the black Jumpman on the elephant-print panel" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/toe-800.jpg" srcset="assets/img/jordan/toe-800.jpg 800w, assets/img/jordan/toe-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Toe box detail showing the embossed leather texture" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/heels-800.jpg" srcset="assets/img/jordan/heels-800.jpg 800w, assets/img/jordan/heels-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Both heels side by side with the Maestro script" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/insole-800.jpg" srcset="assets/img/jordan/insole-800.jpg 800w, assets/img/jordan/insole-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Insole printed with Transcend the Game" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/bag-800.jpg" srcset="assets/img/jordan/bag-800.jpg 800w, assets/img/jordan/bag-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="The boots on a grey boot bag with gold studs" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/heel23-800.jpg" srcset="assets/img/jordan/heel23-800.jpg 800w, assets/img/jordan/heel23-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Heel detail with the number 23" width="1600" height="2000" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -400,18 +438,27 @@ p { margin: 0 0 .8em; max-width: 62ch; }
   <section class="sec make" id="make" aria-labelledby="make-h">
     <div class="wrap">
       <div class="sec__head">
-        <span class="label">Everything I make</span>
+        <span class="label">The work</span>
         <h2 class="display" id="make-h">I make it too.</h2>
-        <p class="sec__intro">Video, design, photo, and writing, made by me.</p>
+        <p class="sec__intro">Brand shoots, photo, video, design, and writing. Shot, designed, and written by me. Photos are all practical, edited in Lightroom.</p>
       </div>
       <div class="filters" role="radiogroup" aria-label="Filter work">
         <input type="radio" name="f" id="f-all" checked><label for="f-all">All</label>
+        <input type="radio" name="f" id="f-brand"><label for="f-brand">Brand</label>
+        <input type="radio" name="f" id="f-photo"><label for="f-photo">Photo</label>
         <input type="radio" name="f" id="f-video"><label for="f-video">Video</label>
         <input type="radio" name="f" id="f-design"><label for="f-design">Design</label>
-        <input type="radio" name="f" id="f-photo"><label for="f-photo">Photo</label>
         <input type="radio" name="f" id="f-writing"><label for="f-writing">Writing</label>
       </div>
       <div class="grid">
+        <article class="item item--wide blk-blue" data-type="brand photo">
+          <img src="assets/img/photo/charly-wide-1200.jpg" srcset="assets/img/photo/charly-wide-1200.jpg 1200w, assets/img/photo/charly-wide-2400.jpg 2400w" sizes="(min-width: 900px) 50vw, 100vw" alt="Close-up of a model's hand at the collar of a green Charly Orgullo México jersey with a gold cross necklace" width="2400" height="1350" loading="lazy" decoding="async">
+          <div class="item__body">
+            <span class="label">Brand collaboration</span>
+            <h3>Charly Heritage Collection</h3>
+            <p>Produced, shot, and edited a downtown Austin apparel and street style shoot, published as a four-way collab with Charly USA, Charly Fútbol, Soccer Post, and Soccer Post ATX. It drove traffic to the site, but the bigger win was community: a flood of compliments from other Soccer Post market accounts and customers, and real brand trust between Soccer Post and Charly.</p>
+          </div>
+        </article>
         <article class="item" data-type="video">
           <div class="ph">[MP4 loop, muted: adidas F50 reel]</div>
           <span class="label muted">Video</span>
@@ -448,75 +495,43 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <h3>"On-Field vs Fan Jerseys: What's the Difference?"</h3>
           <a class="link" href="#">Read ↗</a>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5b. PHOTOGRAPHY -->
-  <section class="sec" id="photo" aria-labelledby="photo-h">
-    <div class="wrap">
-      <div class="sec__head">
-        <span class="label">Photography</span>
-        <h2 class="display" id="photo-h">Shot and edited.</h2>
-        <p class="sec__intro">Product, apparel, and street photography, shot by me and edited in Lightroom. All practical, no composites.</p>
-      </div>
-      <span class="swipe label muted">Swipe for more →</span>
-      <div class="shots">
-        <figure class="shot">
-          <img src="assets/img/photo/f50-salah-800.jpg" srcset="assets/img/photo/f50-salah-800.jpg 800w, assets/img/photo/f50-salah-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 72vw" alt="adidas F50 Elite boots in white and gold on a reflective surface, warm backlight" width="1600" height="2000" loading="lazy" decoding="async">
-          <figcaption><span class="label muted">Product</span>adidas F50 Elite, Mo Salah</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/img/photo/tiempo-jordan-800.jpg" srcset="assets/img/photo/tiempo-jordan-800.jpg 800w, assets/img/photo/tiempo-jordan-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 72vw" alt="Red Nike Tiempo x Jordan boots on a red sweep, one showing the soleplate" width="1600" height="2000" loading="lazy" decoding="async">
-          <figcaption><span class="label muted">Product</span>Nike Tiempo x Jordan</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/img/photo/kobe-phantom-800.jpg" srcset="assets/img/photo/kobe-phantom-800.jpg 800w, assets/img/photo/kobe-phantom-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 72vw" alt="Nike Phantom boots in black and cream on green, low side light" width="1600" height="2000" loading="lazy" decoding="async">
-          <figcaption><span class="label muted">Product</span>Nike x Kobe Phantom</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/img/photo/light-trails-800.jpg" srcset="assets/img/photo/light-trails-800.jpg 800w, assets/img/photo/light-trails-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 72vw" alt="Red and silver Nike boot with red and blue light trails, reflected on black" width="1600" height="2000" loading="lazy" decoding="async">
-          <figcaption><span class="label muted">Product</span>Nike Mercurial Vapor 16 Elite "VJR". Delayed pop flash, a blue-gelled edge light, and a slow shutter.</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/img/photo/swiss-jersey-800.jpg" srcset="assets/img/photo/swiss-jersey-800.jpg 800w, assets/img/photo/swiss-jersey-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 72vw" alt="Red Puma Switzerland jersey lit by a narrow beam against black" width="1600" height="2000" loading="lazy" decoding="async">
-          <figcaption><span class="label muted">Apparel</span>Puma Switzerland home jersey</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/img/photo/swiss-detail-800.jpg" srcset="assets/img/photo/swiss-detail-800.jpg 800w, assets/img/photo/swiss-detail-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 72vw" alt="Close-up of the Switzerland jersey crest, Puma logo, and knit texture" width="1600" height="2000" loading="lazy" decoding="async">
-          <figcaption><span class="label muted">Apparel</span>Switzerland jersey, fabric detail</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/img/photo/charly-heritage-800.jpg" srcset="assets/img/photo/charly-heritage-800.jpg 800w, assets/img/photo/charly-heritage-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 72vw" alt="Model in a green Charly Orgullo México jersey and wide-leg jeans sitting on outdoor stairs" width="1600" height="2000" loading="lazy" decoding="async">
-          <figcaption><span class="label muted">Apparel / street</span>Charly Heritage Collection</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 72vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
-          <figcaption><span class="label muted">Apparel / freelance</span>Destino, local Austin streetwear</figcaption>
-        </figure>
-      </div>
-      <p class="shots__note"><a class="link" href="https://gaelmezamedia.myportfolio.com">Full photo portfolio ↗</a></p>
-    </div>
-  </section>
-
-  <!-- 6. BRAND-LEVEL PRODUCTION -->
-  <section class="sec" aria-labelledby="prod-h">
-    <div class="wrap">
-      <div class="sec__head">
-        <span class="label">Brand-level production</span>
-        <h2 class="display" id="prod-h">Produced, shot, and edited.</h2>
-      </div>
-      <div class="prod prod--one">
-        <article class="prod__item">
-          <img src="assets/img/photo/charly-wide-1200.jpg" srcset="assets/img/photo/charly-wide-1200.jpg 1200w, assets/img/photo/charly-wide-2400.jpg 2400w" sizes="(min-width: 900px) 60vw, 100vw" alt="Close-up of a model's hand at the collar of a green Charly Orgullo México jersey with a gold cross necklace" width="2400" height="1350" loading="lazy" decoding="async">
-          <div class="prod__copy blk-blue">
-            <span class="label">Brand collaboration</span>
-            <h3>Charly Heritage Collection</h3>
-            <p>Produced, shot, and edited a downtown Austin apparel and street style shoot, published as a four-way collab with Charly USA, Charly Fútbol, Soccer Post, and Soccer Post ATX.</p>
-            <p><b>Result:</b> It drove traffic to the site, but the bigger win was community. Other Soccer Post market accounts and regular customers flooded it with compliments, and it built real brand trust between Soccer Post and Charly. Community drives sales, not the other way around.</p>
-          </div>
+        <article class="item" data-type="photo">
+          <img src="assets/img/photo/f50-salah-800.jpg" srcset="assets/img/photo/f50-salah-800.jpg 800w, assets/img/photo/f50-salah-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="adidas F50 Elite boots in white and gold on a reflective surface, warm backlight" width="1600" height="2000" loading="lazy" decoding="async">
+          <span class="label muted">Photo / Product</span>
+          <h3>adidas F50 Elite, Mo Salah</h3>
+        </article>
+        <article class="item" data-type="photo">
+          <img src="assets/img/photo/kobe-phantom-800.jpg" srcset="assets/img/photo/kobe-phantom-800.jpg 800w, assets/img/photo/kobe-phantom-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Nike Phantom boots in black and cream on green, low side light" width="1600" height="2000" loading="lazy" decoding="async">
+          <span class="label muted">Photo / Product</span>
+          <h3>Nike x Kobe Phantom</h3>
+        </article>
+        <article class="item" data-type="photo">
+          <img src="assets/img/photo/light-trails-800.jpg" srcset="assets/img/photo/light-trails-800.jpg 800w, assets/img/photo/light-trails-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Red and silver Nike boot with red and blue light trails, reflected on black" width="1600" height="2000" loading="lazy" decoding="async">
+          <span class="label muted">Photo / Product</span>
+          <h3>Nike Mercurial Vapor 16 Elite "VJR". Delayed pop flash, a blue-gelled edge light, and a slow shutter.</h3>
+        </article>
+        <article class="item" data-type="photo">
+          <img src="assets/img/photo/swiss-jersey-800.jpg" srcset="assets/img/photo/swiss-jersey-800.jpg 800w, assets/img/photo/swiss-jersey-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Red Puma Switzerland jersey lit by a narrow beam against black" width="1600" height="2000" loading="lazy" decoding="async">
+          <span class="label muted">Photo / Apparel</span>
+          <h3>Puma Switzerland home jersey</h3>
+        </article>
+        <article class="item" data-type="photo">
+          <img src="assets/img/photo/swiss-detail-800.jpg" srcset="assets/img/photo/swiss-detail-800.jpg 800w, assets/img/photo/swiss-detail-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Close-up of the Switzerland jersey crest, Puma logo, and knit texture" width="1600" height="2000" loading="lazy" decoding="async">
+          <span class="label muted">Photo / Apparel</span>
+          <h3>Switzerland jersey, fabric detail</h3>
+        </article>
+        <article class="item" data-type="photo">
+          <img src="assets/img/photo/charly-heritage-800.jpg" srcset="assets/img/photo/charly-heritage-800.jpg 800w, assets/img/photo/charly-heritage-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Model in a green Charly Orgullo México jersey and wide-leg jeans sitting on outdoor stairs" width="1600" height="2000" loading="lazy" decoding="async">
+          <span class="label muted">Photo / Apparel / street</span>
+          <h3>Charly Heritage Collection</h3>
+        </article>
+        <article class="item" data-type="photo">
+          <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
+          <span class="label muted">Photo / Apparel / freelance</span>
+          <h3>Destino, local Austin streetwear</h3>
         </article>
       </div>
+      <p class="shots__note"><a class="link" href="https://gaelmezamedia.myportfolio.com">Full photo portfolio ↗</a></p>
     </div>
   </section>
 
@@ -584,6 +599,8 @@ p { margin: 0 0 .8em; max-width: 62ch; }
   </div>
 </footer>
 <script>
+/* Respect reduced motion for the studio video */
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
 /* Reveal-on-scroll: each piece eases in once, the first time it comes into view. */
 (function () {
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
