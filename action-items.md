@@ -53,3 +53,4 @@ I fill everything in, update the live preview, and we build the remaining pages 
 ## Phone reels section (built, hidden until clips arrive)
 - [x] 4 mobile reels added (jersey printing, Panini exchange, in-store event, event aerial)
 - [ ] Optional: links for the 4 mobile reels
+- [ ] Future Hero Card post link (tile hidden until it arrives; it had a dead link)

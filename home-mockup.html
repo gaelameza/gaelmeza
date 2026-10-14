@@ -134,6 +134,16 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .case.blk-blue dt { color: rgba(255,255,255,.72); }
 .case--studio h3 { margin-bottom: 14px; }
 .studio__strip { margin-top: 18px; }
+/* Seamless carousel */
+.item--carousel { grid-column: 1 / -1; margin-top: 8px; }
+.seam { overflow-x: auto; border: var(--rule); background: var(--ink); scrollbar-width: thin; }
+.seam:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.seam__track { display: flex; list-style: none; margin: 0; padding: 0; width: max-content; }
+.seam__slide { position: relative; flex: 0 0 auto; width: 240px; }
+.seam__slide img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; }
+.seam__slide + .seam__slide::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; border-left: 2px dashed rgba(255,255,255,.85); z-index: 1; }
+.seam__n { position: absolute; top: 8px; left: 8px; font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .08em; color: #fff; background: rgba(0,0,0,.55); padding: 2px 5px; }
+@media (min-width: 900px) { .seam__slide { width: 360px; } }
 /* Phone reels */
 .reels { display: grid; grid-auto-flow: column; grid-auto-columns: 46%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
 .reel { scroll-snap-align: start; display: flex; flex-direction: column; gap: 6px; }
@@ -489,6 +499,12 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <a class="link" href="https://www.instagram.com/reel/DZabnakRrG5/">View original ↗</a>
         </article>
         <article class="item" data-type="video">
+          <video src="assets/video/oktoberfest.mp4" poster="assets/video/oktoberfest-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Unboxing an Oktoberfest Wiesn jersey"></video>
+          <span class="label muted">Video / Content pillar</span>
+          <h3>Oktoberfest Wiesn jersey unboxing</h3>
+          <a class="link" href="https://www.instagram.com/p/DeZq3JDxpgI/">View original ↗</a>
+        </article>
+        <article class="item" data-type="video">
           <video src="assets/video/f50-yamal.mp4" poster="assets/video/f50-yamal-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="adidas F50 Lamine Yamal boot, turned in hand against a red backdrop"></video>
           <span class="label muted">Video</span>
           <h3>adidas F50 "Football's Heartbreaker" (Lamine Yamal)</h3>
@@ -509,12 +525,14 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <a class="link" href="https://www.instagram.com/p/DdEwM-YlIsD/">View original ↗</a>
         </article>
         -->
+        <!-- Hidden until gael sends the post link (keeps the grid at 9)
         <article class="item" data-type="design">
           <img src="assets/img/future-hero-card/slide-1.png" alt="Make your own player card: cover slide of the Soccer Post Future Hero Card tutorial carousel" width="1080" height="1440" loading="lazy">
           <span class="label muted">Design</span>
           <h3>Future Hero Card: player card tutorial carousel</h3>
           <a class="link" href="#">View original ↗</a>
         </article>
+        -->
         <!-- Waiting on the cover image from gael (action-items.md)
         <article class="item" data-type="design">
           <div class="ph">[Image: launch carousel cover]</div>
@@ -554,6 +572,22 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
           <span class="label muted">Photo / Apparel / freelance</span>
           <h3>Destino, local Austin streetwear</h3>
+        </article>
+        <article class="item item--carousel" data-type="design">
+          <div class="seam" role="region" aria-label="Seamless Charly Heritage carousel, 8 slides. Scroll sideways." tabindex="0">
+            <ol class="seam__track">
+              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-01-800.jpg" srcset="assets/img/charly-carousel/slide-01-800.jpg 600w, assets/img/charly-carousel/slide-01-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">01</span></li>
+              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-02-800.jpg" srcset="assets/img/charly-carousel/slide-02-800.jpg 600w, assets/img/charly-carousel/slide-02-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">02</span></li>
+              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-03-800.jpg" srcset="assets/img/charly-carousel/slide-03-800.jpg 600w, assets/img/charly-carousel/slide-03-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">03</span></li>
+              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-04-800.jpg" srcset="assets/img/charly-carousel/slide-04-800.jpg 600w, assets/img/charly-carousel/slide-04-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">04</span></li>
+              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-05-800.jpg" srcset="assets/img/charly-carousel/slide-05-800.jpg 600w, assets/img/charly-carousel/slide-05-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">05</span></li>
+              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-06-800.jpg" srcset="assets/img/charly-carousel/slide-06-800.jpg 600w, assets/img/charly-carousel/slide-06-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">06</span></li>
+              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-07-800.jpg" srcset="assets/img/charly-carousel/slide-07-800.jpg 600w, assets/img/charly-carousel/slide-07-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">07</span></li>
+              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-08-800.jpg" srcset="assets/img/charly-carousel/slide-08-800.jpg 600w, assets/img/charly-carousel/slide-08-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">08</span></li>
+            </ol>
+          </div>
+          <span class="label muted">Design / Seamless carousel / scroll sideways</span>
+          <h3>Charly Heritage seamless carousel: 8 slides that flow as one image. Built from Charly's brand assets. Dashed lines mark each 3:4 Instagram slide.</h3>
         </article>
         <article class="item item--writing" data-type="writing">
           <span class="label muted">Writing / Soccer Post blog, written and built by me</span>
