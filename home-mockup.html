@@ -180,6 +180,23 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .item__body { padding: 16px; }
 .item__body p { font-size: 14px; margin: 6px 0 0; }
 @media (min-width: 900px) { .item--wide { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); } .item--wide img { height: 100%; } .item__body { padding: 24px; align-self: center; } }
+.item video { aspect-ratio: 1 / 1; width: 100%; height: auto; object-fit: cover; border: var(--hair); display: block; background: #000; }
+@media (min-width: 900px) { .item video { aspect-ratio: 4 / 5; } }
+.textcard { aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: space-between; padding: 14px; border: var(--rule); background: var(--paper); text-decoration: none; transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+.textcard:hover { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--ink); }
+.textcard__t { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: clamp(16px, 1.7vw, 22px); line-height: 1.05; text-transform: uppercase; }
+@media (min-width: 900px) { .textcard { aspect-ratio: 4 / 5; padding: 18px; } }
+/* Charly brand case */
+@media (min-width: 900px) { #charly .sec__head { grid-template-columns: minmax(0, 1fr); } }
+.brandcase { display: grid; gap: 12px; }
+.brandcase__video { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; border: var(--rule); background: #000; }
+.brandcase__body { padding: 18px; display: grid; gap: 12px; align-content: start; }
+.brandcase__body dl { margin: 0; display: grid; gap: 10px; }
+.brandcase__body dt { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.brandcase__body dd { margin: 0; font-size: 15px; }
+.brandcase__strip { display: grid; grid-auto-flow: column; grid-auto-columns: 60%; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; }
+.brandcase__strip img { scroll-snap-align: start; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: var(--hair); }
+@media (min-width: 900px) { .brandcase { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 20px; } .brandcase__strip { grid-column: 1 / -1; grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; gap: 20px; } }
 /* Studio case study */
 .case--studio { margin-top: 20px; display: grid; gap: 18px; }
 .studio__media .phone { max-width: 200px; }
@@ -299,7 +316,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
         <a class="btn btn--line" href="https://linkedin.com/in/gael-meza">LinkedIn ↗</a>
       </div>
       <div class="hero__side">
-        <div class="phone"><img class="r916" src="assets/img/photo/charly-street-916-540.jpg" srcset="assets/img/photo/charly-street-916-540.jpg 540w, assets/img/photo/charly-street-916-1080.jpg 1080w" sizes="(min-width: 900px) 320px, 60vw" alt="Model in a black Charly jersey on a downtown Austin street, from the Charly Heritage Collection shoot" width="1080" height="1920"></div>
+        <div class="phone"><img class="r916" src="assets/img/photo/light-trails-916-540.jpg" srcset="assets/img/photo/light-trails-916-540.jpg 540w, assets/img/photo/light-trails-916-1080.jpg 1080w" sizes="(min-width: 900px) 320px, 60vw" alt="Red Nike Mercurial boot with red and blue light trails, shot in studio" width="1080" height="1920"></div>
       </div>
     </div>
   </section>
@@ -430,7 +447,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
         <div class="ph">[Artifact: content calendar snapshot]</div>
         <div class="ph">[Artifact: caption template + voice guide side by side]</div>
       </div>
-      <p class="blogline"><span class="label">Blog + analytics</span><br>Pitched and built the Soccer Post blog with SEO structure and custom per-post reporting in Shopify Analytics (ShopifyQL). "On-Field vs Fan Jerseys" has 1,300 pageviews over 180 days. Recent posts: <a class="link" href="https://soccerpost.com/blogs/news/adidas-equipment-the-story-behind-soccer-s-most-iconic-kit-design">adidas Equipment kit history ↗</a> <a class="link" href="https://soccerpost.com/blogs/news/the-best-kit-drops-you-missed-during-the-world-cup">World Cup kit drops ↗</a> <a class="link" href="https://soccerpost.com/blogs/news/tried-true-classic-cleats">Classic cleats ↗</a> <a class="link" href="https://soccerpost.com/blogs/news/built-to-fly-breaking-down-speed-boots">Speed boots ↗</a></p>
+      <p class="blogline"><span class="label">Blog + analytics</span><br>Pitched and built the Soccer Post blog with SEO structure and custom per-post reporting in Shopify Analytics (ShopifyQL). "On-Field vs Fan Jerseys" has 1,300 pageviews over 180 days. More posts under Writing in <a class="link" href="#make">The work</a>.</p>
     </div>
   </section>
 
@@ -440,37 +457,34 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       <div class="sec__head">
         <span class="label">The work</span>
         <h2 class="display" id="make-h">I make it too.</h2>
-        <p class="sec__intro">Brand shoots, photo, video, design, and writing. Shot, designed, and written by me. Photos are all practical, edited in Lightroom.</p>
+        <p class="sec__intro">Photo, video, design, and writing, made by me. Photos are practical and edited in Lightroom unless marked otherwise.</p>
       </div>
       <div class="filters" role="radiogroup" aria-label="Filter work">
         <input type="radio" name="f" id="f-all" checked><label for="f-all">All</label>
-        <input type="radio" name="f" id="f-brand"><label for="f-brand">Brand</label>
         <input type="radio" name="f" id="f-photo"><label for="f-photo">Photo</label>
         <input type="radio" name="f" id="f-video"><label for="f-video">Video</label>
         <input type="radio" name="f" id="f-design"><label for="f-design">Design</label>
         <input type="radio" name="f" id="f-writing"><label for="f-writing">Writing</label>
       </div>
       <div class="grid">
-        <article class="item item--wide blk-blue" data-type="brand photo">
-          <img src="assets/img/photo/charly-wide-1200.jpg" srcset="assets/img/photo/charly-wide-1200.jpg 1200w, assets/img/photo/charly-wide-2400.jpg 2400w" sizes="(min-width: 900px) 50vw, 100vw" alt="Close-up of a model's hand at the collar of a green Charly Orgullo México jersey with a gold cross necklace" width="2400" height="1350" loading="lazy" decoding="async">
-          <div class="item__body">
-            <span class="label">Brand collaboration</span>
-            <h3>Charly Heritage Collection</h3>
-            <p>Produced, shot, and edited a downtown Austin apparel and street style shoot, published as a four-way collab with Charly USA, Charly Fútbol, Soccer Post, and Soccer Post ATX. It drove traffic to the site, but the bigger win was community: a flood of compliments from other Soccer Post market accounts and customers, and real brand trust between Soccer Post and Charly.</p>
-          </div>
-        </article>
         <article class="item" data-type="video">
-          <div class="ph">[MP4 loop, muted: adidas F50 reel]</div>
+          <video src="assets/video/f50-yamal.mp4" poster="assets/video/f50-yamal-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="adidas F50 Lamine Yamal boot, turned in hand against a red backdrop"></video>
           <span class="label muted">Video</span>
           <h3>adidas F50 "Football's Heartbreaker" (Lamine Yamal)</h3>
           <span class="item__n">490,950 views</span>
           <a class="link" href="https://www.tiktok.com/@soccerpostaustin/video/7613405934206946590">View original ↗</a>
         </article>
         <article class="item" data-type="design">
-          <div class="ph">[Image: SP Stats carousel cover]</div>
-          <span class="label muted">Design</span>
-          <h3>SP Stats carousel: Mexico and USMNT, Round of 16</h3>
-          <a class="link" href="#">View original ↗</a>
+          <img src="assets/img/jerseys/man-utd-away.jpg" alt="Soccer Post new arrivals graphic: Manchester United 2026/27 away jersey floating on a blue gradient" width="810" height="1080" loading="lazy" decoding="async">
+          <span class="label muted">Design / Template</span>
+          <h3>New arrivals jersey template: 10 kits in one system. Jersey shots are mine, backgrounds built in Photoshop.</h3>
+          <a class="link" href="https://www.instagram.com/p/Dctrjj1oECJ/">View original ↗</a>
+        </article>
+        <article class="item" data-type="design">
+          <div class="ph">[Image: first slide of the collage post]</div>
+          <span class="label muted">Design / Collage</span>
+          <h3>Graphic collage post built from brand assets</h3>
+          <a class="link" href="https://www.instagram.com/p/DdEwM-YlIsD/">View original ↗</a>
         </article>
         <article class="item" data-type="design">
           <img src="assets/img/future-hero-card/slide-1.png" alt="Make your own player card: cover slide of the Soccer Post Future Hero Card tutorial carousel" width="1080" height="1440" loading="lazy">
@@ -483,17 +497,6 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <span class="label muted">Design</span>
           <h3>Product launch carousel overlays</h3>
           <a class="link" href="https://www.instagram.com/p/Db3ZEWYIPpa/">View original ↗</a>
-        </article>
-        <article class="item" data-type="design">
-          <div class="ph">[Spec email: product launch, Flodesk-style layout]</div>
-          <span class="label muted">Design / Spec work</span>
-          <h3>Product launch email, designed and written as a spec piece</h3>
-        </article>
-        <article class="item" data-type="writing">
-          <div class="ph">[Image: blog post header]</div>
-          <span class="label muted">Writing</span>
-          <h3>"On-Field vs Fan Jerseys: What's the Difference?"</h3>
-          <a class="link" href="#">Read ↗</a>
         </article>
         <article class="item" data-type="photo">
           <img src="assets/img/photo/f50-salah-800.jpg" srcset="assets/img/photo/f50-salah-800.jpg 800w, assets/img/photo/f50-salah-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="adidas F50 Elite boots in white and gold on a reflective surface, warm backlight" width="1600" height="2000" loading="lazy" decoding="async">
@@ -521,17 +524,64 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <h3>Switzerland jersey, fabric detail</h3>
         </article>
         <article class="item" data-type="photo">
-          <img src="assets/img/photo/charly-heritage-800.jpg" srcset="assets/img/photo/charly-heritage-800.jpg 800w, assets/img/photo/charly-heritage-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Model in a green Charly Orgullo México jersey and wide-leg jeans sitting on outdoor stairs" width="1600" height="2000" loading="lazy" decoding="async">
-          <span class="label muted">Photo / Apparel / street</span>
-          <h3>Charly Heritage Collection</h3>
-        </article>
-        <article class="item" data-type="photo">
           <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
           <span class="label muted">Photo / Apparel / freelance</span>
           <h3>Destino, local Austin streetwear</h3>
         </article>
+        <article class="item item--text" data-type="writing">
+          <a class="textcard" href="#"><span class="label">Soccer Post blog</span><span class="textcard__t">On-Field vs Fan Jerseys: What's the Difference?</span></a>
+          <span class="label muted">Writing / 1,300 pageviews</span>
+          <a class="link" href="#">Read ↗</a>
+        </article>
+        <article class="item item--text" data-type="writing">
+          <a class="textcard" href="https://soccerpost.com/blogs/news/adidas-equipment-the-story-behind-soccer-s-most-iconic-kit-design"><span class="label">Soccer Post blog</span><span class="textcard__t">adidas Equipment: the story behind soccer's most iconic kit design</span></a>
+          <span class="label muted">Writing</span>
+          <a class="link" href="https://soccerpost.com/blogs/news/adidas-equipment-the-story-behind-soccer-s-most-iconic-kit-design">Read ↗</a>
+        </article>
+        <article class="item item--text" data-type="writing">
+          <a class="textcard" href="https://soccerpost.com/blogs/news/the-best-kit-drops-you-missed-during-the-world-cup"><span class="label">Soccer Post blog</span><span class="textcard__t">The best kit drops you missed during the World Cup</span></a>
+          <span class="label muted">Writing</span>
+          <a class="link" href="https://soccerpost.com/blogs/news/the-best-kit-drops-you-missed-during-the-world-cup">Read ↗</a>
+        </article>
+        <article class="item item--text" data-type="writing">
+          <a class="textcard" href="https://soccerpost.com/blogs/news/tried-true-classic-cleats"><span class="label">Soccer Post blog</span><span class="textcard__t">Tried and true: classic cleats</span></a>
+          <span class="label muted">Writing</span>
+          <a class="link" href="https://soccerpost.com/blogs/news/tried-true-classic-cleats">Read ↗</a>
+        </article>
+        <article class="item item--text" data-type="writing">
+          <a class="textcard" href="https://soccerpost.com/blogs/news/built-to-fly-breaking-down-speed-boots"><span class="label">Soccer Post blog</span><span class="textcard__t">Built to fly: breaking down speed boots</span></a>
+          <span class="label muted">Writing</span>
+          <a class="link" href="https://soccerpost.com/blogs/news/built-to-fly-breaking-down-speed-boots">Read ↗</a>
+        </article>
       </div>
       <p class="shots__note"><a class="link" href="https://gaelmezamedia.myportfolio.com">Full photo portfolio ↗</a></p>
+    </div>
+  </section>
+
+  <!-- 6. BRAND COLLABORATION: CHARLY -->
+  <section class="sec" id="charly" aria-labelledby="charly-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">Brand collaboration</span>
+        <h2 class="display" id="charly-h">Charly Heritage Collection.</h2>
+        <p class="sec__intro">My only official brand collab. Produced, shot, and edited start to finish.</p>
+      </div>
+      <div class="brandcase">
+        <video class="brandcase__video" src="assets/video/charly-heritage.mp4" poster="assets/video/charly-heritage-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Charly Heritage Collection film: models in Charly jerseys on downtown Austin streets"></video>
+        <div class="brandcase__body blk-blue">
+          <dl>
+            <div><dt>The brief</dt><dd>Launch Charly's Heritage Collection with Soccer Post and show our community a side of us that's cool and human, not just sales.</dd></div>
+            <div><dt>What I did</dt><dd>Produced, shot, and edited a downtown Austin apparel and street style shoot: stills and a short film. Published as a four-way collab with Charly USA, Charly Fútbol, Soccer Post, and Soccer Post ATX.</dd></div>
+            <div><dt>Result</dt><dd>It drove traffic to the site, but the bigger win was community: a flood of compliments from other Soccer Post market accounts and regular customers, and real brand trust between Soccer Post and Charly. Community drives sales, not the other way around.</dd></div>
+          </dl>
+          <a class="link" href="https://www.instagram.com/p/DeAZcDWRNvq/">Watch the film on Instagram ↗</a>
+        </div>
+        <div class="brandcase__strip">
+            <img src="assets/img/photo/charly-heritage-800.jpg" srcset="assets/img/photo/charly-heritage-800.jpg 800w, assets/img/photo/charly-heritage-1600.jpg 1600w" sizes="(min-width: 900px) 18vw, 60vw" alt="Model in a green Charly Orgullo México jersey and wide-leg jeans sitting on outdoor stairs" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/photo/charly-street-800.jpg" srcset="assets/img/photo/charly-street-800.jpg 800w, assets/img/photo/charly-street-1600.jpg 1600w" sizes="(min-width: 900px) 18vw, 60vw" alt="Model in a black Charly jersey on a downtown Austin street" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/photo/charly-detail-800.jpg" srcset="assets/img/photo/charly-detail-800.jpg 800w, assets/img/photo/charly-detail-1600.jpg 1600w" sizes="(min-width: 900px) 18vw, 60vw" alt="Close-up of a hand at the collar of the green Charly jersey with a gold cross necklace" width="1600" height="2000" loading="lazy" decoding="async">
+        </div>
+      </div>
     </div>
   </section>
 

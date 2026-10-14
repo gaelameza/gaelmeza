@@ -22,17 +22,15 @@ Updated Oct 14 after your answers. Done items are checked. Cut items (BTS photo,
 
 | What | Where it goes | Format and size |
 |---|---|---|
-| F50 reel video file | Everything I make | Vertical video, I'll crop it |
-| SP Stats carousel, first slide | Everything I make | Image, 4:5 |
+| Collage post, first slide | The work | Image, 4:5 |
 | Launch carousel, first slide | Everything I make | Image, 4:5 |
 | Blog post screenshot | Everything I make | Top of the "On-Field vs Fan Jerseys" post |
 | Resume PDF (when you have one) | A "Download Resume" button | One page, titles matching LinkedIn |
 
-Done: YouTube graph, Charly wide photo.
+Done: YouTube graph, Charly photos and film, F50 video, jersey template graphics.
 
 ## 3. Send me these links
 
-- [ ] SP Stats carousel post
 - [ ] Future Hero Card carousel post
 - [ ] "On-Field vs Fan Jerseys" blog post
 - [x] Other blog posts (4 added)
@@ -45,7 +43,6 @@ Done: YouTube graph, Charly wide photo.
   - a one-page monthly social report with made-up or rounded numbers
   - a sample week of your content calendar
   - your caption template next to your voice guide
-- [ ] **Spec email (optional):** say "go" and I'll draft a product-launch email (copy and layout). You build it in Flodesk or Canva and send me a screenshot. It gets labeled as spec work.
 - [ ] **Learn Figma basics.** It's the one tool Mello names that's missing from your list.
 - [ ] **Check your Instagram (@gaelmezamedia).** Hiring managers will click it, so make sure the top 9 posts are your best work.
 
