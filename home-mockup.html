@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gael Meza | Social Media Professional, Austin TX</title>
+<title>Gael Meza | Creative Content and Social, Austin TX</title>
 <meta name="description" content="Gael Meza runs social for a national soccer retailer and makes the content himself: video, design, photo, and copy. Austin, TX.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,9 +133,12 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .case dt { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .case.blk-blue dt { color: rgba(255,255,255,.72); }
 .case--studio h3 { margin-bottom: 14px; }
-.studio__strip { margin-top: 18px; }
+.studio__strip { margin-top: 4px; grid-column: 1 / -1; }
+.charly-carousel { margin-top: 20px; display: grid; gap: 6px; }
+.charly-carousel h3 { margin: 0; font-size: 15px; line-height: 1.25; }
+.accts-line { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 14px 0 0; }
+.tools-h { margin: 36px 0 14px; }
 /* Seamless carousel */
-.item--carousel { grid-column: 1 / -1; margin-top: 8px; }
 .seam { overflow-x: auto; border: var(--rule); background: var(--ink); scrollbar-width: thin; }
 .seam:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 .seam__track { display: flex; list-style: none; margin: 0; padding: 0; width: max-content; }
@@ -226,7 +229,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .studio__media video { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; display: block; background: #000; }
 .studio__strip { display: grid; grid-auto-flow: column; grid-auto-columns: 42%; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
 .studio__strip img { scroll-snap-align: start; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border: var(--hair); }
-@media (min-width: 900px) { .case--studio { grid-template-columns: 280px minmax(0, 1fr); align-items: start; gap: 28px; } .studio__strip { grid-auto-flow: row; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; } }
+@media (min-width: 900px) { .case--studio { grid-template-columns: 280px minmax(0, 1fr); align-items: start; gap: 28px; } .studio__strip { grid-auto-flow: row; grid-template-columns: repeat(8, minmax(0, 1fr)); overflow: visible; } }
 
 /* 5b. Photography */
 .shots { display: grid; grid-auto-flow: column; grid-auto-columns: 72%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin: 0; }
@@ -281,17 +284,8 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .foot { background: var(--ink); color: var(--paper); border-top: 1px solid #444; }
 .foot .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; padding-top: 16px; padding-bottom: 20px; }
 
-/* Motion: quiet and unhurried */
+/* Motion: quiet and unhurried. The hero shows instantly. */
 @media (prefers-reduced-motion: no-preference) {
-  .intro-h1 .m { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .04em; }
-  .intro-h1 .m > span { display: inline-block; transform: translateY(100%); animation: up 1.1s var(--ease) forwards; animation-delay: calc(var(--i) * 120ms + 150ms); }
-  .intro-h1 .stamp { display: inline-block; opacity: 0; animation: fade .9s var(--ease) 1s forwards; }
-  .hero__meta, .hero__line, .hero__open, .hero .ctas { opacity: 0; animation: rise 1s var(--ease) forwards; }
-  .hero__meta { animation-delay: .1s; }
-  .hero__line { animation-delay: .8s; }
-  .hero__open { animation-delay: .95s; }
-  .hero .ctas { animation-delay: 1.1s; }
-  .hero__side { opacity: 0; animation: fade 1.4s var(--ease) .5s forwards; }
   @keyframes up { to { transform: translateY(0); } }
   @keyframes fade { to { opacity: 1; } }
   @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -308,11 +302,10 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 
 <header class="site-head">
   <div class="wrap">
-    <a class="logo" href="#" aria-label="Gael Meza, home">Gael Meza</a>
+    <a class="logo" href="#main" aria-label="Gael Meza, home">Gael Meza</a>
     <nav class="nav" aria-label="Main">
-      <a href="#work">Work</a>
-      <a href="#social">Social</a>
-      <a href="#make">The work</a>
+      <a href="#make">Work</a>
+      <a href="#work">Case studies</a>
       <a href="#about">About</a>
     </nav>
     <div class="head-cta"><a class="btn" href="#contact">Get In Touch</a></div>
@@ -329,8 +322,8 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <span>Interim Social Media Director, Soccer Post</span>
           <span class="muted">Austin, TX</span>
         </div>
-        <h1 class="display intro-h1" aria-label="Social that moves the numbers."><span class="m" aria-hidden="true"><span style="--i:0">Social</span></span> <span class="m" aria-hidden="true"><span style="--i:1">that</span></span> <span class="m" aria-hidden="true"><span style="--i:2">moves</span></span> <span class="m" aria-hidden="true"><span style="--i:3">the</span></span> <span class="m" aria-hidden="true"><span style="--i:4">numbers</span></span><span class="red stamp" aria-hidden="true">.</span></h1>
-        <p class="hero__line">I'm Gael Meza, a social media professional in Austin, TX. I plan it, shoot it, design it, and write it, and I run the strategy and reporting behind it for a national soccer retailer.</p>
+        <h1 class="display">Social that moves the numbers<span class="red">.</span></h1>
+        <p class="hero__line"><span class="missing">[WRITE: hero intro, 2 sentences. Who you are and what you love making. Current: I plan it, shoot it, design it, and write it, and I run the strategy and reporting behind it for a national soccer retailer.]</span></p>
         <p class="hero__open label">Open to: Creative Content Manager, Social Media Manager, or Content Lead. Based in Austin, happy on-site.</p>
       </div>
       <div class="ctas">
@@ -349,139 +342,19 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       <div class="stat blk-blue"><div class="stat__n">6.9M</div><span class="label">Views on one creator collab. A company record.</span></div>
       <div class="stat"><div class="stat__n">5M+</div><span class="label muted">Views, Austin account, first year</span></div>
       <div class="stat"><div class="stat__n">130K+</div><span class="label muted">YouTube views in 30 days, on a channel quiet for a decade</span></div>
-      <div class="stat blk-red"><div class="stat__n">+19.4%</div><span class="label">Austin follower growth in 6 weeks (World Cup window)</span></div>
+      <div class="stat blk-red"><div class="stat__n">~800K</div><span class="label">World Cup views in six weeks, national and Austin</span></div>
     </div>
   </section>
 
-  <!-- 3. FEATURED CASE STUDIES -->
-  <section class="sec" id="work" aria-labelledby="work-h">
-    <div class="wrap">
-      <div class="sec__head">
-        <span class="label">Featured case studies</span>
-        <h2 class="display" id="work-h">The work, by the numbers.</h2>
-        <p class="sec__intro">Four projects. Goal, what I did, the result, and what I'd do next.</p>
-      </div>
-      <span class="swipe label muted">Swipe for all three, then the studio shoot below →</span>
-      <div class="cases">
-        <article class="case blk-blue">
-          <span class="label">01 / TonyMakesVlogs</span>
-          <h3>6.9M views. Cost: one pair of boots.</h3>
-          <dl>
-            <div><dt>Goal</dt><dd>Grow reach for the national account with no budget.</dd></div>
-            <div><dt>What I did</dt><dd>Spotted a creator mid-way through his "Becoming A Pro Soccer Player" series, playing in Copa Mundial boots with holes in them. Pitched the collab myself, coordinated the product, and ran it as a collab post so the reach credited Soccer Post.</dd></div>
-            <div><dt>Result</dt><dd>6.9M views, 579K likes, 53.4K shares, 19.6K saves. About 240x the account's ~29K followers at the time. Most-viewed content in company history. It was my first paid creator collab, and it showed me that a simple boot unboxing with a trending audio works, so I made that a content pillar.</dd></div>
-            <div><dt>What I'd do next</dt><dd>Funnel the new audience straight to the website: a CTA in the creator's caption, and a pinned post that tells new viewers who we are.</dd></div>
-          </dl>
-          <div class="links"><a class="link" href="#">Read the case study →</a><a class="link" href="https://www.instagram.com/reel/DcWGGlrOup4/">View original ↗</a></div>
-        </article>
 
-        <article class="case">
-          <span class="label muted">02 / YouTube revival</span>
-          <h3>130K+ views in 30 days.</h3>
-          <img class="yt-graph" src="assets/img/youtube-views-graph.png" alt="YouTube Studio lifetime views graph: flat for about a decade, then a sharp spike in 2026" width="1660" height="360" loading="lazy">
-          <dl>
-            <div><dt>Goal</dt><dd>Revive a channel that had barely posted in over a decade. Others had tried before me.</dd></div>
-            <div><dt>What I did</dt><dd>Took over as YouTube account manager and ran all of it: a new channel banner, our first YouTube Community, and our first Community post, which drew surprisingly strong engagement.</dd></div>
-            <div><dt>Result</dt><dd>Over 130,000 views and almost 300 new subscribers in the 30 days to Oct 14, 2026. September 2026, at about 80,000 views, was the channel's best month in roughly 15 years.</dd></div>
-            <div><dt>What I'd do next</dt><dd>Post quality long-form horizontal video on a steady schedule, built to be cut down and reused across our other platforms.</dd></div>
-          </dl>
-          <div class="links"><a class="link" href="#">Read the case study →</a><a class="link" href="https://www.youtube.com/@SoccerPostFC">View channel ↗</a></div>
-        </article>
-
-        <article class="case">
-          <span class="label muted">03 / World Cup content program</span>
-          <h3>~800K views in six weeks.</h3>
-          <dl>
-            <div><dt>Goal</dt><dd>Own the World Cup moment across the national and Austin accounts.</dd></div>
-            <div><dt>What I did</dt><dd>Concepted, researched, fact-checked, and produced the program: SP Stats carousels (Mexico and USMNT, Round of 16), a quarterfinals bracket, matchup graphics, and boot and kit content, all on a verify-before-publish rule.</dd></div>
-            <div><dt>Result</dt><dd>June 9 to July 21, 2026, national and Austin combined: ~800K views, ~266K accounts reached, ~40K interactions, ~994 net new followers.</dd></div>
-            <div><dt>What I'd do next</dt><dd>One reel took off far past the rest, and I didn't capitalize on it. Next time I'd have a plan ready to ride a hit the same week: a fast follow-up in the same format, a pinned post, and a short series built on what worked.</dd></div>
-          </dl>
-          <div class="links"><a class="link" href="#">Read the case study →</a></div>
-        </article>
-      </div>
-      <article class="case case--studio">
-        <div class="studio__media">
-          <div class="phone"><video class="r916" src="assets/video/tiempo-jordan.mp4" poster="assets/video/tiempo-jordan-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Vertical video from the Nike Tiempo x Jordan SE studio shoot"></video></div>
-        </div>
-        <div class="studio__body">
-          <span class="label muted">04 / Studio shoot</span>
-          <h3>Nike Tiempo x Jordan SE. One boot, a full studio set.</h3>
-          <dl>
-            <div><dt>Goal</dt><dd>Launch content for every Soccer Post market account, led by Austin.</dd></div>
-            <div><dt>What I did</dt><dd>Lit, shot, and edited the whole set myself. Stills on a clean red backdrop with a single gridded key light: hero shots, macro details of the leather, soleplate, and heel, and styled flat lays, edited in Lightroom. The vertical video uses one key light on a dark background to match the edge of the boot, shot by me and edited in DaVinci Resolve.</dd></div>
-            <div><dt>Result</dt><dd>Other market accounts chose my assets, so the set ran across the network, and the video went out on the national account. The Austin stores saw a big jump in in-store traffic.</dd></div>
-          </dl>
-          <div class="studio__strip">
-            <img src="assets/img/jordan/pair-800.jpg" srcset="assets/img/jordan/pair-800.jpg 800w, assets/img/jordan/pair-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="The Nike Tiempo x Jordan SE pair on a red sweep, one boot showing the soleplate" width="1600" height="2000" loading="lazy" decoding="async">
-            <img src="assets/img/jordan/sole-800.jpg" srcset="assets/img/jordan/sole-800.jpg 800w, assets/img/jordan/sole-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Macro of the translucent soleplate with the Jumpman logo" width="1600" height="2000" loading="lazy" decoding="async">
-            <img src="assets/img/jordan/jumpman-800.jpg" srcset="assets/img/jordan/jumpman-800.jpg 800w, assets/img/jordan/jumpman-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Close-up of the black Jumpman on the elephant-print panel" width="1600" height="2000" loading="lazy" decoding="async">
-            <img src="assets/img/jordan/toe-800.jpg" srcset="assets/img/jordan/toe-800.jpg 800w, assets/img/jordan/toe-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Toe box detail showing the embossed leather texture" width="1600" height="2000" loading="lazy" decoding="async">
-            <img src="assets/img/jordan/heels-800.jpg" srcset="assets/img/jordan/heels-800.jpg 800w, assets/img/jordan/heels-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Both heels side by side with the Maestro script" width="1600" height="2000" loading="lazy" decoding="async">
-            <img src="assets/img/jordan/insole-800.jpg" srcset="assets/img/jordan/insole-800.jpg 800w, assets/img/jordan/insole-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Insole printed with Transcend the Game" width="1600" height="2000" loading="lazy" decoding="async">
-            <img src="assets/img/jordan/bag-800.jpg" srcset="assets/img/jordan/bag-800.jpg 800w, assets/img/jordan/bag-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="The boots on a grey boot bag with gold studs" width="1600" height="2000" loading="lazy" decoding="async">
-            <img src="assets/img/jordan/heel23-800.jpg" srcset="assets/img/jordan/heel23-800.jpg 800w, assets/img/jordan/heel23-1600.jpg 1600w" sizes="(min-width: 900px) 15vw, 40vw" alt="Heel detail with the number 23" width="1600" height="2000" loading="lazy" decoding="async">
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- 4. HOW I RUN SOCIAL -->
-  <section class="sec" id="social" aria-labelledby="social-h">
-    <div class="wrap">
-      <div class="sec__head">
-        <span class="label">How I run social</span>
-        <h2 class="display" id="social-h">Planned, measured, repeatable.</h2>
-        <p class="sec__intro">Four accounts, one person, and the systems that keep it consistent.</p>
-      </div>
-      <div class="run">
-        <div class="accts">
-          <div class="acct">
-            <span class="label">National / Systems-driven</span>
-            <ul>
-              <li><a class="link" href="https://instagram.com/soccerpost">IG @soccerpost ↗</a></li>
-              <li><a class="link" href="https://www.tiktok.com/@soccerpost.fc">TikTok @soccerpost.fc ↗</a></li>
-              <li><a class="link" href="https://www.youtube.com/@SoccerPostFC">YouTube Soccer Post F.C ↗</a></li>
-            </ul>
-            <p>Planned, scheduled, and measured in Metricool, with an organic post when the moment calls for it.</p>
-          </div>
-          <div class="acct">
-            <span class="label">Austin / Community-driven</span>
-            <ul><li><a class="link" href="https://instagram.com/soccerpostatx">IG @soccerpostatx ↗</a></li></ul>
-            <p>Where I test ideas and build community. <b>5M+</b> views in my first year, and it regularly drives sales and foot traffic.</p>
-          </div>
-        </div>
-        <div class="decision blk-red">
-          <span class="label">Data to decision</span>
-          <q>Metricool's audience tool shows when each page is most active, so I plan posts around it. 4pm is our best slot so far on YouTube and TikTok.</q>
-          <span class="label">Plus: multi-platform scheduling saves me hours every week.</span>
-        </div>
-      </div>
-      <ul class="systems">
-        <li><b>Caption architecture</b>Fixed post skeletons and a five-hashtag structure</li>
-        <li><b>Voice guide</b>One voice per account: editorial, local, and TikTok-native</li>
-        <li><b>Multi-market assets</b>Unique selects per market to avoid duplicate-content reach suppression</li>
-        <li><b>Brand compliance</b>Neutral across Nike, adidas, and Puma, with verify-before-publish</li>
-      </ul>
-      <!-- Waiting on 3 sanitized artifacts from gael (action-items.md)
-      <div class="artifacts">
-        <div class="ph">[Artifact: one-page monthly social report]</div>
-        <div class="ph">[Artifact: content calendar snapshot]</div>
-        <div class="ph">[Artifact: caption template + voice guide side by side]</div>
-      </div>
-      -->
-      <p class="blogline"><span class="label">Blog + analytics</span><br>Pitched and built the Soccer Post blog with SEO structure and custom per-post reporting in Shopify Analytics (ShopifyQL). "On-Field vs Fan Jerseys" has 1,300 pageviews over 180 days. More posts under Writing in <a class="link" href="#make">The work</a>.</p>
-    </div>
-  </section>
 
   <!-- 5. EVERYTHING I MAKE -->
   <section class="sec make" id="make" aria-labelledby="make-h">
     <div class="wrap">
       <div class="sec__head">
-        <span class="label">The work</span>
+        <span class="label">Work</span>
         <h2 class="display" id="make-h">I make it too.</h2>
-        <p class="sec__intro">Photo, video, design, and writing, made by me. Photos are practical and edited in Lightroom unless marked otherwise.</p>
+        <p class="sec__intro"><span class="missing">[WRITE: one sentence on how you approach a shoot or a post. Fact to keep: photos are practical and edited in Lightroom unless marked otherwise.]</span></p>
       </div>
       <div class="filters" role="radiogroup" aria-label="Filter work">
         <input type="radio" name="f" id="f-all" checked><label for="f-all">All</label>
@@ -494,7 +367,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
         <article class="item item--feature" data-type="video">
           <video src="assets/video/ultimo-tango.mp4" poster="assets/video/ultimo-tango-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Unboxing the adidas F50 Ultimo Tango boot: hands lift the boot from its box and turn the soleplate"></video>
           <span class="label muted">Video / Content pillar</span>
-          <h3>adidas F50 "Ultimo Tango" unboxing. A simple format that became a Soccer Post pillar, redone with every new cleat.</h3>
+          <h3>adidas F50 "Ultimo Tango" unboxing</h3>
           <span class="item__n">104K views, 7.7K likes</span>
           <a class="link" href="https://www.instagram.com/reel/DZabnakRrG5/">View original ↗</a>
         </article>
@@ -573,26 +446,10 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <span class="label muted">Photo / Apparel / freelance</span>
           <h3>Destino, local Austin streetwear</h3>
         </article>
-        <article class="item item--carousel" data-type="design">
-          <div class="seam" role="region" aria-label="Seamless Charly Heritage carousel, 8 slides. Scroll sideways." tabindex="0">
-            <ol class="seam__track">
-              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-01-800.jpg" srcset="assets/img/charly-carousel/slide-01-800.jpg 600w, assets/img/charly-carousel/slide-01-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">01</span></li>
-              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-02-800.jpg" srcset="assets/img/charly-carousel/slide-02-800.jpg 600w, assets/img/charly-carousel/slide-02-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">02</span></li>
-              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-03-800.jpg" srcset="assets/img/charly-carousel/slide-03-800.jpg 600w, assets/img/charly-carousel/slide-03-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">03</span></li>
-              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-04-800.jpg" srcset="assets/img/charly-carousel/slide-04-800.jpg 600w, assets/img/charly-carousel/slide-04-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">04</span></li>
-              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-05-800.jpg" srcset="assets/img/charly-carousel/slide-05-800.jpg 600w, assets/img/charly-carousel/slide-05-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">05</span></li>
-              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-06-800.jpg" srcset="assets/img/charly-carousel/slide-06-800.jpg 600w, assets/img/charly-carousel/slide-06-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">06</span></li>
-              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-07-800.jpg" srcset="assets/img/charly-carousel/slide-07-800.jpg 600w, assets/img/charly-carousel/slide-07-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">07</span></li>
-              <li class="seam__slide"><img src="assets/img/charly-carousel/slide-08-800.jpg" srcset="assets/img/charly-carousel/slide-08-800.jpg 600w, assets/img/charly-carousel/slide-08-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">08</span></li>
-            </ol>
-          </div>
-          <span class="label muted">Design / Seamless carousel / scroll sideways</span>
-          <h3>Charly Heritage seamless carousel: 8 slides that flow as one image. Built from Charly's brand assets. Dashed lines mark each 3:4 Instagram slide.</h3>
-        </article>
         <article class="item item--writing" data-type="writing">
-          <span class="label muted">Writing / Soccer Post blog, written and built by me</span>
+          <span class="label muted">Writing / Soccer Post blog, which I pitched and built</span>
           <ul class="posts">
-            <li><a href="#"><span class="posts__t">On-Field vs Fan Jerseys: What's the Difference?</span><span class="label muted">1,300 pageviews</span><span class="posts__go">Read ↗</span></a></li>
+            <li><a><span class="posts__t">On-Field vs Fan Jerseys: What's the Difference?</span><span class="label muted">1,300 pageviews</span><span class="posts__go"><span class="missing">[MISSING: link]</span></span></a></li>
             <li><a href="https://soccerpost.com/blogs/news/adidas-equipment-the-story-behind-soccer-s-most-iconic-kit-design"><span class="posts__t">adidas Equipment: the story behind soccer's most iconic kit design</span><span class="posts__go">Read ↗</span></a></li>
             <li><a href="https://soccerpost.com/blogs/news/the-best-kit-drops-you-missed-during-the-world-cup"><span class="posts__t">The best kit drops you missed during the World Cup</span><span class="posts__go">Read ↗</span></a></li>
             <li><a href="https://soccerpost.com/blogs/news/tried-true-classic-cleats"><span class="posts__t">Tried and true: classic cleats</span><span class="posts__go">Read ↗</span></a></li>
@@ -604,36 +461,38 @@ p { margin: 0 0 .8em; max-width: 62ch; }
     </div>
   </section>
 
-  <!-- 5b. MOBILE CONTENT -->
-  <section class="sec" id="phone" aria-labelledby="phone-h">
+
+  <!-- STUDIO SHOOT -->
+  <section class="sec" id="studio" aria-labelledby="studio-h">
     <div class="wrap">
       <div class="sec__head">
-        <span class="label">Mobile content</span>
-        <h2 class="display" id="phone-h">In the moment.</h2>
-        <p class="sec__intro">Fun mobile content and recap posts from store events and community days.</p>
+        <span class="label">Studio shoot</span>
+        <h2 class="display" id="studio-h">One boot, a full studio set.</h2>
       </div>
-      <div class="reels">
-        <article class="reel">
-          <video src="assets/video/reels/jersey-print.mp4" poster="assets/video/reels/jersey-print-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="In-store jersey printing, shown with a hand-written caption"></video>
-          <span class="label muted">Store / Lifestyle</span>
-          <h3>"Come print a jersey without me"</h3>
-        </article>
-        <article class="reel">
-          <video src="assets/video/reels/panini-exchange.mp4" poster="assets/video/reels/panini-exchange-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Kids and fans trading Panini World Cup stickers at a Soccer Post store in Austin"></video>
-          <span class="label muted">Community event</span>
-          <h3>Panini sticker exchange, Austin</h3>
-        </article>
-        <article class="reel">
-          <video src="assets/video/reels/store-event.mp4" poster="assets/video/reels/store-event-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Fans filling a Soccer Post store during an in-store event"></video>
-          <span class="label muted">Recap</span>
-          <h3>In-store event day</h3>
-        </article>
-        <article class="reel">
-          <video src="assets/video/reels/event-aerial.mp4" poster="assets/video/reels/event-aerial-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Aerial view of fans gathering at a Puma tent outside a stadium"></video>
-          <span class="label muted">Recap</span>
-          <h3>Event day, from above</h3>
-        </article>
-      </div>
+      <article class="case case--studio">
+        <div class="studio__media">
+          <div class="phone"><video class="r916" src="assets/video/tiempo-jordan.mp4" poster="assets/video/tiempo-jordan-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Vertical video from the Nike Tiempo x Jordan SE studio shoot"></video></div>
+        </div>
+        <div class="studio__body">
+          <span class="label muted">Nike Tiempo x Jordan SE</span>
+          <h3>Lit, shot, and edited by me.</h3>
+          <dl>
+            <div><dt>Goal</dt><dd>Launch content for every Soccer Post market account, led by Austin.</dd></div>
+            <div><dt>What I did</dt><dd>Lit, shot, and edited the whole set myself. Stills on a clean red backdrop with a single gridded key light: hero shots, macro details of the leather, soleplate, and heel, and styled flat lays, edited in Lightroom. The vertical video uses one key light on a dark background to match the edge of the boot, shot by me and edited in DaVinci Resolve.</dd></div>
+            <div><dt>Result</dt><dd>Other market accounts chose my assets, so the set ran across the network, and the video went out on the national account. The Austin stores saw a big jump in in-store traffic.</dd></div>
+          </dl>
+        </div>
+        <div class="studio__strip">
+            <img src="assets/img/jordan/pair-800.jpg" srcset="assets/img/jordan/pair-800.jpg 800w, assets/img/jordan/pair-1600.jpg 1600w" sizes="(min-width: 900px) 12vw, 40vw" alt="The Nike Tiempo x Jordan SE pair on a red sweep, one boot showing the soleplate" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/sole-800.jpg" srcset="assets/img/jordan/sole-800.jpg 800w, assets/img/jordan/sole-1600.jpg 1600w" sizes="(min-width: 900px) 12vw, 40vw" alt="Macro of the translucent soleplate with the Jumpman logo" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/jumpman-800.jpg" srcset="assets/img/jordan/jumpman-800.jpg 800w, assets/img/jordan/jumpman-1600.jpg 1600w" sizes="(min-width: 900px) 12vw, 40vw" alt="Close-up of the black Jumpman on the elephant-print panel" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/toe-800.jpg" srcset="assets/img/jordan/toe-800.jpg 800w, assets/img/jordan/toe-1600.jpg 1600w" sizes="(min-width: 900px) 12vw, 40vw" alt="Toe box detail showing the embossed leather texture" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/heels-800.jpg" srcset="assets/img/jordan/heels-800.jpg 800w, assets/img/jordan/heels-1600.jpg 1600w" sizes="(min-width: 900px) 12vw, 40vw" alt="Both heels side by side with the Maestro script" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/insole-800.jpg" srcset="assets/img/jordan/insole-800.jpg 800w, assets/img/jordan/insole-1600.jpg 1600w" sizes="(min-width: 900px) 12vw, 40vw" alt="Insole printed with Transcend the Game" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/bag-800.jpg" srcset="assets/img/jordan/bag-800.jpg 800w, assets/img/jordan/bag-1600.jpg 1600w" sizes="(min-width: 900px) 12vw, 40vw" alt="The boots on a grey boot bag with gold studs" width="1600" height="2000" loading="lazy" decoding="async">
+            <img src="assets/img/jordan/heel23-800.jpg" srcset="assets/img/jordan/heel23-800.jpg 800w, assets/img/jordan/heel23-1600.jpg 1600w" sizes="(min-width: 900px) 12vw, 40vw" alt="Heel detail with the number 23" width="1600" height="2000" loading="lazy" decoding="async">
+          </div>
+      </article>
     </div>
   </section>
 
@@ -661,6 +520,102 @@ p { margin: 0 0 .8em; max-width: 62ch; }
             <img src="assets/img/photo/charly-street-800.jpg" srcset="assets/img/photo/charly-street-800.jpg 800w, assets/img/photo/charly-street-1600.jpg 1600w" sizes="(min-width: 900px) 18vw, 60vw" alt="Model in a black Charly jersey on a downtown Austin street" width="1600" height="2000" loading="lazy" decoding="async">
         </div>
       </div>
+      <div class="charly-carousel">
+        <div class="seam" role="region" aria-label="Seamless Charly Heritage carousel, 8 slides. Scroll sideways." tabindex="0">
+          <ol class="seam__track">
+            <li class="seam__slide"><img src="assets/img/charly-carousel/slide-01-800.jpg" srcset="assets/img/charly-carousel/slide-01-800.jpg 600w, assets/img/charly-carousel/slide-01-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">01</span></li>
+            <li class="seam__slide"><img src="assets/img/charly-carousel/slide-02-800.jpg" srcset="assets/img/charly-carousel/slide-02-800.jpg 600w, assets/img/charly-carousel/slide-02-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">02</span></li>
+            <li class="seam__slide"><img src="assets/img/charly-carousel/slide-03-800.jpg" srcset="assets/img/charly-carousel/slide-03-800.jpg 600w, assets/img/charly-carousel/slide-03-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">03</span></li>
+            <li class="seam__slide"><img src="assets/img/charly-carousel/slide-04-800.jpg" srcset="assets/img/charly-carousel/slide-04-800.jpg 600w, assets/img/charly-carousel/slide-04-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">04</span></li>
+            <li class="seam__slide"><img src="assets/img/charly-carousel/slide-05-800.jpg" srcset="assets/img/charly-carousel/slide-05-800.jpg 600w, assets/img/charly-carousel/slide-05-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">05</span></li>
+            <li class="seam__slide"><img src="assets/img/charly-carousel/slide-06-800.jpg" srcset="assets/img/charly-carousel/slide-06-800.jpg 600w, assets/img/charly-carousel/slide-06-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">06</span></li>
+            <li class="seam__slide"><img src="assets/img/charly-carousel/slide-07-800.jpg" srcset="assets/img/charly-carousel/slide-07-800.jpg 600w, assets/img/charly-carousel/slide-07-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">07</span></li>
+            <li class="seam__slide"><img src="assets/img/charly-carousel/slide-08-800.jpg" srcset="assets/img/charly-carousel/slide-08-800.jpg 600w, assets/img/charly-carousel/slide-08-1200.jpg 900w" sizes="(min-width: 900px) 360px, 240px" alt="" width="900" height="1200" loading="lazy" decoding="async"><span class="seam__n">08</span></li>
+          </ol>
+        </div>
+        <span class="label muted">Design / Seamless carousel / scroll sideways</span>
+        <h3>Seamless carousel: 8 slides that flow as one image, built from Charly's brand assets.</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURED CASE STUDIES -->
+  <section class="sec" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">Case studies</span>
+        <h2 class="display" id="work-h">By the numbers.</h2>
+      </div>
+      <div class="cases">
+        <article class="case blk-blue">
+          <span class="label">01 / TonyMakesVlogs</span>
+          <h3>6.9M views. Cost: one pair of boots.</h3>
+          <dl>
+            <div><dt>Goal</dt><dd>Grow reach for the national account with no budget.</dd></div>
+            <div><dt>What I did</dt><dd>Spotted a creator mid-way through his "Becoming A Pro Soccer Player" series, playing in Copa Mundial boots with holes in them. Pitched the collab myself, coordinated the product, and ran it as a collab post so the reach credited Soccer Post.</dd></div>
+            <div><dt>Result</dt><dd>6.9M views, 579K likes, 53.4K shares, 19.6K saves. About 240x the account's ~29K followers at the time. Most-viewed content in company history. It was my first paid creator collab, and it showed me that a simple boot unboxing with a trending audio works, so I made that a content pillar. It is still running: see the unboxings in <a class="link" href="#make">Work</a>.</dd></div>
+            <div><dt>What I'd do next</dt><dd>Funnel the new audience straight to the website: a CTA in the creator's caption, and a pinned post that tells new viewers who we are.</dd></div>
+          </dl>
+          <div class="links"><a class="link" href="https://www.instagram.com/reel/DcWGGlrOup4/">View original ↗</a></div>
+        </article>
+
+        <article class="case">
+          <span class="label muted">02 / YouTube revival</span>
+          <h3>130K+ views in 30 days.</h3>
+          <img class="yt-graph" src="assets/img/youtube-views-graph.png" alt="YouTube Studio lifetime views graph: flat for about a decade, then a sharp spike in 2026" width="1660" height="360" loading="lazy">
+          <dl>
+            <div><dt>Goal</dt><dd>Revive a channel that had barely posted in over a decade. Others had tried before me.</dd></div>
+            <div><dt>What I did</dt><dd>Took over as YouTube account manager and ran all of it: a new channel banner, our first YouTube Community, and our first Community post, which drew surprisingly strong engagement.</dd></div>
+            <div><dt>Result</dt><dd>Over 130,000 views and almost 300 new subscribers in the 30 days to Oct 14, 2026. September 2026, at about 80,000 views, was the channel's best month in roughly 15 years.</dd></div>
+            <div><dt>What I'd do next</dt><dd>Post quality long-form horizontal video on a steady schedule, built to be cut down and reused across our other platforms.</dd></div>
+          </dl>
+          <div class="links"><a class="link" href="https://www.youtube.com/@SoccerPostFC">View channel ↗</a></div>
+        </article>
+
+        <article class="case">
+          <span class="label muted">03 / World Cup content program</span>
+          <h3>~800K views in six weeks.</h3>
+          <dl>
+            <div><dt>Goal</dt><dd>Own the World Cup moment across the national and Austin accounts.</dd></div>
+            <div><dt>What I did</dt><dd>Concepted, researched, fact-checked, and produced the program: SP Stats carousels (Mexico and USMNT, Round of 16), a quarterfinals bracket, matchup graphics, and boot and kit content, all on a verify-before-publish rule.</dd></div>
+            <div><dt>Result</dt><dd>June 9 to July 21, 2026, national and Austin combined: ~800K views, ~266K accounts reached, ~40K interactions, ~994 net new followers.</dd></div>
+            <div><dt>What I'd do next</dt><dd>One reel took off far past the rest, and I didn't capitalize on it. Next time I'd have a plan ready to ride a hit the same week: a fast follow-up in the same format, a pinned post, and a short series built on what worked.</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE CONTENT -->
+  <section class="sec" id="phone" aria-labelledby="phone-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">Mobile content</span>
+        <h2 class="display" id="phone-h">In the moment.</h2>
+        <p class="sec__intro"><span class="missing">[WRITE: one sentence on these moments and why they matter to you.]</span></p>
+      </div>
+      <div class="reels">
+        <article class="reel">
+          <video src="assets/video/reels/jersey-print.mp4" poster="assets/video/reels/jersey-print-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="In-store jersey printing, shown with a hand-written caption"></video>
+          <span class="label muted">Store / Lifestyle</span>
+          <h3>"Come print a jersey without me"</h3>
+        </article>
+        <article class="reel">
+          <video src="assets/video/reels/panini-exchange.mp4" poster="assets/video/reels/panini-exchange-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Kids and fans trading Panini World Cup stickers at a Soccer Post store in Austin"></video>
+          <span class="label muted">Community event</span>
+          <h3>Panini sticker exchange, Austin</h3>
+        </article>
+        <article class="reel">
+          <video src="assets/video/reels/store-event.mp4" poster="assets/video/reels/store-event-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Fans filling a Soccer Post store during an in-store event"></video>
+          <span class="label muted">Recap</span>
+          <h3>In-store event day</h3>
+        </article>
+        <article class="reel">
+          <video src="assets/video/reels/event-aerial.mp4" poster="assets/video/reels/event-aerial-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Aerial view of fans gathering at a Puma tent outside a stadium"></video>
+          <span class="label muted">Recap</span>
+          <h3>Event day, from above</h3>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -668,50 +623,39 @@ p { margin: 0 0 .8em; max-width: 62ch; }
   <section class="sec" id="about" aria-labelledby="about-h">
     <div class="wrap">
       <div class="sec__head">
-        <span class="label">Experience</span>
+        <span class="label">About</span>
         <h2 class="display" id="about-h">Sales floor to national social.</h2>
-        <p class="sec__intro">One continuous run at one company. I came up on the sales floor, so I make content sales can actually use. <span class="missing">[VERIFY: titles match LinkedIn]</span></p>
+        <p class="sec__intro"><span class="missing">[WRITE: 3 to 4 sentences. How you went from the sales floor to national social, how you use data, and what you want next. Line worth keeping: I came up on the sales floor, so I make content sales can actually use.]</span></p>
       </div>
       <div class="exp">
         <ul class="list">
           <li class="now"><span class="label">May 2026, now</span><span><b>Interim Social Media Director</b>, Soccer Post, national</span></li>
-          <li><span class="label">Feb 2026, now</span><span><b>National Content Creator &amp; Social Strategist</b></span></li>
-          <li><span class="label">May 2025, now</span><span><b>Social Media Manager &amp; Producer</b>, Austin market</span></li>
+          <li><span class="label">Feb 2026, now</span><span><b>National Content Creator &amp; Social Strategist</b>, Soccer Post</span></li>
+          <li><span class="label">May 2025, now</span><span><b>Social Media Manager &amp; Producer</b>, Soccer Post, Austin market</span></li>
           <li><span class="label">2022 to 2025</span><span>Sales and early social roles at The Soccer Corner, now Soccer Post. Social from Oct 2024.</span></li>
-          <li><span class="label">Aug 2026</span><span>Shot Austin FC and wrote match recaps for Imagine That Sports</span></li>
-          <li><span class="label">Feb 2025, now</span><span><b>Founder, Gael Meza Media</b></span></li>
+          <li><span class="label">Feb 2025, now</span><span><b>Founder, Gael Meza Media</b>, freelance photo and video</span></li>
+          <li><span class="label">Aug 2026</span><span>Freelance: shot Austin FC and wrote match recaps for Imagine That Sports</span></li>
         </ul>
-        <!-- Waiting on a real testimonial from gael
-        <figure class="quote blk-red">
-          <blockquote>[QUOTE: from a creator, client, or partner]</blockquote>
-          <figcaption class="label">[NAME], [TITLE], [COMPANY]</figcaption>
-        </figure>
-        -->
+        <p class="accts-line label">Accounts I run: <a class="link" href="https://instagram.com/soccerpost">IG @soccerpost</a> <a class="link" href="https://www.tiktok.com/@soccerpost.fc">TikTok @soccerpost.fc</a> <a class="link" href="https://www.youtube.com/@SoccerPostFC">YouTube Soccer Post F.C</a> <a class="link" href="https://instagram.com/soccerpostatx">IG @soccerpostatx</a></p>
       </div>
-    </div>
-  </section>
-
-  <!-- 8. PLATFORMS AND TOOLS -->
-  <section class="sec" aria-labelledby="tools-h">
-    <div class="wrap">
-      <h2 class="label" id="tools-h" style="margin:0 0 14px">Platforms and tools</h2>
+      <h3 class="label tools-h">Platforms and tools</h3>
       <div class="tools">
         <div><span class="label muted">Platforms</span><span>Instagram, TikTok, YouTube</span></div>
         <div><span class="label muted">Analytics</span><span>Metricool, Meta Business Suite and Insights, YouTube Studio, Shopify Analytics (ShopifyQL)</span></div>
         <div><span class="label muted">Creative</span><span>Photoshop, Lightroom, DaVinci Resolve, Premiere Pro, Illustrator, Canva, CapCut</span></div>
       </div>
-      <p class="brandline">Content produced for Soccer Post featuring Nike, adidas, Puma, and Charly</p>
     </div>
   </section>
+
 
   <!-- 9. LET'S TALK -->
   <section class="cta" id="contact" aria-labelledby="cta">
     <div class="wrap">
       <span class="label">Hiring, or have a project?</span>
       <h2 class="display" id="cta">Let's talk<span class="red">.</span></h2>
-      <p>Open to full-time roles, plus social, content, and production projects.</p>
+      <p><span class="missing">[WRITE: one sentence on what someone should reach out to you for. Current: Open to full-time roles, plus social, content, and production projects.]</span></p>
       <div class="ctas">
-        <a class="btn" href="#">Get In Touch →</a>
+        <a class="btn" href="mailto:mezagaelalejandro@gmail.com">Get In Touch →</a>
         <a class="btn btn--line" href="https://linkedin.com/in/gael-meza">LinkedIn ↗</a>
       </div>
       <div class="cta__links label">
@@ -730,8 +674,16 @@ p { margin: 0 0 .8em; max-width: 62ch; }
   </div>
 </footer>
 <script>
-/* Respect reduced motion for the studio video */
-if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+/* Videos play only while on screen; reduced motion gets controls instead. */
+(function () {
+  var vids = document.querySelectorAll('video');
+  vids.forEach(function (v) { v.removeAttribute('autoplay'); });
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) { vids.forEach(function (v) { v.controls = true; }); return; }
+  var vio = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { var p = e.target.play(); if (p) p.catch(function () {}); } else e.target.pause(); });
+  }, { threshold: 0.25 });
+  vids.forEach(function (v) { vio.observe(v); });
+})();
 /* Reveal-on-scroll: each piece eases in once, the first time it comes into view. */
 (function () {
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
