@@ -266,6 +266,29 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .feat + .feat { margin-top: 28px; }
 @media (min-width: 900px) { .feat--flip > img { order: 2; } .feat--flip .feat__body { order: 1; } .feat--flip .feat__strip { order: 3; } .feat__strip--2 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
+/* Full-width design carousels */
+.item--carousel { grid-column: 1 / -1; gap: 12px; }
+.car { display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+.car img { scroll-snap-align: start; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border: var(--hair); }
+.item .car img { aspect-ratio: 3 / 4; }
+.car__copy { display: grid; gap: 6px; }
+.car__copy p { font-size: 15px; margin: 0; }
+@media (min-width: 900px) { .car { grid-auto-flow: row; grid-template-columns: repeat(5, minmax(0, 1fr)); overflow: visible; gap: 16px; } .car__copy { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); column-gap: 32px; align-items: start; } .car__copy .label { grid-column: 1 / -1; } }
+.feat__strip--3 { }
+@media (min-width: 900px) { .feat__strip--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Full-size viewer */
+.zoomable { cursor: zoom-in; }
+.viewer { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; }
+.viewer::backdrop { background: rgba(10, 10, 10, .92); }
+.viewer__stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 56px 12px 64px; }
+.viewer__stage img, .viewer__stage video { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.viewer button { position: fixed; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--paper); color: var(--ink); border: 0; padding: 10px 14px; cursor: pointer; z-index: 2; }
+.viewer__close { top: 12px; right: 12px; }
+.viewer__prev { left: 12px; bottom: 12px; }
+.viewer__next { right: 12px; bottom: 12px; }
+.viewer__count { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); color: #fff; font-family: var(--mono); font-size: 12px; }
+
 /* YouTube before / after */
 .ba { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: var(--hair); }
 .ba > div { padding: 10px 12px; display: grid; gap: 2px; font-size: 13px; }
@@ -400,11 +423,20 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <span class="item__n">490,950 views</span>
           <a class="link" href="https://www.tiktok.com/@soccerpostaustin/video/7613405934206946590">View original ↗</a>
         </article>
-        <article class="item" data-type="design">
-          <img src="assets/img/jerseys/man-utd-away.jpg" alt="Soccer Post new arrivals graphic: Manchester United 2026/27 away jersey floating on a blue gradient" width="810" height="1080" loading="lazy" decoding="async">
-          <span class="label muted">Design / Template</span>
-          <h3>New arrivals template: ten kits, one system. Jersey photography and Photoshop backgrounds by me.</h3>
-          <a class="link" href="https://www.instagram.com/p/Dctrjj1oECJ/">View original ↗</a>
+        <article class="item item--carousel" data-type="design">
+          <div class="car" data-gallery="jerseys">
+            <img src="assets/img/jerseys/man-utd-away.jpg" alt="Soccer Post new arrivals graphic: Manchester United 2026/27 away jersey on the template overlay" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/jerseys/arsenal-home.jpg" alt="Soccer Post new arrivals graphic: Arsenal 2026/27 home jersey on the template overlay" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/jerseys/juventus-third.jpg" alt="Soccer Post new arrivals graphic: Juventus 2026/27 third jersey on the template overlay" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/jerseys/dortmund-home.jpg" alt="Soccer Post new arrivals graphic: Borussia Dortmund 2026/27 home jersey on the template overlay" width="810" height="1080" loading="lazy" decoding="async">
+            <img src="assets/img/jerseys/man-city-away.jpg" alt="Soccer Post new arrivals graphic: Manchester City 2026/27 away jersey on the template overlay" width="810" height="1080" loading="lazy" decoding="async">
+          </div>
+          <div class="car__copy">
+            <span class="label muted">Design / Template graphic overlay</span>
+            <h3>New arrivals template: a graphic overlay I designed, built to take any kit.</h3>
+            <p>One reusable layout: Soccer Post branding, a headline slot for the kit name, a caption line, and a background I build in Photoshop to match each jersey's colors. I shoot the jersey, drop it in, and the post is done. Ten kits so far, five shown here.</p>
+            <a class="link" href="https://www.instagram.com/p/Dctrjj1oECJ/">View original ↗</a>
+          </div>
         </article>
         <!-- Waiting on the cover image from gael (action-items.md)
         <article class="item" data-type="design">
@@ -414,10 +446,18 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <a class="link" href="https://www.instagram.com/p/DdEwM-YlIsD/">View original ↗</a>
         </article>
         -->
-        <article class="item" data-type="design">
-          <img src="assets/img/future-hero-card/slide-1.png" alt="Make your own player card: cover slide of the Soccer Post Future Hero Card tutorial carousel" width="1080" height="1440" loading="lazy" decoding="async">
-          <span class="label muted">Design / Tutorial carousel</span>
-          <h3>Future Hero Card: a make-your-own player card, inspired by EA SPORTS FC. Designed, written, and edited by me.</h3>
+        <article class="item item--carousel" data-type="design">
+          <div class="car" data-gallery="fhc">
+            <img src="assets/img/future-hero-card/slide-1.jpg" alt="Future Hero Card carousel. Cover slide: Make your own player card" width="1080" height="1440" loading="lazy" decoding="async">
+            <img src="assets/img/future-hero-card/slide-2.jpg" alt="Future Hero Card carousel. Step 1: Pick your position, outfield or keeper" width="1080" height="1440" loading="lazy" decoding="async">
+            <img src="assets/img/future-hero-card/slide-3.jpg" alt="Future Hero Card carousel. Step 2: Add your photo in the Canva template" width="1080" height="1440" loading="lazy" decoding="async">
+            <img src="assets/img/future-hero-card/slide-4.jpg" alt="Future Hero Card carousel. Step 3: Rate yourself on all six stats" width="1080" height="1440" loading="lazy" decoding="async">
+            <img src="assets/img/future-hero-card/slide-5.jpg" alt="Future Hero Card carousel. Step 4: Post it and tag Soccer Post" width="1080" height="1440" loading="lazy" decoding="async">
+          </div>
+          <div class="car__copy">
+            <span class="label muted">Design / Tutorial carousel</span>
+            <h3>Future Hero Card: a make-your-own player card, inspired by EA SPORTS FC. Designed, written, and edited by me.</h3>
+          </div>
         </article>
         <article class="item" data-type="design">
           <img src="assets/img/charly-carousel/slide-01-800.jpg" alt="First slide of the seamless Charly Heritage carousel" width="900" height="1200" loading="lazy" decoding="async">
@@ -498,11 +538,10 @@ p { margin: 0 0 .8em; max-width: 62ch; }
             <div><dt>The approach</dt><dd>A simple setup that lets the message on the shirt carry the story.</dd></div>
           </dl>
         </div>
-        <div class="feat__strip">
+        <div class="feat__strip feat__strip--3">
           <img src="assets/img/destino/family-800.jpg" srcset="assets/img/destino/family-800.jpg 800w, assets/img/destino/family-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Family of three in Destino tees in front of a split cedar trunk" width="1600" height="2000" loading="lazy" decoding="async">
           <img src="assets/img/destino/portrait-800.jpg" srcset="assets/img/destino/portrait-800.jpg 800w, assets/img/destino/portrait-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Woman in a white Destino tee with gold hoops and a name necklace, lit by a soft key" width="1600" height="2000" loading="lazy" decoding="async">
           <img src="assets/img/destino/tree-800.jpg" srcset="assets/img/destino/tree-800.jpg 800w, assets/img/destino/tree-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Man in a black Destino tee framed by branches and a split trunk" width="1600" height="2000" loading="lazy" decoding="async">
-          <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 22vw, 60vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -772,6 +811,58 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       });
     });
   }, { passive: true });
+})();
+</script>
+<dialog class="viewer" aria-label="Full-size view">
+  <button class="viewer__close" type="button">Close ✕</button>
+  <div class="viewer__stage"></div>
+  <button class="viewer__prev" type="button">← Prev</button>
+  <button class="viewer__next" type="button">Next →</button>
+  <span class="viewer__count"></span>
+</dialog>
+<script>
+/* Full-size viewer: tap any photo, graphic, or video to see it large. Groups page through with arrows. */
+(function () {
+  var dlg = document.querySelector('.viewer');
+  if (!dlg || !dlg.showModal) return;
+  var stage = dlg.querySelector('.viewer__stage'), count = dlg.querySelector('.viewer__count');
+  var prev = dlg.querySelector('.viewer__prev'), next = dlg.querySelector('.viewer__next');
+  var list = [], idx = 0;
+  function big(el) {
+    if (el.tagName === 'VIDEO') return el.currentSrc || el.getAttribute('src');
+    var ss = el.getAttribute('srcset');
+    if (ss) { var parts = ss.split(',').map(function (x) { return x.trim().split(/\s+/)[0]; }); return parts[parts.length - 1]; }
+    return el.currentSrc || el.getAttribute('src');
+  }
+  function show() {
+    var el = list[idx]; stage.innerHTML = '';
+    var m;
+    if (el.tagName === 'VIDEO') { m = document.createElement('video'); m.src = big(el); m.controls = true; m.autoplay = true; m.loop = true; m.playsInline = true; }
+    else { m = document.createElement('img'); m.src = big(el); m.alt = el.alt || ''; }
+    stage.appendChild(m);
+    var many = list.length > 1;
+    prev.hidden = next.hidden = count.hidden = !many;
+    count.textContent = (idx + 1) + ' / ' + list.length;
+  }
+  function group(el) {
+    var g = el.closest('[data-gallery], .feat__strip, .studio__strip, .brandcase__strip, .seam__track, .reels');
+    if (!g) return [el];
+    return Array.prototype.slice.call(g.querySelectorAll('img, video'));
+  }
+  var targets = document.querySelectorAll('main .grid img, main .grid video, .car img, .feat img, .studio__strip img, .studio__media video, .brandcase img, .brandcase video, .seam img, .reel video, .case img');
+  targets.forEach(function (el) {
+    el.classList.add('zoomable');
+    el.setAttribute('tabindex', '0');
+    function open(e) { e.preventDefault(); list = group(el); idx = Math.max(0, list.indexOf(el)); show(); dlg.showModal(); }
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') open(e); });
+  });
+  prev.addEventListener('click', function () { idx = (idx - 1 + list.length) % list.length; show(); });
+  next.addEventListener('click', function () { idx = (idx + 1) % list.length; show(); });
+  dlg.querySelector('.viewer__close').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg || e.target === stage) dlg.close(); });
+  dlg.addEventListener('keydown', function (e) { if (list.length > 1 && e.key === 'ArrowLeft') prev.click(); if (list.length > 1 && e.key === 'ArrowRight') next.click(); });
+  dlg.addEventListener('close', function () { stage.innerHTML = ''; });
 })();
 </script>
 </body>
