@@ -7,7 +7,7 @@ Updated Oct 14 after your answers. Done items are checked. Cut items (BTS photo,
 - [x] Tony case study: what you'd do next
 - [x] YouTube revival: your role
 - [x] YouTube revival: what you'd do next
-- [ ] **World Cup program:** what would you do next? One sentence.
+- [x] World Cup program: what you'd do next (capitalize on the viral reel)
 - [x] Metricool / 4pm posting
 - [x] Charly Heritage results
 - [x] Accounts: 4
@@ -49,3 +49,6 @@ Done: YouTube graph, Charly photos and film, F50 video, jersey template graphics
 ## 5. When this list is done
 
 I fill everything in, update the live preview, and we build the remaining pages (case studies, About, Contact) so you can send Mello one link.
+
+## Phone reels section (built, hidden until clips arrive)
+- [ ] 3 to 4 lifestyle / recap reels shot on your phone (the original MP4s), plus the IG or TikTok link for each and views if you have them

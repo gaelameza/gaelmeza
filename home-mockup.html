@@ -134,6 +134,12 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .case.blk-blue dt { color: rgba(255,255,255,.72); }
 .case--studio h3 { margin-bottom: 14px; }
 .studio__strip { margin-top: 18px; }
+/* Phone reels */
+.reels { display: grid; grid-auto-flow: column; grid-auto-columns: 46%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+.reel { scroll-snap-align: start; display: flex; flex-direction: column; gap: 6px; }
+.reel video { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; display: block; border: var(--hair); background: #000; }
+.reel h3 { margin: 0; font-size: 15px; line-height: 1.2; }
+@media (min-width: 900px) { .reels { grid-auto-flow: row; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; overflow: visible; } }
 .case dd { margin: 0; font-size: 14px; }
 .case .links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 4px; }
 @media (min-width: 900px) { .cases { grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; overflow: visible; } }
@@ -378,7 +384,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
             <div><dt>Goal</dt><dd>Own the World Cup moment across the national and Austin accounts.</dd></div>
             <div><dt>What I did</dt><dd>Concepted, researched, fact-checked, and produced the program: SP Stats carousels (Mexico and USMNT, Round of 16), a quarterfinals bracket, matchup graphics, and boot and kit content, all on a verify-before-publish rule.</dd></div>
             <div><dt>Result</dt><dd>June 9 to July 21, 2026, national and Austin combined: ~800K views, ~266K accounts reached, ~40K interactions, ~994 net new followers.</dd></div>
-            <div><dt>What I'd do next</dt><dd><span class="missing">[MISSING]</span></dd></div>
+            <div><dt>What I'd do next</dt><dd>One reel took off far past the rest, and I didn't capitalize on it. Next time I'd have a plan ready to ride a hit the same week: a fast follow-up in the same format, a pinned post, and a short series built on what worked.</dd></div>
           </dl>
           <div class="links"><a class="link" href="#">Read the case study →</a></div>
         </article>
@@ -553,6 +559,20 @@ p { margin: 0 0 .8em; max-width: 62ch; }
         </article>
       </div>
       <p class="shots__note"><a class="link" href="https://gaelmezamedia.myportfolio.com">Full photo portfolio ↗</a></p>
+    </div>
+  </section>
+
+  <!-- 5b. PHONE REELS: hidden until gael sends the clips. To show: remove the hidden attribute and fill each tile.
+       Each tile: <article class="reel"><video src="assets/video/reels/NAME.mp4" poster="assets/video/reels/NAME-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="..."></video><span class="label muted">Recap</span><h3>Title</h3><a class="link" href="IG URL">View original ↗</a></article> -->
+  <section class="sec" id="phone" aria-labelledby="phone-h" hidden>
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">Lifestyle and recaps</span>
+        <h2 class="display" id="phone-h">Shot on my phone.</h2>
+        <p class="sec__intro">Lifestyle and recap reels, shot in the moment on my phone.</p>
+      </div>
+      <div class="reels">
+      </div>
     </div>
   </section>
 
