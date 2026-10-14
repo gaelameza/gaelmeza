@@ -251,6 +251,18 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .yt-graph { width: 100%; height: auto; border: var(--hair); background: #fff; }
 .phone img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; display: block; }
 
+/* Feature: Destino */
+.feat { display: grid; gap: 12px; }
+.feat > img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: var(--rule); }
+.feat__body { padding: 18px; display: grid; gap: 14px; align-content: start; }
+.feat__quote { margin: 0; font-family: var(--display); font-weight: 800; font-stretch: 100%; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.2; display: grid; gap: 8px; }
+.feat__body dl { margin: 0; display: grid; gap: 10px; }
+.feat__body dt { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.feat__body dd { margin: 0; font-size: 15px; }
+.feat__strip { display: grid; grid-auto-flow: column; grid-auto-columns: 60%; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; }
+.feat__strip img { scroll-snap-align: start; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: var(--hair); }
+@media (min-width: 900px) { .feat { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; } .feat__strip { grid-column: 1 / -1; grid-auto-flow: row; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; gap: 20px; } }
+
 /* YouTube before / after */
 .ba { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: var(--hair); }
 .ba > div { padding: 10px 12px; display: grid; gap: 2px; font-size: 13px; }
@@ -332,6 +344,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       <div class="ctas">
         <a class="btn" href="#contact">Get In Touch →</a>
         <a class="btn btn--line" href="https://linkedin.com/in/gael-meza">LinkedIn ↗</a>
+        <a class="btn btn--line" href="Gael-Meza-Resume.pdf" download>Resume ↓</a>
       </div>
     </div>
   </section>
@@ -418,6 +431,22 @@ p { margin: 0 0 .8em; max-width: 62ch; }
         </article>
         -->
         <article class="item" data-type="photo">
+          <img src="assets/img/destino/family-800.jpg" srcset="assets/img/destino/family-800.jpg 800w, assets/img/destino/family-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Family of three in Destino tees in front of a split cedar trunk" width="1600" height="2000" loading="lazy" decoding="async">
+          <span class="label muted">Photo / Apparel / freelance</span>
+          <h3>Destino restock campaign. One octabox, natural edge light.</h3>
+          <a class="link" href="#destino">See the shoot ↓</a>
+        </article>
+        <article class="item" data-type="photo">
+          <img src="assets/img/photo/swiss-jersey-800.jpg" srcset="assets/img/photo/swiss-jersey-800.jpg 800w, assets/img/photo/swiss-jersey-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Red Puma Switzerland jersey lit by a narrow beam against black" width="1600" height="2000" loading="lazy" decoding="async">
+          <span class="label muted">Photo / Apparel</span>
+          <h3>Puma Switzerland home jersey</h3>
+        </article>
+        <article class="item" data-type="photo">
+          <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
+          <span class="label muted">Photo / Apparel / freelance</span>
+          <h3>Destino, local Austin streetwear</h3>
+        </article>
+        <article class="item" data-type="photo">
           <img src="assets/img/photo/f50-salah-800.jpg" srcset="assets/img/photo/f50-salah-800.jpg 800w, assets/img/photo/f50-salah-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="adidas F50 Elite boots in white and gold on a reflective surface, warm backlight" width="1600" height="2000" loading="lazy" decoding="async">
           <span class="label muted">Photo / Product</span>
           <h3>adidas F50 Elite, Mo Salah</h3>
@@ -431,23 +460,6 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <img src="assets/img/photo/light-trails-800.jpg" srcset="assets/img/photo/light-trails-800.jpg 800w, assets/img/photo/light-trails-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Red and silver Nike boot with red and blue light trails, reflected on black" width="1600" height="2000" loading="lazy" decoding="async">
           <span class="label muted">Photo / Product</span>
           <h3>Nike Mercurial Vapor 16 "VJR". Pop flash, gelled edge light, slow shutter.</h3>
-        </article>
-        <article class="item" data-type="photo">
-          <img src="assets/img/photo/swiss-jersey-800.jpg" srcset="assets/img/photo/swiss-jersey-800.jpg 800w, assets/img/photo/swiss-jersey-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Red Puma Switzerland jersey lit by a narrow beam against black" width="1600" height="2000" loading="lazy" decoding="async">
-          <span class="label muted">Photo / Apparel</span>
-          <h3>Puma Switzerland home jersey</h3>
-        </article>
-        <!-- Cut so the grid fills evenly (8 tiles); near duplicate of the Swiss home shot
-        <article class="item" data-type="photo">
-          <img src="assets/img/photo/swiss-detail-800.jpg" srcset="assets/img/photo/swiss-detail-800.jpg 800w, assets/img/photo/swiss-detail-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Close-up of the Switzerland jersey crest, Puma logo, and knit texture" width="1600" height="2000" loading="lazy" decoding="async">
-          <span class="label muted">Photo / Apparel</span>
-          <h3>Switzerland jersey, fabric detail</h3>
-        </article>
-        -->
-        <article class="item" data-type="photo">
-          <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
-          <span class="label muted">Photo / Apparel / freelance</span>
-          <h3>Destino, local Austin streetwear</h3>
         </article>
         <article class="item item--writing" data-type="writing">
           <span class="label muted">Writing / The Soccer Post blog, pitched and built by me</span>
@@ -464,6 +476,34 @@ p { margin: 0 0 .8em; max-width: 62ch; }
     </div>
   </section>
 
+
+  <!-- APPAREL: DESTINO -->
+  <section class="sec" id="destino" aria-labelledby="destino-h">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">Apparel / Freelance client</span>
+        <h2 class="display" id="destino-h">Destino.</h2>
+        <p class="sec__intro">Local Austin streetwear rooted in Hispanic values, with a deeply local customer base.</p>
+      </div>
+      <div class="feat">
+        <img src="assets/img/destino/padres-800.jpg" srcset="assets/img/destino/padres-800.jpg 800w, assets/img/destino/padres-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Man in a black Destino tee carrying a young boy on his shoulder; the back of the shirt reads Para mis padres que cruzaron fronteras por una vida mejor" width="1600" height="2000" loading="lazy" decoding="async">
+        <div class="feat__body blk-red">
+          <blockquote class="feat__quote">"Para mis padres que cruzaron fronteras por una vida mejor."<span class="label">For my parents, who crossed borders for a better life.</span></blockquote>
+          <dl>
+            <div><dt>The shoot</dt><dd>Restock campaign for Destino, shot and edited by me.</dd></div>
+            <div><dt>Lighting</dt><dd>One light: a 60cm octabox as the key, with natural light as the edge. Edited in Lightroom.</dd></div>
+            <div><dt>The approach</dt><dd>A simple setup that lets the message on the shirt carry the story.</dd></div>
+          </dl>
+        </div>
+        <div class="feat__strip">
+          <img src="assets/img/destino/family-800.jpg" srcset="assets/img/destino/family-800.jpg 800w, assets/img/destino/family-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Family of three in Destino tees in front of a split cedar trunk" width="1600" height="2000" loading="lazy" decoding="async">
+          <img src="assets/img/destino/portrait-800.jpg" srcset="assets/img/destino/portrait-800.jpg 800w, assets/img/destino/portrait-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Woman in a white Destino tee with gold hoops and a name necklace, lit by a soft key" width="1600" height="2000" loading="lazy" decoding="async">
+          <img src="assets/img/destino/tree-800.jpg" srcset="assets/img/destino/tree-800.jpg 800w, assets/img/destino/tree-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Man in a black Destino tee framed by branches and a split trunk" width="1600" height="2000" loading="lazy" decoding="async">
+          <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 22vw, 60vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- STUDIO SHOOT -->
   <section class="sec" id="studio" aria-labelledby="studio-h">
@@ -633,10 +673,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       </div>
       <div class="exp">
         <ul class="list">
-          <li class="now"><span class="label">May 2026, now</span><span><b>Interim Social Media Director</b>, Soccer Post, national</span></li>
-          <li><span class="label">Feb 2026, now</span><span><b>National Content Creator &amp; Social Strategist</b>, Soccer Post</span></li>
-          <li><span class="label">May 2025, now</span><span><b>Social Media Manager &amp; Producer</b>, Soccer Post, Austin market</span></li>
-          <li><span class="label">2022 to 2025</span><span>Sales and early social roles at The Soccer Corner, now Soccer Post. Social from Oct 2024.</span></li>
+          <li class="now"><span class="label">2022, now</span><span><b>Soccer Post</b>, formerly The Soccer Corner<br>Interim Social Media Director, national (since May 2026)<br>National Content Creator &amp; Social Strategist (since Feb 2026)<br>Social Media Manager &amp; Producer, Austin (since May 2025)<br><span class="muted">All three current. Sales floor from 2022, social since Oct 2024.</span></span></li>
           <li><span class="label">Feb 2025, now</span><span><b>Founder, Gael Meza Media</b>, freelance photo and video</span></li>
           <li><span class="label">Aug 2026</span><span>Freelance: shot Austin FC and wrote match recaps for Imagine That Sports</span></li>
         </ul>
@@ -661,6 +698,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       <div class="ctas">
         <a class="btn" href="mailto:mezagaelalejandro@gmail.com">Get In Touch →</a>
         <a class="btn btn--line" href="https://linkedin.com/in/gael-meza">LinkedIn ↗</a>
+        <a class="btn btn--line" href="Gael-Meza-Resume.pdf" download>Resume ↓</a>
       </div>
       <div class="cta__links label">
         <a href="mailto:mezagaelalejandro@gmail.com">mezagaelalejandro@gmail.com</a>
