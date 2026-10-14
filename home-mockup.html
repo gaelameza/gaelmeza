@@ -90,10 +90,10 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 @media (min-width: 900px) { .sec__head { gap: 14px; margin-bottom: 36px; } .sec__intro { max-width: 60ch; } }
 
 /* 1. Hero */
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 132px; gap: 16px 20px; padding-top: 20px; padding-bottom: 28px; align-items: end; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 28px; padding-bottom: 32px; }
 .hero__text { container-type: inline-size; grid-column: 1 / -1; }
 .hero__meta { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 14px; }
-.hero h1 { font-size: clamp(34px, 14cqi, 140px); }
+.hero h1 { font-size: clamp(40px, 12.4cqi, 200px); }
 .hero__line { font-size: clamp(16px, 1.9vw, 21px); line-height: 1.45; margin: 18px 0 10px; max-width: 44ch; }
 .hero__open { border-left: 3px solid var(--ink); padding-left: 10px; margin: 0; }
 .ctas { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -101,10 +101,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .phone { border: 3px solid var(--ink); border-radius: 18px; padding: 6px; background: var(--ink); width: 100%; }
 .phone .ph { border: 0; border-radius: 12px; font-size: 9px; }
 @media (min-width: 900px) {
-  .hero .wrap { grid-template-columns: minmax(0, 1fr) 250px; gap: 24px 56px; padding-top: 56px; padding-bottom: 56px; }
-  .hero__text { grid-column: 1; }
-  .hero__side { grid-column: 2; grid-row: 1 / span 2; }
-  .hero .ctas { grid-column: 1; }
+  .hero .wrap { gap: 28px; padding-top: 64px; padding-bottom: 64px; }
   .phone .ph { font-size: 11px; }
 }
 
@@ -254,6 +251,12 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .yt-graph { width: 100%; height: auto; border: var(--hair); background: #fff; }
 .phone img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; display: block; }
 
+/* YouTube before / after */
+.ba { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: var(--hair); }
+.ba > div { padding: 10px 12px; display: grid; gap: 2px; font-size: 13px; }
+.ba > div + div { border-left: var(--hair); }
+.ba b { font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: 20px; line-height: 1.05; }
+
 /* 7. Experience */
 .exp { display: grid; gap: 16px; }
 @media (min-width: 900px) { .exp { max-width: 860px; } .list li { grid-template-columns: 150px minmax(0, 1fr); } }
@@ -319,19 +322,16 @@ p { margin: 0 0 .8em; max-width: 62ch; }
     <div class="wrap">
       <div class="hero__text">
         <div class="hero__meta label">
-          <span>Interim Social Media Director, Soccer Post</span>
+          <span>Social Media &amp; Digital Content, Soccer Post</span>
           <span class="muted">Austin, TX</span>
         </div>
         <h1 class="display">Social that moves the numbers<span class="red">.</span></h1>
-        <p class="hero__line">I'm Gael Meza, a social media professional in Austin. I plan it, shoot it, design it, and write it, for a national soccer retailer and the local brands I love.</p>
+        <p class="hero__line">I'm Gael Meza (pronounced Guy-ehl Meh-za), a multiskilled creative based in Austin. I plan it, shoot it, design it, write it, and post it. Right now I do all five for the largest soccer retailer in the country.</p>
         <p class="hero__open label">Open to: Creative Content Manager, Social Media Manager, or Content Lead. Based in Austin, happy on-site.</p>
       </div>
       <div class="ctas">
         <a class="btn" href="#contact">Get In Touch →</a>
         <a class="btn btn--line" href="https://linkedin.com/in/gael-meza">LinkedIn ↗</a>
-      </div>
-      <div class="hero__side">
-        <div class="phone"><img class="r916" src="assets/img/photo/light-trails-916-540.jpg" srcset="assets/img/photo/light-trails-916-540.jpg 540w, assets/img/photo/light-trails-916-1080.jpg 1080w" sizes="(min-width: 900px) 320px, 60vw" alt="Red Nike Mercurial boot with red and blue light trails, shot in studio" width="1080" height="1920"></div>
       </div>
     </div>
   </section>
@@ -339,9 +339,9 @@ p { margin: 0 0 .8em; max-width: 62ch; }
   <!-- 2. RESULTS -->
   <section class="results" aria-label="Results">
     <div class="wrap">
-      <div class="stat blk-blue"><div class="stat__n">6.9M</div><span class="label">Views on one creator collab. A company record.</span></div>
-      <div class="stat"><div class="stat__n">5M+</div><span class="label muted">Views, Austin account, first year</span></div>
-      <div class="stat"><div class="stat__n">130K+</div><span class="label muted">YouTube views in 30 days, on a channel quiet for a decade</span></div>
+      <div class="stat blk-blue"><div class="stat__n">6.9M</div><span class="label">Views on one creator collab. The most-viewed post in company history.</span></div>
+      <div class="stat"><div class="stat__n">5M+</div><span class="label muted">Views on the Austin account in my first year</span></div>
+      <div class="stat"><div class="stat__n">130K+</div><span class="label muted">YouTube views in 30 days, on a channel dormant for a decade</span></div>
       <div class="stat blk-red"><div class="stat__n">~800K</div><span class="label">World Cup views in six weeks, national and Austin</span></div>
     </div>
   </section>
@@ -353,8 +353,8 @@ p { margin: 0 0 .8em; max-width: 62ch; }
     <div class="wrap">
       <div class="sec__head">
         <span class="label">Work</span>
-        <h2 class="display" id="make-h">I make it too.</h2>
-        <p class="sec__intro">Every piece starts with one question: what makes someone stop scrolling? Photos are practical, lit in camera, and edited in Lightroom unless marked otherwise.</p>
+        <h2 class="display" id="make-h">Made by me.</h2>
+        <p class="sec__intro">Every piece starts with one question: why would someone care? I build content for a specific audience: easy to digest, and made to hit a clear objective. Every photo is practical and edited by me in Lightroom.</p>
       </div>
       <div class="filters" role="radiogroup" aria-label="Filter work">
         <input type="radio" name="f" id="f-all" checked><label for="f-all">All</label>
@@ -387,7 +387,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
         <article class="item" data-type="design">
           <img src="assets/img/jerseys/man-utd-away.jpg" alt="Soccer Post new arrivals graphic: Manchester United 2026/27 away jersey floating on a blue gradient" width="810" height="1080" loading="lazy" decoding="async">
           <span class="label muted">Design / Template</span>
-          <h3>New arrivals template: 10 kits, one system. My jersey shots, Photoshop backgrounds.</h3>
+          <h3>New arrivals template: ten kits, one system. Jersey photography and Photoshop backgrounds by me.</h3>
           <a class="link" href="https://www.instagram.com/p/Dctrjj1oECJ/">View original ↗</a>
         </article>
         <!-- Waiting on the cover image from gael (action-items.md)
@@ -398,14 +398,17 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <a class="link" href="https://www.instagram.com/p/DdEwM-YlIsD/">View original ↗</a>
         </article>
         -->
-        <!-- Hidden until gael sends the post link (keeps the grid at 9)
         <article class="item" data-type="design">
-          <img src="assets/img/future-hero-card/slide-1.png" alt="Make your own player card: cover slide of the Soccer Post Future Hero Card tutorial carousel" width="1080" height="1440" loading="lazy">
-          <span class="label muted">Design</span>
-          <h3>Future Hero Card: player card tutorial carousel</h3>
-          <a class="link" href="#">View original ↗</a>
+          <img src="assets/img/future-hero-card/slide-1.png" alt="Make your own player card: cover slide of the Soccer Post Future Hero Card tutorial carousel" width="1080" height="1440" loading="lazy" decoding="async">
+          <span class="label muted">Design / Tutorial carousel</span>
+          <h3>Future Hero Card: a make-your-own player card, inspired by EA SPORTS FC. Designed, written, and edited by me, with AI assistance.</h3>
         </article>
-        -->
+        <article class="item" data-type="design">
+          <img src="assets/img/charly-carousel/slide-01-800.jpg" alt="First slide of the seamless Charly Heritage carousel" width="900" height="1200" loading="lazy" decoding="async">
+          <span class="label muted">Design / Seamless carousel</span>
+          <h3>Charly Heritage: eight slides that read as one image, built from Charly's brand assets.</h3>
+          <a class="link" href="#charly">See the full carousel ↓</a>
+        </article>
         <!-- Waiting on the cover image from gael (action-items.md)
         <article class="item" data-type="design">
           <div class="ph">[Image: launch carousel cover]</div>
@@ -447,9 +450,9 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <h3>Destino, local Austin streetwear</h3>
         </article>
         <article class="item item--writing" data-type="writing">
-          <span class="label muted">Writing / Soccer Post blog, which I pitched and built</span>
+          <span class="label muted">Writing / The Soccer Post blog, pitched and built by me</span>
           <ul class="posts">
-            <li><a><span class="posts__t">On-Field vs Fan Jerseys: What's the Difference?</span><span class="label muted">1,300 pageviews</span><span class="posts__go"><span class="missing">[MISSING: link]</span></span></a></li>
+            <li><a href="https://soccerpost.com/blogs/news/on-field-vs-fan-jerseys-what-s-the-difference"><span class="posts__t">On-Field vs Fan Jerseys: What's the Difference?</span><span class="label muted">1,300 pageviews</span><span class="posts__go">Read ↗</span></a></li>
             <li><a href="https://soccerpost.com/blogs/news/adidas-equipment-the-story-behind-soccer-s-most-iconic-kit-design"><span class="posts__t">adidas Equipment: the story behind soccer's most iconic kit design</span><span class="posts__go">Read ↗</span></a></li>
             <li><a href="https://soccerpost.com/blogs/news/the-best-kit-drops-you-missed-during-the-world-cup"><span class="posts__t">The best kit drops you missed during the World Cup</span><span class="posts__go">Read ↗</span></a></li>
             <li><a href="https://soccerpost.com/blogs/news/tried-true-classic-cleats"><span class="posts__t">Tried and true: classic cleats</span><span class="posts__go">Read ↗</span></a></li>
@@ -475,11 +478,11 @@ p { margin: 0 0 .8em; max-width: 62ch; }
         </div>
         <div class="studio__body">
           <span class="label muted">Nike Tiempo x Jordan SE</span>
-          <h3>Lit, shot, and edited by me.</h3>
+          <h3>Launch assets for every market.</h3>
           <dl>
             <div><dt>Goal</dt><dd>Launch content for every Soccer Post market account, led by Austin.</dd></div>
-            <div><dt>What I did</dt><dd>Lit, shot, and edited the whole set myself. Stills on a clean red backdrop with a single gridded key light: hero shots, macro details of the leather, soleplate, and heel, and styled flat lays, edited in Lightroom. The vertical video uses one key light on a dark background to match the edge of the boot, shot by me and edited in DaVinci Resolve.</dd></div>
-            <div><dt>Result</dt><dd>Other market accounts chose my assets, so the set ran across the network, and the video went out on the national account. The Austin stores saw a big jump in in-store traffic.</dd></div>
+            <div><dt>What I did</dt><dd>Lit, shot, and edited the full set. Stills on a red sweep with a single gridded key light: hero shots, macro details of the leather, soleplate, and heel, and styled flat lays, edited in Lightroom. The vertical video uses one key light on a dark background to match the edge of the boot, shot by me and edited in DaVinci Resolve.</dd></div>
+            <div><dt>Result</dt><dd>Other markets adopted the set for their own accounts, and the national account ran the video. Austin stores saw a clear lift in foot traffic.</dd></div>
           </dl>
         </div>
         <div class="studio__strip">
@@ -502,15 +505,15 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       <div class="sec__head">
         <span class="label">Brand collaboration</span>
         <h2 class="display" id="charly-h">Charly Heritage Collection.</h2>
-        <p class="sec__intro">My only official brand collab. Produced, shot, and edited start to finish.</p>
+        <p class="sec__intro">An official four-way brand collaboration, produced, shot, and edited end to end.</p>
       </div>
       <div class="brandcase">
         <video class="brandcase__video" src="assets/video/charly-heritage.mp4" poster="assets/video/charly-heritage-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Charly Heritage Collection film: models in Charly jerseys on downtown Austin streets"></video>
         <div class="brandcase__body blk-blue">
           <dl>
-            <div><dt>The brief</dt><dd>Launch Charly's Heritage Collection with Soccer Post and show our community a side of us that's cool and human, not just sales.</dd></div>
+            <div><dt>The brief</dt><dd>Launch Charly's Heritage Collection with Soccer Post and show the community a more human side of the brand.</dd></div>
             <div><dt>What I did</dt><dd>Produced, shot, and edited a downtown Austin apparel and street style shoot: stills and a short film. Published as a four-way collab with Charly USA, Charly Fútbol, Soccer Post, and Soccer Post ATX.</dd></div>
-            <div><dt>Result</dt><dd>It drove traffic to the site, but the bigger win was community: a flood of compliments from other Soccer Post market accounts and regular customers, and real brand trust between Soccer Post and Charly. Community drives sales, not the other way around.</dd></div>
+            <div><dt>Result</dt><dd>Solid traffic to the site, and a bigger return in brand equity: praise from other Soccer Post market accounts and loyal customers, and deeper trust between Soccer Post and Charly. Community drives sales, not the other way around.</dd></div>
           </dl>
           <a class="link" href="https://www.instagram.com/p/DeAZcDWRNvq/">Watch the film on Instagram ↗</a>
         </div>
@@ -549,11 +552,11 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       <div class="cases">
         <article class="case blk-blue">
           <span class="label">01 / TonyMakesVlogs</span>
-          <h3>6.9M views. Cost: one pair of boots.</h3>
+          <h3>6.9M views for the cost of one pair of boots.</h3>
           <dl>
             <div><dt>Goal</dt><dd>Grow reach for the national account with no budget.</dd></div>
             <div><dt>What I did</dt><dd>Spotted a creator mid-way through his "Becoming A Pro Soccer Player" series, playing in Copa Mundial boots with holes in them. Pitched the collab myself, coordinated the product, and ran it as a collab post so the reach credited Soccer Post.</dd></div>
-            <div><dt>Result</dt><dd>6.9M views, 579K likes, 53.4K shares, 19.6K saves. About 240x the account's ~29K followers at the time. Most-viewed content in company history. It was my first paid creator collab, and it showed me that a simple boot unboxing with a trending audio works, so I made that a content pillar. It is still running: see the unboxings in <a class="link" href="#make">Work</a>.</dd></div>
+            <div><dt>Result</dt><dd>6.9M views, 579K likes, 53.4K shares, 19.6K saves: about 240x the account's ~29K followers, and the most-viewed post in company history. It also proved a format. A simple boot unboxing on a trending audio is now one of our content pillars (see the unboxings in <a class="link" href="#make">Work</a>).</dd></div>
             <div><dt>What I'd do next</dt><dd>Funnel the new audience straight to the website: a CTA in the creator's caption, and a pinned post that tells new viewers who we are.</dd></div>
           </dl>
           <div class="links"><a class="link" href="https://www.instagram.com/reel/DcWGGlrOup4/">View original ↗</a></div>
@@ -561,12 +564,13 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 
         <article class="case">
           <span class="label muted">02 / YouTube revival</span>
-          <h3>130K+ views in 30 days.</h3>
+          <h3>Dormant for a decade. 130K+ views in a month.</h3>
+          <div class="ba"><div><span class="label muted">Before</span><b>~10 years</b><span>of near-flat views and only occasional uploads</span></div><div class="blk-red"><span class="label">After</span><b>130K+ views</b><span>and ~300 new subscribers in 30 days</span></div></div>
           <img class="yt-graph" src="assets/img/youtube-views-graph.png" alt="YouTube Studio lifetime views graph: flat for about a decade, then a sharp spike in 2026" width="1660" height="360" loading="lazy">
           <dl>
-            <div><dt>Goal</dt><dd>Revive a channel that had barely posted in over a decade. Others had tried before me.</dd></div>
-            <div><dt>What I did</dt><dd>Took over as YouTube account manager and ran all of it: a new channel banner, our first YouTube Community, and our first Community post, which drew surprisingly strong engagement.</dd></div>
-            <div><dt>Result</dt><dd>Over 130,000 views and almost 300 new subscribers in the 30 days to Oct 14, 2026. September 2026, at about 80,000 views, was the channel's best month in roughly 15 years.</dd></div>
+            <div><dt>Goal</dt><dd>Bring back a channel that had been effectively dormant for a decade.</dd></div>
+            <div><dt>What I did</dt><dd>Took full ownership as YouTube account manager: rebranded the channel, launched our YouTube Community, and published its first post, which beat our engagement expectations.</dd></div>
+            <div><dt>Result</dt><dd>130K+ views and ~300 new subscribers in the 30 days to Oct 14, 2026. That is nearly 9% of the channel's 1.5M lifetime views, in a single month. September 2026 (~80K views) was its best month in about 15 years.</dd></div>
             <div><dt>What I'd do next</dt><dd>Post quality long-form horizontal video on a steady schedule, built to be cut down and reused across our other platforms.</dd></div>
           </dl>
           <div class="links"><a class="link" href="https://www.youtube.com/@SoccerPostFC">View channel ↗</a></div>
@@ -579,7 +583,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
             <div><dt>Goal</dt><dd>Own the World Cup moment across the national and Austin accounts.</dd></div>
             <div><dt>What I did</dt><dd>Concepted, researched, fact-checked, and produced the program: SP Stats carousels (Mexico and USMNT, Round of 16), a quarterfinals bracket, matchup graphics, and boot and kit content, all on a verify-before-publish rule.</dd></div>
             <div><dt>Result</dt><dd>June 9 to July 21, 2026, national and Austin combined: ~800K views, ~266K accounts reached, ~40K interactions, ~994 net new followers.</dd></div>
-            <div><dt>What I'd do next</dt><dd>One reel took off far past the rest, and I didn't capitalize on it. Next time I'd have a plan ready to ride a hit the same week: a fast follow-up in the same format, a pinned post, and a short series built on what worked.</dd></div>
+            <div><dt>What I'd do next</dt><dd>Have a breakout plan ready. When one reel outperforms, ride it the same week: a fast follow-up in the same format, a pinned post, and a short series built on what worked.</dd></div>
           </dl>
         </article>
       </div>
@@ -592,7 +596,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       <div class="sec__head">
         <span class="label">Mobile content</span>
         <h2 class="display" id="phone-h">In the moment.</h2>
-        <p class="sec__intro">Some of my favorite content is what I catch on my phone in the moment: real customers and real events, posted while they still matter.</p>
+        <p class="sec__intro">Some of my favorite content is what I catch on my phone in the moment: real events and real emotions, shaped for how people watch social today.</p>
       </div>
       <div class="reels">
         <article class="reel">
@@ -625,7 +629,7 @@ p { margin: 0 0 .8em; max-width: 62ch; }
       <div class="sec__head">
         <span class="label">About</span>
         <h2 class="display" id="about-h">Sales floor to national social.</h2>
-        <p class="sec__intro">I started on the sales floor at The Soccer Corner in 2022, so I make content sales can actually use. Today I run four Soccer Post accounts and let Metricool do the heavy lifting: I post when our audience is most active and put the hours I save into better work. I believe community builds sales, not the other way around. Next, I want to bring that to a brand that cares how it shows up in the real world.</p>
+        <p class="sec__intro">I started on the sales floor at The Soccer Corner in 2022, and I still create like a salesperson: content has to move people to act. Today I run four Soccer Post accounts, with Metricool handling scheduling and audience data, so posts land when each audience is most active and the hours I save go into the work. Community builds sales, not the other way around. Next, I want to bring that to a brand that cares how it shows up in the real world.</p>
       </div>
       <div class="exp">
         <ul class="list">
