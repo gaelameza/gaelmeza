@@ -263,6 +263,9 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .feat__strip img { scroll-snap-align: start; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: var(--hair); }
 @media (min-width: 900px) { .feat { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; } .feat__strip { grid-column: 1 / -1; grid-auto-flow: row; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; gap: 20px; } }
 
+.feat + .feat { margin-top: 28px; }
+@media (min-width: 900px) { .feat--flip > img { order: 2; } .feat--flip .feat__body { order: 1; } .feat--flip .feat__strip { order: 3; } .feat__strip--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
 /* YouTube before / after */
 .ba { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: var(--hair); }
 .ba > div { padding: 10px 12px; display: grid; gap: 2px; font-size: 13px; }
@@ -500,6 +503,21 @@ p { margin: 0 0 .8em; max-width: 62ch; }
           <img src="assets/img/destino/portrait-800.jpg" srcset="assets/img/destino/portrait-800.jpg 800w, assets/img/destino/portrait-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Woman in a white Destino tee with gold hoops and a name necklace, lit by a soft key" width="1600" height="2000" loading="lazy" decoding="async">
           <img src="assets/img/destino/tree-800.jpg" srcset="assets/img/destino/tree-800.jpg 800w, assets/img/destino/tree-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Man in a black Destino tee framed by branches and a split trunk" width="1600" height="2000" loading="lazy" decoding="async">
           <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 22vw, 60vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div class="feat feat--flip">
+        <img src="assets/img/destino/pink-portrait-800.jpg" srcset="assets/img/destino/pink-portrait-800.jpg 800w, assets/img/destino/pink-portrait-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 90vw" alt="Woman in a pink Destino jersey reading No Human Is Illegal, lit by a single small softbox against black" width="1600" height="2000" loading="lazy" decoding="async">
+        <div class="feat__body blk-blue">
+          <blockquote class="feat__quote">"No Human Is Illegal."<span class="label">Printed on the Destino pink jersey</span></blockquote>
+          <dl>
+            <div><dt>The shoot</dt><dd>Pink jersey campaign for Destino, shot and edited by me.</dd></div>
+            <div><dt>Lighting</dt><dd>One small 45cm gridded softbox, outdoors at night. One frame inside a mercado, lit by the store's own warm light.</dd></div>
+          </dl>
+        </div>
+        <div class="feat__strip feat__strip--2">
+          <img src="assets/img/destino/pink-wall-800.jpg" srcset="assets/img/destino/pink-wall-800.jpg 800w, assets/img/destino/pink-wall-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 60vw" alt="Woman in the pink Destino jersey and western boots against a pink and white striped wall at night" width="1600" height="2000" loading="lazy" decoding="async">
+          <img src="assets/img/destino/pink-mercado-800.jpg" srcset="assets/img/destino/pink-mercado-800.jpg 800w, assets/img/destino/pink-mercado-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 60vw" alt="Woman in the pink Destino jersey and sunglasses leaning on a ladder inside a mercado, warm store light" width="1600" height="2000" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
