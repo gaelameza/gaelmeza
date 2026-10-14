@@ -51,4 +51,5 @@ Done: YouTube graph, Charly photos and film, F50 video, jersey template graphics
 I fill everything in, update the live preview, and we build the remaining pages (case studies, About, Contact) so you can send Mello one link.
 
 ## Phone reels section (built, hidden until clips arrive)
-- [ ] 3 to 4 lifestyle / recap reels shot on your phone (the original MP4s), plus the IG or TikTok link for each and views if you have them
+- [x] 4 mobile reels added (jersey printing, Panini exchange, in-store event, event aerial)
+- [ ] Optional: links for the 4 mobile reels

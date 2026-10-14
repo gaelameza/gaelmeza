@@ -172,7 +172,8 @@ p { margin: 0 0 .8em; max-width: 62ch; }
 .filters input:checked + label { background: var(--ink); color: var(--paper); }
 .filters input:focus-visible + label { outline: 3px solid var(--blue); outline-offset: 2px; }
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
-@media (min-width: 900px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 20px; } }
+@media (max-width: 899px) { .item--feature { grid-column: 1 / -1; } }
+@media (min-width: 900px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; } }
 .item { display: grid; gap: 6px; align-content: start; }
 .item .ph, .item img { aspect-ratio: 3 / 4; width: 100%; height: auto; object-fit: cover; border: var(--hair); transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
 .item:hover .ph, .item:hover img { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--ink); }
@@ -480,6 +481,13 @@ p { margin: 0 0 .8em; max-width: 62ch; }
         <input type="radio" name="f" id="f-writing"><label for="f-writing">Writing</label>
       </div>
       <div class="grid">
+        <article class="item item--feature" data-type="video">
+          <video src="assets/video/ultimo-tango.mp4" poster="assets/video/ultimo-tango-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Unboxing the adidas F50 Ultimo Tango boot: hands lift the boot from its box and turn the soleplate"></video>
+          <span class="label muted">Video / Content pillar</span>
+          <h3>adidas F50 "Ultimo Tango" unboxing. A simple format that became a Soccer Post pillar, redone with every new cleat.</h3>
+          <span class="item__n">104K views, 7.7K likes</span>
+          <a class="link" href="https://www.instagram.com/reel/DZabnakRrG5/">View original ↗</a>
+        </article>
         <article class="item" data-type="video">
           <video src="assets/video/f50-yamal.mp4" poster="assets/video/f50-yamal-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="adidas F50 Lamine Yamal boot, turned in hand against a red backdrop"></video>
           <span class="label muted">Video</span>
@@ -516,34 +524,34 @@ p { margin: 0 0 .8em; max-width: 62ch; }
         </article>
         -->
         <article class="item" data-type="photo">
-          <img src="assets/img/photo/f50-salah-800.jpg" srcset="assets/img/photo/f50-salah-800.jpg 800w, assets/img/photo/f50-salah-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="adidas F50 Elite boots in white and gold on a reflective surface, warm backlight" width="1600" height="2000" loading="lazy" decoding="async">
+          <img src="assets/img/photo/f50-salah-800.jpg" srcset="assets/img/photo/f50-salah-800.jpg 800w, assets/img/photo/f50-salah-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="adidas F50 Elite boots in white and gold on a reflective surface, warm backlight" width="1600" height="2000" loading="lazy" decoding="async">
           <span class="label muted">Photo / Product</span>
           <h3>adidas F50 Elite, Mo Salah</h3>
         </article>
         <article class="item" data-type="photo">
-          <img src="assets/img/photo/kobe-phantom-800.jpg" srcset="assets/img/photo/kobe-phantom-800.jpg 800w, assets/img/photo/kobe-phantom-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Nike Phantom boots in black and cream on green, low side light" width="1600" height="2000" loading="lazy" decoding="async">
+          <img src="assets/img/photo/kobe-phantom-800.jpg" srcset="assets/img/photo/kobe-phantom-800.jpg 800w, assets/img/photo/kobe-phantom-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Nike Phantom boots in black and cream on green, low side light" width="1600" height="2000" loading="lazy" decoding="async">
           <span class="label muted">Photo / Product</span>
           <h3>Nike x Kobe Phantom</h3>
         </article>
         <article class="item" data-type="photo">
-          <img src="assets/img/photo/light-trails-800.jpg" srcset="assets/img/photo/light-trails-800.jpg 800w, assets/img/photo/light-trails-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Red and silver Nike boot with red and blue light trails, reflected on black" width="1600" height="2000" loading="lazy" decoding="async">
+          <img src="assets/img/photo/light-trails-800.jpg" srcset="assets/img/photo/light-trails-800.jpg 800w, assets/img/photo/light-trails-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Red and silver Nike boot with red and blue light trails, reflected on black" width="1600" height="2000" loading="lazy" decoding="async">
           <span class="label muted">Photo / Product</span>
           <h3>Nike Mercurial Vapor 16 "VJR". Pop flash, gelled edge light, slow shutter.</h3>
         </article>
         <article class="item" data-type="photo">
-          <img src="assets/img/photo/swiss-jersey-800.jpg" srcset="assets/img/photo/swiss-jersey-800.jpg 800w, assets/img/photo/swiss-jersey-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Red Puma Switzerland jersey lit by a narrow beam against black" width="1600" height="2000" loading="lazy" decoding="async">
+          <img src="assets/img/photo/swiss-jersey-800.jpg" srcset="assets/img/photo/swiss-jersey-800.jpg 800w, assets/img/photo/swiss-jersey-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Red Puma Switzerland jersey lit by a narrow beam against black" width="1600" height="2000" loading="lazy" decoding="async">
           <span class="label muted">Photo / Apparel</span>
           <h3>Puma Switzerland home jersey</h3>
         </article>
         <!-- Cut so the grid fills evenly (8 tiles); near duplicate of the Swiss home shot
         <article class="item" data-type="photo">
-          <img src="assets/img/photo/swiss-detail-800.jpg" srcset="assets/img/photo/swiss-detail-800.jpg 800w, assets/img/photo/swiss-detail-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Close-up of the Switzerland jersey crest, Puma logo, and knit texture" width="1600" height="2000" loading="lazy" decoding="async">
+          <img src="assets/img/photo/swiss-detail-800.jpg" srcset="assets/img/photo/swiss-detail-800.jpg 800w, assets/img/photo/swiss-detail-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Close-up of the Switzerland jersey crest, Puma logo, and knit texture" width="1600" height="2000" loading="lazy" decoding="async">
           <span class="label muted">Photo / Apparel</span>
           <h3>Switzerland jersey, fabric detail</h3>
         </article>
         -->
         <article class="item" data-type="photo">
-          <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 25vw, 50vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
+          <img src="assets/img/photo/lifestyle-apparel-800.jpg" srcset="assets/img/photo/lifestyle-apparel-800.jpg 800w, assets/img/photo/lifestyle-apparel-1600.jpg 1600w" sizes="(min-width: 900px) 33vw, 50vw" alt="Two models in cream Destino long-sleeve graphic tees against a painted stone wall" width="1600" height="2000" loading="lazy" decoding="async">
           <span class="label muted">Photo / Apparel / freelance</span>
           <h3>Destino, local Austin streetwear</h3>
         </article>
@@ -562,16 +570,35 @@ p { margin: 0 0 .8em; max-width: 62ch; }
     </div>
   </section>
 
-  <!-- 5b. PHONE REELS: hidden until gael sends the clips. To show: remove the hidden attribute and fill each tile.
-       Each tile: <article class="reel"><video src="assets/video/reels/NAME.mp4" poster="assets/video/reels/NAME-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="..."></video><span class="label muted">Recap</span><h3>Title</h3><a class="link" href="IG URL">View original ↗</a></article> -->
-  <section class="sec" id="phone" aria-labelledby="phone-h" hidden>
+  <!-- 5b. MOBILE CONTENT -->
+  <section class="sec" id="phone" aria-labelledby="phone-h">
     <div class="wrap">
       <div class="sec__head">
-        <span class="label">Lifestyle and recaps</span>
-        <h2 class="display" id="phone-h">Shot on my phone.</h2>
-        <p class="sec__intro">Lifestyle and recap reels, shot in the moment on my phone.</p>
+        <span class="label">Mobile content</span>
+        <h2 class="display" id="phone-h">In the moment.</h2>
+        <p class="sec__intro">Fun mobile content and recap posts from store events and community days.</p>
       </div>
       <div class="reels">
+        <article class="reel">
+          <video src="assets/video/reels/jersey-print.mp4" poster="assets/video/reels/jersey-print-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="In-store jersey printing, shown with a hand-written caption"></video>
+          <span class="label muted">Store / Lifestyle</span>
+          <h3>"Come print a jersey without me"</h3>
+        </article>
+        <article class="reel">
+          <video src="assets/video/reels/panini-exchange.mp4" poster="assets/video/reels/panini-exchange-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Kids and fans trading Panini World Cup stickers at a Soccer Post store in Austin"></video>
+          <span class="label muted">Community event</span>
+          <h3>Panini sticker exchange, Austin</h3>
+        </article>
+        <article class="reel">
+          <video src="assets/video/reels/store-event.mp4" poster="assets/video/reels/store-event-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Fans filling a Soccer Post store during an in-store event"></video>
+          <span class="label muted">Recap</span>
+          <h3>In-store event day</h3>
+        </article>
+        <article class="reel">
+          <video src="assets/video/reels/event-aerial.mp4" poster="assets/video/reels/event-aerial-poster.jpg" muted loop playsinline autoplay preload="none" aria-label="Aerial view of fans gathering at a Puma tent outside a stadium"></video>
+          <span class="label muted">Recap</span>
+          <h3>Event day, from above</h3>
+        </article>
       </div>
     </div>
   </section>
@@ -675,7 +702,7 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelect
 (function () {
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   document.documentElement.classList.add('js');
-  var sel = '.sec h2, .cta h2, .stat, .case, .accts, .decision, .systems, .artifacts, .item, .shot, .prod__item, .list, .quote, .tools';
+  var sel = '.sec h2, .cta h2, .stat, .case, .accts, .decision, .systems, .artifacts, .item, .reel, .shot, .prod__item, .list, .quote, .tools';
   var els = document.querySelectorAll(sel);
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
